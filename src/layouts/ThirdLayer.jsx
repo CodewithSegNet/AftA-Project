@@ -2,7 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Img1 from "../assets/bell.png";
 import Img2 from "../assets/one.png";
-import Img3 from "../assets/two.png";
+import Img3 from "../assets/group12.png";
 import Img4 from "../assets/three.png";
 import Img5 from "../assets/four.png";
 
@@ -27,7 +27,7 @@ const ThirdLayer = () => {
     slidesToShow: 4,    
     slidesToScroll: 1,     
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
     pauseOnHover: true,
     responsive: [
       {
@@ -52,9 +52,10 @@ const ThirdLayer = () => {
   };
 
 
-const headshots = [Img2, Img3, Img4, Img5];
+const headshots = [Img2, Img3, Img4, Img5, Img2, Img3, Img4, Img5];
 
-const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots];
+// Create enough duplicates for seamless scrolling
+const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots, ...headshots];
 
   return (
     <motion.section 

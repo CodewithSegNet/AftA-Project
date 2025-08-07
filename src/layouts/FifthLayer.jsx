@@ -1,6 +1,5 @@
 import { useState } from "react";
 import OpenIcon from "../assets/add.png";
-import CloseIcon from "../assets/close.png";
 
 const faqs = [
   {
@@ -13,11 +12,11 @@ const faqs = [
   },
   {
     question: "I forgot my login method. How can I recover access?",
-    answer: "No worries just enter your registered email on the login screen. We’ll send a new OTP to help you log back in. If you're still having trouble, you can contact support for help."
+    answer: "No worries just enter your registered email on the login screen. We'll send a new OTP to help you log back in. If you're still having trouble, you can contact support for help."
   },
     {
     question: "How do I contact customer support?",
-    answer: "You can reach our support team through the “Support” section in the app. Alternatively, you can use the live chat for on the website faster assistance. "
+    answer: 'You can reach our support team through the "Support" section in the app. Alternatively, you can use the live chat for on the website faster assistance. '
   },
     {
     question: "Can I delete my account if I no longer want to use the platform?",
@@ -52,13 +51,17 @@ const FAQ = () => {
               aria-expanded={openIndex === i}
               aria-controls={`faq-answer-${i}`}
             >
-              <span className="transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent">
+              <span className={`transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent ${
+                openIndex === i ? "bg-text-gradient bg-clip-text text-transparent" : ""
+              }`}>
                 {question}
               </span>
               <img
-                src={openIndex === i ? CloseIcon : OpenIcon}
-                alt={openIndex === i ? "Close" : "Open"}
-                className="ml-4 w-6 h-6 select-none"
+                src={OpenIcon}
+                alt="Open"
+                className={`ml-4 w-6 h-6 select-none transition-transform duration-300 ${
+                  openIndex === i ? "rotate-45" : "rotate-0"
+                }`}
                 aria-hidden="true"
               />
             </button>

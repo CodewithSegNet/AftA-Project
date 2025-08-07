@@ -16,3 +16,16 @@ body {
   background-color: rgba(255, 247, 230, 1);
 }
 
+
+@keyframes scroll {
+  0% { 
+    transform: translateX(0); 
+  }
+  100% { 
+    transform: translateX(calc(-4 * (393px + 20px))); 
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
