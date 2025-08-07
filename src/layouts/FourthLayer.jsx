@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Img1 from "../assets/slide1.webp";
-import Img2 from "../assets/slide2.webp";
-import Img3 from "../assets/slide3.webp";
+import Img1 from "../assets/first.png";
+import Img2 from "../assets/second.png";
+import Img3 from "../assets/third.png";
 import LeftArrow from "../assets/arrowleft.png";
 import RightArrow from "../assets/arrowright.png";
 

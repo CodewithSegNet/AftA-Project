@@ -85,7 +85,7 @@ const Navbar = () => {
 </NavLink>
 
             <NavLink
-              to="/feature"
+              to="/features"
               className={({ isActive }) =>
     `group text-primary text-base font-normal transition-all duration-100 ${
                   isActive
