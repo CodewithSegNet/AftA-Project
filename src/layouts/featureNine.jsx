@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import img1 from "../assets/Profile.png";
+import img1 from "../assets/profile.png";
 
 
 
