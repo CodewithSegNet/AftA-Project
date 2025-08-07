@@ -1,8 +1,8 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import calling1 from "../assets/calling.png"
-import calling2 from "../assets/calling1.png"
-import calling3 from "../assets/calling2.png"
+import calling1 from "../assets/Calling.png"
+import calling2 from "../assets/Calling1.png"
+import calling3 from "../assets/Calling2.png"
 
 const FeatureFirst = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
