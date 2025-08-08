@@ -1,16 +1,20 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import Img1 from "../assets/first.png";
-import Img2 from "../assets/second.png";
-import Img3 from "../assets/third.png";
 import LeftArrow from "../assets/arrowleft.png";
 import RightArrow from "../assets/arrowright.png";
+
+
+const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646499/first_yzp23j.png";
+const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646547/second_xid8ct.png";
+const Img3 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646643/third_vo7uwt.png";
+
+
 
 const images = [Img1, Img2, Img3];
 
 const FourthLayer = () => {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [direction, setDirection] = useState(0); 
 
   const prevImage = () => {
     setDirection(-1);
@@ -27,19 +31,16 @@ const FourthLayer = () => {
 
   const variants = {
     enter: (direction) => ({
-      x: direction > 0 ? 300 : -300,
+      x: direction > 0 ? "100%" : "-100%",
       opacity: 0,
-      position: "absolute",
     }),
     center: {
       x: 0,
       opacity: 1,
-      position: "relative",
     },
     exit: (direction) => ({
-      x: direction > 0 ? -300 : 300,
+      x: direction > 0 ? "-100%" : "100%",
       opacity: 0,
-      position: "absolute",
     }),
   };
 
@@ -51,7 +52,7 @@ const FourthLayer = () => {
           How The AftA App Works
         </h2>
         <p className="text-base font-normal text-primary">
-          We’ve made it simple. explore how AftA helps you meet new people, join
+          We've made it simple. explore how AftA helps you meet new people, join
           trending conversations, and stay in the loop effortlessly.
         </p>
       </div>
@@ -83,10 +84,10 @@ const FourthLayer = () => {
           </div>
 
             <button onClick={prevImage}>
-              <img src={LeftArrow} loading="eager" alt="Previous" className="w-9 h-9" />
+              <img src={LeftArrow} loading="eager" alt="Previous" className="w-9 h-9 hover:scale-105 duration-200" />
             </button>
             <button onClick={nextImage}>
-              <img src={RightArrow} loading="eager"  alt="Next" className="w-9 h-9" />
+              <img src={RightArrow} loading="eager"  alt="Next" className="w-9 h-9 hover:scale-105 duration-200" />
             </button>
           </div>
         </div>
@@ -99,7 +100,7 @@ const FourthLayer = () => {
             </h2>
           </div>
 
-          <div className="flex-1 flex justify-center items-center relative">
+          <div className="flex-1 flex justify-center items-center relative overflow-hidden">
             <AnimatePresence custom={direction} mode="wait">
               <motion.img
                 key={current}

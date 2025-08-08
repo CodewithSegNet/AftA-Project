@@ -1,11 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import FirstImg from "../assets/vidOverlay.png"
-import vid from "../assets/aboutvid.mp4"
 
 const AboutFirst = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
+  // Store video URL as a string constant
+  const videoUrl = "https://res.cloudinary.com/di0r5v8hw/video/upload/v1754644351/aboutvid_1_h6xpj7.mp4";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -101,7 +103,7 @@ const AboutFirst = () => {
             variants={videoVariants}
           >
             <motion.video 
-              src={vid} 
+              src={videoUrl} 
               className="h-[600px] w-[400px] object-cover rounded-lg"
               autoPlay
               loop

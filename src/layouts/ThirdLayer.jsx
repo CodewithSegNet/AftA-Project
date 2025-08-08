@@ -1,14 +1,18 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Img1 from "../assets/bell.png";
-import Img2 from "../assets/one.png";
-import Img3 from "../assets/group12.png";
-import Img4 from "../assets/three.png";
-import Img5 from "../assets/four.png";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+
+const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646171/one_eiz0bx.png";
+const Img3 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646254/group12_oyyrct.png";
+const Img4 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646314/three_hfqqtm.png";
+const Img5 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646372/four_qyyfsp.png";
+
+
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },

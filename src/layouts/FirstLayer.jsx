@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
-import Img1 from "../assets/Maskgroup.png";
-import Img2 from "../assets/StoryTray.png";
-import Img3 from "../assets/countries.png";
 import Img4 from "../assets/emoji.png";
 import Img5 from "../assets/watchyoutube.png";
-import Img6 from "../assets/markgroup2.webp";
+
+
+const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645296/Maskgroup_rukmqw.png";
+const Img6 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645325/markgroup2_j69e7n.webp";
+const Img3 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645470/countries_xnlcji.png";
+const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645686/StoryTray_rmkkdd.png"
 
 
 

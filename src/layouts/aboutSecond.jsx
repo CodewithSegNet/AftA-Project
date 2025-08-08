@@ -1,7 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import secondImg from "../assets/secImg.png"
 import AboutFaq from "../layouts/aboutFaq"
+
+
+
+const secondImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754643743/secImg_njremc.png"
+
 
 const AboutSecond = () => {
   const ref = useRef(null);

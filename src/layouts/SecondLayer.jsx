@@ -1,9 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Img1 from "../assets/secondimg.png";
 import Img2 from "../assets/btnfirst.png";
 import Img3 from "../assets/btnsecond.png";
-import Img4 from "../assets/map.png";
+
+
+const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645399/secondimg_hfesak.png";
+const Img4 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645447/map_tsvzve.png";
+
+
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -91,7 +96,7 @@ const SecondLayer = () => {
               <img
                 src={Img2}
                 alt="Download on Apple"
-                className="w-[170px] md:w-full md:h-auto object-contain"
+                className="w-[170px] md:w-full md:h-auto object-contain hover:scale-105 duration-200"
               />
             </motion.div>
 
@@ -104,7 +109,7 @@ const SecondLayer = () => {
               <img
                 src={Img3}
                 alt="Download on Play"
-                className="w-[170px] md:w-full md:h-auto object-contain"
+                className="w-[170px] md:w-full md:h-auto object-contain hover:scale-105 duration-200"
               />
             </motion.div>
           </div>
@@ -122,7 +127,7 @@ const SecondLayer = () => {
         <img
           src={Img4}
           alt="Map"
-          className="w-full max-w-screen-lg mx-auto h-auto lg:object-contain"
+          className="w-full max-w-screen-lg mx-auto h-auto lg:object-contain hover:scale-110 duration-200"
         />
       </motion.div>
     </motion.section>

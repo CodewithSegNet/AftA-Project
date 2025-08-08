@@ -1,8 +1,12 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../assets/founder1.png"
 import Img2 from "../assets/btnfirst.png";
 import Img3 from "../assets/btnsecond.png";
+
+
+
+
+const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754643911/founder1_h6zidn.png"
 
 const AboutThird = () => {
   const storyRef = useRef(null);

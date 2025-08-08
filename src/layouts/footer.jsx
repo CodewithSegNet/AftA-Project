@@ -67,9 +67,7 @@ const Footer = () => {
             <li className="group">
               <Link to="#" className="block mb-4 lg:mb-2 group-hover:bg-text-gradient2 group-hover:bg-clip-text group-hover:text-transparent transition-all">Community</Link>
             </li>
-                      <li className="group">
-              <Link to="#" className="block mb-4 lg:mb-2  group-hover:bg-text-gradient2 group-hover:bg-clip-text group-hover:text-transparent transition-all">Blog</Link>
-            </li>
+    
           </ul>
         </div>
 
