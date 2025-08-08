@@ -1,11 +1,19 @@
 import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import img1 from "../assets/Story.png";
 import img2 from "../assets/story1.png";
 
 
 const FeatureSixth = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { 
+    once: true, 
+    threshold: 0.3,
+    margin: "-100px"
+  });
+
   return (
-    <motion.section>
+    <motion.section ref={ref}>
 
         <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
 
@@ -14,7 +22,12 @@ const FeatureSixth = () => {
     
 
       {/* Text content */}
-      <motion.div className="w-[368px]">
+      <motion.div 
+        className="w-[368px]"
+        initial={{ x: -100, opacity: 0 }}
+        animate={isInView ? { x: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4">
 Stories that Speak for You
         </motion.h1>
@@ -26,7 +39,12 @@ Share your moments before they disappear. Post photos, memojis, and clips that v
 
 
 
-        <motion.div className="relative">
+        <motion.div 
+          className="relative"
+          initial={{ x: 100, opacity: 0 }}
+          animate={isInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
         <motion.img src={img1} className="h-[740px] relative" alt="" />
                             <motion.img src={img2} className="absolute left-[-320px] top-[5rem]" alt="" />
 

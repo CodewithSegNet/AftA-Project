@@ -3,7 +3,7 @@ import HomePage from "./pages/homepage/index.jsx";
 // import ScrollToTop from "./layouts/ScrolltoTop.jsx";
 import About from "./pages/about/index.jsx";
 import Features from "./pages/features/index.jsx";
-// import Community from "./pages/communities";
+import Community from "./pages/community/index.jsx";
 
 
 
@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<About/>} />
             <Route path="/features" element={<Features />} />
-            {/* <Route path="/community" element={<Community />} /> */}
+            <Route path="/community" element={<Community />} />
 
           </Routes>
       </BrowserRouter>
