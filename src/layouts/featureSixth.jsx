@@ -15,7 +15,7 @@ const FeatureSixth = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
 
 
 
@@ -23,13 +23,13 @@ const FeatureSixth = () => {
 
       {/* Text content */}
       <motion.div 
-        className="w-[368px]"
+        className="lg:w-[368px]"
         initial={{ x: -100, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4">
-Stories that Speak for You
+Stories That Speak for You
         </motion.h1>
 
         <motion.p className="text-base font-normal text-gray-700">
@@ -46,7 +46,7 @@ Share your moments before they disappear. Post photos, memojis, and clips that v
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
         <motion.img src={img1} className="h-[740px] relative" alt="" />
-                            <motion.img src={img2} className="absolute left-[-320px] top-[5rem]" alt="" />
+                            <motion.img src={img2} className="absolute lg:left-[-320px] top-[7rem] lg:top-[5rem] w-[150px] lg:w-full" alt="" />
 
       </motion.div>
 

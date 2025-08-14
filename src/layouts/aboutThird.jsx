@@ -243,7 +243,7 @@ const AboutThird = () => {
 
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto mt-[96px]">
+      <section className="max-w-screen-2xl mx-auto mt-[56px] lg:mt-[96px]">
         {/* Story Section */}
         <motion.div 
           ref={storyRef}
@@ -275,14 +275,14 @@ const AboutThird = () => {
         {/* Leadership Section */}
         <motion.div 
           ref={leadershipRef}
-          className="flex max-w-screen-2xl mx-auto items-center justify-center gap-[4rem] mt-[96px]"
+          className="flex flex-col lg:flex-row max-w-screen-2xl mx-auto items-center justify-center gap-[2rem] lg:gap-[4rem] mt-[56px] lg:mt-[96px]"
           variants={leadershipContainerVariants}
           initial="hidden"
           animate={isLeadershipInView ? "visible" : "hidden"}
         >
           {/* Text content */}
           <motion.div 
-            className="w-[368px]"
+            className="lg:w-[368px]"
             variants={leadershipTextVariants}
           > 
             <motion.h1 
@@ -304,12 +304,12 @@ const AboutThird = () => {
 
           {/* Image container */}
           <motion.div 
-            className="relative h-[600px] w-[604px]"
+            className="relative lg:h-[600px] lg:w-[604px]"
             variants={leadershipImageVariants}
           >
             <motion.img 
               src={img1} 
-              className="h-[600px] pt-3 w-[604px] z-10 pointer-events-none rounded-lg" 
+              className="lg:h-[600px] pt-3 lg:w-[604px] z-10 pointer-events-none rounded-lg" 
               alt=""
               animate={isLeadershipInView ? float : {}}
               whileHover={{ 
@@ -324,7 +324,7 @@ const AboutThird = () => {
         {/* CTA Section */}
         <motion.div 
           ref={ctaRef}
-          className="flex flex-col max-w-screen-2xl mx-auto items-center text-center justify-center gap-[1rem] my-[96px]"
+          className="flex flex-col max-w-screen-2xl mx-auto items-center text-center justify-center gap-[1rem] my-[56px] lg:my-[96px]"
           variants={ctaContainerVariants}
           initial="hidden"
           animate={isCtaInView ? "visible" : "hidden"}
@@ -349,7 +349,7 @@ const AboutThird = () => {
           <motion.div
             variants={ctaButtonsVariants}
           >
-            <div className="flex gap-4">
+            <div className="flex  gap-4">
               <motion.div
                 className="flex-1"
                 variants={buttonVariants}
@@ -374,7 +374,7 @@ const AboutThird = () => {
                 <img
                   src={Img3}
                   alt="Download on Play"
-                  className="w-[195px] md:h-[60px] object-contain hover:scale-105 duration-200"
+                  className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
                 />
               </motion.div>
             </div>

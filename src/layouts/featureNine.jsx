@@ -11,10 +11,10 @@ const FeatureNine = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
 
     <motion.div 
-      className="relative"
+      className="relative order-2 lg:order-1"
       initial={{ opacity: 0, x: -50 }}
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -33,7 +33,7 @@ const FeatureNine = () => {
 
       {/* Text content */}
       <motion.div 
-        className="w-[368px]"
+        className="lg:w-[368px] order-1 lg:order-2"
         initial={{ opacity: 0, x: 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

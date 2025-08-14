@@ -13,12 +13,12 @@ const FeatureFifth = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
 
 
 
       <motion.div 
-        className="relative"
+        className="relative order-2 lg:order-1"
         initial={{ x: -100, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -28,7 +28,7 @@ const FeatureFifth = () => {
 
       {/* Text content */}
       <motion.div 
-        className="w-[368px]"
+        className="lg:w-[368px] order-1 lg:order-2 "
         initial={{ x: 100, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}

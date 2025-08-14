@@ -209,7 +209,7 @@ className={`lg:hidden fixed top-0 left-0 h-screen w-3/4 z-[60]  bg-gradient-to-r
 </NavLink>
 
             <NavLink
-              to="/feature"
+              to="/features"
               className={({ isActive }) =>
     `group text-primary text-base font-normal transition-all duration-100  py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
                   isActive

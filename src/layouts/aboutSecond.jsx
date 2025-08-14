@@ -158,7 +158,7 @@ const AboutSecond = () => {
         >
 
          <motion.div 
-           className="w-[953px]" 
+           className="lg:w-[953px]" 
            variants={headerVariants}
          >
           <motion.h1 
@@ -178,7 +178,7 @@ AftA is built on the foundation of truth, freedom, and cultural pride. We believ
         </motion.div>
 
         <motion.div 
-          className="flex items-center gap-[70px]"
+          className="flex flex-col lg:flex-row items-center gap-[40px] lg:gap-[70px]"
           variants={contentContainerVariants}
         >
 
@@ -187,7 +187,7 @@ AftA is built on the foundation of truth, freedom, and cultural pride. We believ
           >
             <motion.img 
               src={secondImg} 
-              className="h-[600px] pt-5 w-[400px]" 
+              className="lg:h-[600px] pt-5 lg:w-[400px]" 
               alt=""
               animate={isInView ? float : {}}
               whileHover={{ 

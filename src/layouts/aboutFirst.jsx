@@ -91,7 +91,7 @@ const AboutFirst = () => {
       <section>
         <motion.div 
           ref={ref}
-          className="flex max-w-screen-2xl mx-auto items-center justify-center gap-[4rem]"
+          className="flex lg:flex-row flex-col max-w-screen-2xl mx-auto items-center justify-center gap-[2rem] lg:gap-[4rem]"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -99,7 +99,7 @@ const AboutFirst = () => {
           
           {/* Video container with overlay */}
           <motion.div 
-            className="relative h-[600px] w-[400px]"
+            className="relative lg:h-[600px] lg:w-[400px]"
             variants={videoVariants}
           >
             <motion.video 
@@ -126,7 +126,7 @@ const AboutFirst = () => {
 
           {/* Text content */}
           <motion.div 
-            className="w-[368px]"
+            className="lg:w-[368px] mb-12 lg:mb-0"
             variants={textVariants}
           > 
             <motion.h1 

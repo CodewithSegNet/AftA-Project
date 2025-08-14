@@ -47,10 +47,10 @@ const FeatureFirst = () => {
   };
 
   return (
-    <section className="max-w-screen-2xl mx-auto my-12" ref={ref}>
-      <div className="flex items-center justify-center"> 
+    <section className="max-w-screen-2xl mx-auto lg:my-12" ref={ref}>
+      <div className="flex flex-col lg:flex-row items-center justify-center"> 
         <motion.div 
-          className="flex w-[742.17px] items-center justify-center relative h-[700px] overflow-hidden"
+          className="flex w-[350px] lg:w-[742.17px] items-center justify-center relative h-[700px] overflow-hidden"
           initial={{ x: -100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -72,7 +72,7 @@ const FeatureFirst = () => {
 
 
         <motion.div 
-          className=" w-[368px]"
+          className="lg:w-[368px]"
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -80,7 +80,7 @@ const FeatureFirst = () => {
           <motion.h1 
             className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
           >
-Crystal-clear Audio & Video Calls
+Crystal-Clear Audio & Video Calls
           </motion.h1>
 
           <motion.p 

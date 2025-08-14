@@ -17,10 +17,11 @@ const FeatureThird = () => {
   });
 
   return (
-    <section ref={ref} className="max-w-screen-2xl mx-auto mt-[127px] mb-[96px]">
-      <div className="flex items-center justify-center gap-[5rem]"> 
+    <section ref={ref} className="max-w-screen-2xl mx-auto lg:mt-[127px] mb-[96px]">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-[2rem] lg:gap-[5rem]"> 
 
         <motion.div
+          className="order-2 lg:order-1"
           initial={{ x: -100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
           transition={{ 
@@ -177,7 +178,7 @@ const FeatureThird = () => {
         </motion.div>
 
         <motion.div 
-          className="w-[368px]"
+          className="lg:w-[368px] order-1 lg:order-2"
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
           transition={{ 
@@ -187,7 +188,7 @@ const FeatureThird = () => {
           }}
         > 
           <motion.h1 
-            className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+            className=" text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
             initial={{ y: 30, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ 
@@ -196,7 +197,7 @@ const FeatureThird = () => {
               delay: 0.4
             }}
           >
-            Express Yourself with Memojis
+            Express Yourself With Memojis
           </motion.h1>
 
           <motion.p 

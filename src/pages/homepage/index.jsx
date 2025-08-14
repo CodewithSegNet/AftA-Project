@@ -62,7 +62,7 @@ const HomePage = () => {
           <Navbar />
           </div>
   
-  <div className="md:pt-[22rem] lg:pt-[0rem]">
+  <div className="md:pt-[22rem] lg:pt-[0rem] ">
   <FirstLayer/>
   </div>
 

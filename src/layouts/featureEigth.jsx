@@ -13,11 +13,11 @@ const FeatureSixth = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
 
       {/* Text content */}
       <motion.div 
-        className="w-[368px]"
+        className="lg:w-[368px]"
         initial={{ opacity: 0, x: -50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -33,7 +33,7 @@ const FeatureSixth = () => {
 <div className="flex gap-2 items-center w-fit">
     <button 
       className={`${activeTab === "communities" 
-        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] font-semibold w-fit" 
+        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
         : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all duration-300 font-semibold w-fit`}
       onClick={() => setActiveTab("communities")}
     >
@@ -41,7 +41,7 @@ const FeatureSixth = () => {
     </button>
     <button 
       className={`${activeTab === "groups" 
-        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] w-fit font-semibold" 
+        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] w-fit font-semibold hover:text-[rgba(255,180,27,1)] duration-200" 
         : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all font-semibold duration-300 w-fit`}
       onClick={() => setActiveTab("groups")}
     >
@@ -59,7 +59,7 @@ const FeatureSixth = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-Communities that Get You
+Communities That Get You
         </motion.h1>
 
         <motion.p 

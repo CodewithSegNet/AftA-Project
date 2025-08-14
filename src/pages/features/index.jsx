@@ -70,48 +70,48 @@ const About = () => {
           <Navbar />
           </div>
   
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureFirst/>
 </div>
 
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureSecond/>
 </div>
 
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureThird/>
 </div>
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureFourth/>
 </div>
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureFifth/>
 </div>
 
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureSixth/>
 </div>
 
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureSeventh/>
 </div>
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureEight/>
 </div>
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureNine/>
 </div>
 
 
-<div className="">
+<div className=" mx-4 md:mx-6 ">
   <FeatureTen/>
 </div>
 <div className="mx-4 md:mx-6 mt-[2rem]">

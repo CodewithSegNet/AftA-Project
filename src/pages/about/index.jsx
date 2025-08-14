@@ -61,7 +61,7 @@ const About = () => {
           <Navbar />
           </div>
   
-<div className="">
+<div className="mx-4 md:mx-6">
   <AboutFirst/>
 </div>
 

@@ -12,9 +12,9 @@ const FeatureSixth = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
 
-    <motion.div className="relative">
+    <motion.div className="order-2 lg:order-1 relative">
         <motion.img 
           src={img1} 
           className="h-[740px] relative" 
@@ -25,7 +25,7 @@ const FeatureSixth = () => {
         />
         <motion.img 
           src={img2} 
-          className="absolute left-[-220px] top-[18rem]" 
+          className="absolute lg:left-[-220px] top-[32rem] lg:top-[18rem]" 
           alt="" 
           initial={{ opacity: 0, x: -100 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
@@ -33,7 +33,7 @@ const FeatureSixth = () => {
         />
         <motion.img 
           src={img3} 
-          className="absolute right-[-240px] top-[10rem]" 
+          className="absolute lg:right-[-240px] top-[37rem] lg:top-[10rem]" 
           alt="" 
           initial={{ opacity: 0, x: 100 }}
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
@@ -47,7 +47,7 @@ const FeatureSixth = () => {
 
       {/* Text content */}
       <motion.div 
-        className="w-[368px]"
+        className="lg:w-[368px] order-1 lg:order-2"
         initial={{ opacity: 0, x: 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
