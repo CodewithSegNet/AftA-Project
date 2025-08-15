@@ -39,14 +39,14 @@ const Footer = () => {
 
   
   {/* Content on top */}
-  <span className="relative flex items-center z-10">
+  <Link className="relative flex items-center z-10">
     <img
       src={Download}
       className="h-5 w-6 pr-2 transition-all duration-300 group-hover:brightness-110"
       alt="Download"
     />
     Get The App Now
-  </span>
+  </Link>
 </button>
 
         </div>

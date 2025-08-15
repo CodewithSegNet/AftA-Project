@@ -162,7 +162,7 @@ const AboutSecond = () => {
            variants={headerVariants}
          >
           <motion.h1 
-            className="text-[42px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-4"
+            className="text-[32px] md:text-[64px] leading-[35px] md:leading-[70px] font-normal mb-2 lg:mb-4"
             variants={titleVariants}
           >
             Our Principles
@@ -187,7 +187,7 @@ AftA is built on the foundation of truth, freedom, and cultural pride. We believ
           >
             <motion.img 
               src={secondImg} 
-              className="lg:h-[600px] pt-5 lg:w-[400px]" 
+              className=" lg:h-[600px] pt-5 lg:w-[400px]" 
               alt=""
               animate={isInView ? float : {}}
               whileHover={{ 

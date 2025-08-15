@@ -11,7 +11,7 @@ const FeatureNine = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
 
 
     
@@ -24,7 +24,7 @@ const FeatureNine = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1 
-          className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+          className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -51,7 +51,7 @@ Total control over who sees what. From story views to chat access, tweak your pr
         >
         <motion.img 
           src={img1} 
-          className="h-[740px] relative" 
+          className="h-[600px] lg:h-[740px] relative" 
           alt="" 
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}

@@ -13,7 +13,7 @@ const FeatureSixth = () => {
   return (
     <motion.section ref={ref}>
 
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[2rem] lg:gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
 
       {/* Text content */}
       <motion.div 
@@ -23,18 +23,18 @@ const FeatureSixth = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
 <motion.div 
-  className="flex gap-5 items-center bg-[rgba(0,17,23,1)] rounded-full p-2 w-fit mb-10"
+  className="flex gap-5 items-center bg-[rgba(0,17,23,1)] mx-auto lg:mx-none rounded-full p-3 w-fit mb-10"
   initial={{ opacity: 0, y: -20 }}
   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 >
-    <img src={img3} alt="" />
+    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11" alt="" />
 
 <div className="flex gap-2 items-center w-fit">
     <button 
       className={`${activeTab === "communities" 
         ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all duration-300 font-semibold w-fit`}
+        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full text-sm lg:text-md transition-all duration-300 font-semibold w-fit hover:text-[rgba(255,180,27,1)] hover:bg-[rgba(255,180,27,0.1)] `}
       onClick={() => setActiveTab("communities")}
     >
       Communities
@@ -42,7 +42,7 @@ const FeatureSixth = () => {
     <button 
       className={`${activeTab === "groups" 
         ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] w-fit font-semibold hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all font-semibold duration-300 w-fit`}
+        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full text-sm lg:text-md  transition-all font-semibold duration-300 w-fit hover:text-[rgba(255,180,27,1)] hover:bg-[rgba(255,180,27,0.1)] `}
       onClick={() => setActiveTab("groups")}
     >
       Groups
@@ -54,7 +54,7 @@ const FeatureSixth = () => {
 
 
         <motion.h1 
-          className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+          className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -80,7 +80,7 @@ Find your people. Join the conversation. Whether you're about fashion, tech, act
     >
         <motion.img 
           src={activeTab === "communities" ? img1 : img2}
-          className="h-[740px] w-[350px] relative" 
+          className="h-[600px] lg:h-[740px] lg:w-[350px] relative" 
           alt="" 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}

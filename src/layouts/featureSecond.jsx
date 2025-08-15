@@ -10,7 +10,7 @@ const FeatureSecond = () => {
 
   return (
     <section ref={ref}>
-      <div className="my-[96px]">
+      <div className=" my-[40px] lg:my-[96px]">
         <div className="flex flex-col lg:flex-row items-center gap-[2rem] lg:gap-[6rem] justify-center"> 
           <motion.div 
             className="lg:w-[368px]"
@@ -19,7 +19,7 @@ const FeatureSecond = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           > 
             <motion.h1 
-              className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+              className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -45,7 +45,7 @@ const FeatureSecond = () => {
             <div className=" relative">
               <motion.img 
                 src={feat1} 
-                className="h-[740px] relative"  
+                className="h-[600px] lg:h-[740px] relative"  
                 alt=""
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}

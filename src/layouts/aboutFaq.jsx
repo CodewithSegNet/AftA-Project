@@ -43,7 +43,7 @@ const FAQ = () => {
               aria-expanded={openIndex === i}
               aria-controls={`faq-answer-${i}`}
             >
-              <span className={`transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent ${
+              <span className={`text-sm lg:text-base transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent ${
                 openIndex === i ? "bg-text-gradient bg-clip-text text-transparent" : ""
               }`}>
                 {question}
@@ -60,7 +60,7 @@ const FAQ = () => {
 
             <div
               id={`faq-answer-${i}`}
-              className={`overflow-hidden transition-all duration-500 ease-in-out text-gray-700 lg:w-[800px] ${
+              className={`text-xs lg:text-sm overflow-hidden transition-all duration-500 ease-in-out text-gray-700 lg:w-[800px] ${
                 openIndex === i ? "max-h-96 mt-0" : "max-h-0 mt-0"
               }`}
               style={{ transitionProperty: "max-height, margin-top" }}

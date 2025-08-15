@@ -130,7 +130,7 @@ const AboutFirst = () => {
             variants={textVariants}
           > 
             <motion.h1 
-              className="text-[42px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-4"
+              className="text-[32px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-2 lg:mb-4"
               variants={headingVariants}
             >
               Our Mission

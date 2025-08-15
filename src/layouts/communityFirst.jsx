@@ -2,15 +2,17 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 import img3 from "../assets/fill.png";
 import img1 from "../assets/profile.png";
-import img4 from "../assets/remove.png";
+import img4 from "../assets/plus.svg";
 import img5 from "../assets/Community01.png";
-import img6 from "../assets/Community2.png";
+import img6 from "../assets/Community11.png";
 import img7 from "../assets/Community3.png";
 import img8 from "../assets/Community4.png";
 import img9 from "../assets/Community001.png";
 import img10 from "../assets/Community002.png";
 import img11 from "../assets/Community004.png";
 import img12 from "../assets/Community006.png";
+import img14 from "../assets/Community12.png";
+import img15 from "../assets/Community13.png";
 
 
 const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645067/community1_z8zcqf.png";
@@ -109,7 +111,7 @@ const CommunityFirst = () => {
 
 
 <div className="relative">
-    <img src={Img2} className="relative" alt="" />
+    <img src={Img2} className="relative mt-[7rem] lg:mt-0 " alt="" />
 </div>
 
 
@@ -120,30 +122,30 @@ const CommunityFirst = () => {
   variants={staggerContainer}
   initial="hidden"
   animate={tabSwitcherInView ? "visible" : "hidden"}
-  className="absolute top- left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center"
+  className="absolute top-[30rem] lg:top-[50rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center"
 >
 
             <motion.div 
               variants={fadeInUp}
-              className="flex flex-col items-center justify-center text-center mb-[96px]"
+              className="flex flex-col items-center justify-center text-center mb-[50px] lg:mb-[76px]"
             >
 
-                <h1 className="text-3xl text-black mb-3">Let's Show You How</h1>
+                <h1 className="text-[32px] md:text-3xl text-black mb-3">Let's Show You How</h1>
                 <p className="text-sm text-black">Follow the steps below to join or create your own community on AftA.</p>
             </motion.div>
 
 
 <motion.div 
   variants={fadeInUp}
-  className="flex gap-5 items-center bg-[rgba(0,17,23,1)] rounded-full p-2 w-fit mb-10"
+  className="flex lg:p-4 items-center bg-[rgba(0,17,23,1)] rounded-full px-8 py-2 w-fit mb-10"
 >
 
-    <img src={img3} alt="" />
+    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11 mr-4 " alt="" />
 
 <div className="flex gap-2 items-center w-fit relative">
     {/* Active tab indicator */}
     <motion.div
-      className="absolute inset-0 bg-[rgba(255,180,27,0.1)] rounded-full"
+      className="absolute inset-0 bg-[rgba(255,180,27,0.1)] rounded-full whitespace-nowrap"
       initial={false}
       animate={{
         x: activeTab === "Create Community" ? 0 : "100%",
@@ -158,9 +160,9 @@ const CommunityFirst = () => {
     />
     
     <button 
-      className={`${activeTab === "Create Community" 
+      className={`${activeTab === "Create Community whitespace-nowrap" 
         ? "text-[rgba(255,180,27,1)] font-semibold" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all duration-300 font-semibold w-fit relative z-10`}
+        : "text-[rgba(255,255,255,1)]"} lg:px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)] `}
       onClick={() => setActiveTab("Create Community")}
     >
 Create Community
@@ -168,7 +170,7 @@ Create Community
     <button 
       className={`${activeTab === "Join Community" 
         ? "text-[rgba(255,180,27,1)] font-semibold" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all font-semibold duration-300 w-fit relative z-10`}
+        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)] lg:pr-[2rem]`}
       onClick={() => setActiveTab("Join Community")}
     >
 Join Community
@@ -180,13 +182,13 @@ Join Community
 </motion.div>
 
 
-<div className="absolute top-[13rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
+<div className="absolute top-[11rem] lg:top-[13rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
       <motion.div 
         initial="hidden"
-        className="w-[378px]"
+        className="w-[240px] lg:w-[378px] text-center lg:text-left"
       >
         <motion.h1 
-          className="text-[32px] md:text-[50px] leading-[50px] md:leading-[55px] font-normal mb-4"
+          className="text-[32px] md:text-[50px] leading-[35px] lg:leading-[55px] font-normal mb-2 lg:mb-4"
         >
 Build Your Tribe <br /> Find Your Voice
         </motion.h1>
@@ -229,17 +231,17 @@ Discover and build communities that speak your vibe. Connect, share, and grow wi
           variants={staggerContainer}
           initial="hidden"
           animate={section1InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[130px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[110px] mb-[30px] lg:mt-[130px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]"
         >
 
 
     
 
       {/* Text content */}
-      <motion.div variants={fadeInLeft} className="w-[398px]">
-        <motion.h1 className="text-[42px] md:text-[60px] leading-[50px] md:leading-[80px] font-normal mb-4">
-            <span className="flex text-left items-end">
-<span className="flex items-end w-fit"> Tap "Create a  Community"<span><img src={img4} className="h-[4rem] w-[7rem]" alt="" /></span> </span>
+      <motion.div variants={fadeInLeft} className="lg:w-[398px]">
+        <motion.h1 className="text-[32px] md:text-[60px] leading-[35px] md:leading-[80px] font-normal mb-4">
+            <span className="flex  text-left items-end">
+<span className="flex items-end w-fit"> Tap "Create a  Community"<span><img src={img4} className="h-[3.5rem] w-[7rem]" alt="" /></span> </span>
 
 
             </span>
@@ -252,7 +254,7 @@ Manage your account, bio, and more. You're always in full control of how you sho
 
 
     <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img5} className="h-[740px] relative" alt="" />
+        <motion.img src={img5} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
 
     
@@ -270,18 +272,18 @@ Manage your account, bio, and more. You're always in full control of how you sho
           variants={staggerContainer}
           initial="hidden"
           animate={section2InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2em] lg:gap-[4rem]"
         >
 
-    <motion.div variants={fadeInLeft} className="relative">
-        <motion.img src={img6} className="h-[740px] relative" alt="" />
+    <motion.div variants={fadeInLeft} className="relative order-2 lg:order-1">
+        <motion.img src={img15} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
 
     
 
       {/* Text content */}
-      <motion.div variants={fadeInRight} className="w-[368px]">
-        <motion.h1 className=" text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+      <motion.div variants={fadeInRight} className="lg:w-[368px] order-1 lg:order-2">
+        <motion.h1 className=" text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
             Give It a Name
         </motion.h1>
 
@@ -306,7 +308,7 @@ Manage your account, bio, and more. You're always in full control of how you sho
           variants={staggerContainer}
           initial="hidden"
           animate={section3InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]"
         >
 
 
@@ -314,8 +316,8 @@ Manage your account, bio, and more. You're always in full control of how you sho
     
 
       {/* Text content */}
-      <motion.div variants={fadeInLeft} className="w-[368px]">
-        <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+      <motion.div variants={fadeInLeft} className="lg:w-[368px]">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Choose a Niche
         </motion.h1>
 
@@ -327,7 +329,7 @@ Select a niche that defines your community's focus. This helps like-minded peopl
 
 
         <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img6} className="h-[740px] relative" alt="" />
+        <motion.img src={img6} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
 
 
@@ -342,18 +344,18 @@ Select a niche that defines your community's focus. This helps like-minded peopl
           variants={staggerContainer}
           initial="hidden"
           animate={section4InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]"
         >
 
-    <motion.div variants={fadeInLeft} className="relative">
-        <motion.img src={img6} className="h-[740px] relative" alt="" />
+    <motion.div variants={fadeInLeft} className="relative order-2 lg:order-2">
+        <motion.img src={img14} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
 
     
 
       {/* Text content */}
-      <motion.div variants={fadeInRight} className="w-[368px]">
-        <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+      <motion.div variants={fadeInRight} className="lg:w-[368px] order-1 lg:order-2">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Add a Description
         </motion.h1>
 
@@ -378,7 +380,7 @@ Manage your account, bio, and more. You're always in full control of how you sho
           variants={staggerContainer}
           initial="hidden"
           animate={section5InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]"
         >
 
    
@@ -386,8 +388,8 @@ Manage your account, bio, and more. You're always in full control of how you sho
     
 
       {/* Text content */}
-      <motion.div variants={fadeInLeft} className="w-[368px]">
-        <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+      <motion.div variants={fadeInLeft} className="lg:w-[368px]">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Set Your Permissions
         </motion.h1>
 
@@ -398,7 +400,7 @@ Decide how your community will function — choose who can post, approve members
 
 
  <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img7} className="h-[740px] relative" alt="" />
+        <motion.img src={img7} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
     
 
@@ -414,18 +416,18 @@ Decide how your community will function — choose who can post, approve members
           variants={staggerContainer}
           initial="hidden"
           animate={section6InView ? "visible" : "hidden"}
-          className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]"
         >
 
-    <motion.div variants={fadeInLeft} className="relative">
-        <motion.img src={img8} className="h-[740px] relative" alt="" />
+    <motion.div variants={fadeInLeft} className="relative order-2 lg:order-1">
+        <motion.img src={img8} className="h-[600px] lg:h-[740px] relative" alt="" />
       </motion.div>
 
     
 
       {/* Text content */}
-      <motion.div variants={fadeInRight} className="w-[368px]">
-        <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+      <motion.div variants={fadeInRight} className="lg:w-[368px] order-1 lg:order-2">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Submit for Approval
         </motion.h1>
 
@@ -461,10 +463,10 @@ Once you're done, submit your community for admin approval. You'll be notified o
                 className="inset-0 flex flex-col items-center justify-center text-center p-8"
               >
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[130px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[110px] mb-[30px] lg:mt-[130px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]">
           {/* Text content */}
-          <motion.div className="w-[368px]">
-            <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+          <motion.div className="lg:w-[368px]">
+            <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Explore the Space
             </motion.h1>
 
@@ -473,18 +475,18 @@ Browse through AftA's community hub to discover spaces that align with your inte
           </motion.div>
 
           <motion.div className="relative">
-            <motion.img src={img9} className="h-[740px] relative" alt="" />
+            <motion.img src={img9} className="h-[600px] lg:h-[740px] relative" alt="" />
           </motion.div>
         </div>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
-          <motion.div className="relative">
-            <motion.img src={img10} className="h-[740px] relative" alt="" />
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[40px] lg:my-[96px] gap-[4rem]">
+          <motion.div className="relative order-2 lg:order-1">
+            <motion.img src={img10} className="h-[600px] lg:h-[740px] order-2 lg-order-1 relative" alt="" />
           </motion.div>
 
           {/* Text content */}
-          <motion.div className="w-[368px]">
-            <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+          <motion.div className="lg:w-[368px] order-1 lg:order-2">
+            <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Search or Discover
             </motion.h1>
 
@@ -494,10 +496,10 @@ Use the search bar to find a specific community or check out personalized recomm
           </motion.div>
         </div>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
           {/* Text content */}
-          <motion.div className="w-[368px]">
-            <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+          <motion.div className="lg:w-[368px]">
+            <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Tap to Learn More
             </motion.h1>
 
@@ -507,18 +509,18 @@ Found one that catches your eye? Tap Join to view its details. If it feels right
           </motion.div>
 
           <motion.div className="relative">
-            <motion.img src={img11} className="h-[740px] relative" alt="" />
+            <motion.img src={img11} className="h-[600px] lg:h-[740px] relative" alt="" />
           </motion.div>
         </div>
 
-        <div className="flex items-center justify-center max-w-screen-2xl mx-auto my-[96px] gap-[4rem]">
-          <motion.div className="relative">
-            <motion.img src={img12} className="h-[740px] relative" alt="" />
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
+          <motion.div className="relative order-2 lg:order-1">
+            <motion.img src={img12} className="h-[600px] lg:h-[740px] relative" alt="" />
           </motion.div>
 
           {/* Text content */}
-          <motion.div className="w-[368px]">
-            <motion.h1 className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4 text-left">
+          <motion.div className="lg:w-[368px] order-1 lg:order-2">
+            <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4 text-left">
 Wait for Approval
             </motion.h1>
 

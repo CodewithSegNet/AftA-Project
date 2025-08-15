@@ -253,7 +253,7 @@ const AboutThird = () => {
           animate={isStoryInView ? "visible" : "hidden"}
         > 
           <motion.h1 
-            className="text-[42px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-4"
+            className="text-[32px] md:text-[64px] leading-[35px] md:leading-[70px] font-normal mb-4"
             variants={storyTitleVariants}
           >
             AftA's Story
@@ -286,7 +286,7 @@ const AboutThird = () => {
             variants={leadershipTextVariants}
           > 
             <motion.h1 
-              className="text-[42px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-4"
+              className="text-[32px] md:text-[64px] leading-[35px] md:leading-[70px] font-normal mb-4"
               variants={leadershipTitleVariants}
             >
               Our Leadership
@@ -332,7 +332,7 @@ const AboutThird = () => {
           {/* Text content */}
           <div className=""> 
             <motion.h1 
-              className="text-[42px] md:text-[64px] leading-[50px] md:leading-[70px] font-normal mb-4"
+              className="text-[32px] md:text-[64px] leading-[35px] md:leading-[70px] font-normal mb-4"
               variants={ctaTitleVariants}
             >
               Get The AftA App Now

@@ -17,7 +17,7 @@ const FeatureThird = () => {
   });
 
   return (
-    <section ref={ref} className="max-w-screen-2xl mx-auto lg:mt-[127px] mb-[96px]">
+    <section ref={ref} className="max-w-screen-2xl mx-auto lg:mt-[127px] lg:mb-[96px]  my-[40px]">
       <div className="flex flex-col lg:flex-row items-center justify-center gap-[2rem] lg:gap-[5rem]"> 
 
         <motion.div
@@ -30,7 +30,7 @@ const FeatureThird = () => {
           }}
         >
           <div className="relative">
-            <img src={call1} className="relative h-[700px]" alt="Mobile device" />
+            <img src={call1} className="relative h-[600px]  lg:h-[700px]" alt="Mobile device" />
 
             {/* Floating emoji animations - positioned outside call1 device at edges */}
             {/* Top edge emoji */}
@@ -188,7 +188,7 @@ const FeatureThird = () => {
           }}
         > 
           <motion.h1 
-            className=" text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+            className=" text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
             initial={{ y: 30, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ 

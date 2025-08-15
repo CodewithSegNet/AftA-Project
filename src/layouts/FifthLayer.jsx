@@ -34,10 +34,10 @@ const FAQ = () => {
   return (
     <section className="max-w-screen-2xl mx-auto my-12">
       <div className="max-w-[669px] md:pl-[27px] pb-[46px]">
-        <h2 className="text-[42px] text-primary md:text-[64px] pb-[8px] leading-[50px] md:leading-[70px] font-normal">
+        <h2 className="text-[32px] text-primary md:text-[64px] pb-[8px] leading-[35px] md:leading-[70px] font-normal">
           Frequently Asked Questions
         </h2>
-        <p className="text-base font-normal text-primary ">
+        <p className="text-sm lg:text-base font-normal text-primary ">
           Find quick answers to common questions about our services, features, and how to get started.
         </p>
       </div>
@@ -51,7 +51,7 @@ const FAQ = () => {
               aria-expanded={openIndex === i}
               aria-controls={`faq-answer-${i}`}
             >
-              <span className={`transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent ${
+              <span className={`text-sm lg:text-base transition-all duration-300 group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent ${
                 openIndex === i ? "bg-text-gradient bg-clip-text text-transparent" : ""
               }`}>
                 {question}
@@ -68,7 +68,7 @@ const FAQ = () => {
 
             <div
               id={`faq-answer-${i}`}
-              className={`overflow-hidden transition-all duration-500 ease-in-out text-gray-700 max-w-full ${
+              className={`text-xs lg:text-sm overflow-hidden transition-all duration-500 ease-in-out text-gray-700 max-w-full ${
                 openIndex === i ? "max-h-96 mt-0" : "max-h-0 mt-0"
               }`}
               style={{ transitionProperty: "max-height, margin-top" }}

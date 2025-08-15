@@ -78,7 +78,7 @@ const FeatureFirst = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         > 
           <motion.h1 
-            className="text-[42px] md:text-[64px] leading-[50px] md:leading-[80px] font-normal mb-4"
+            className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
           >
 Crystal-Clear Audio & Video Calls
           </motion.h1>
