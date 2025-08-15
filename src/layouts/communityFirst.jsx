@@ -145,7 +145,7 @@ const CommunityFirst = () => {
 <div className="flex gap-2 items-center w-fit relative">
     {/* Active tab indicator */}
     <motion.div
-      className="absolute inset-0 bg-[rgba(255,180,27,0.1)] rounded-full whitespace-nowrap"
+      className="absolute inset-0 bg-[rgba(255,180,27,0.2)] !text-[rgba(255,180,27,1)] rounded-full whitespace-nowrap"
       initial={false}
       animate={{
         x: activeTab === "Create Community" ? 0 : "100%",
@@ -161,15 +161,15 @@ const CommunityFirst = () => {
     
     <button 
       className={`${activeTab === "Create Community whitespace-nowrap" 
-        ? "text-[rgba(255,180,27,1)] font-semibold" 
-        : "text-[rgba(255,255,255,1)]"} lg:px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)] `}
+        ? " text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
+        : "text-[rgba(255,180,27,1)]"} lg:px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)] `}
       onClick={() => setActiveTab("Create Community")}
     >
 Create Community
     </button>
     <button 
       className={`${activeTab === "Join Community" 
-        ? "text-[rgba(255,180,27,1)] font-semibold" 
+        ? " text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
         : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)] lg:pr-[2rem]`}
       onClick={() => setActiveTab("Join Community")}
     >
