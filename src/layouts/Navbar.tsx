@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import Logo from "../assets/logodark.png";
 import Download from "../assets/download.svg";
+import { useDownloadModal } from "../layouts/DownloadModalContext.jsx";
 
 import { Menu, X } from "lucide-react";
 
@@ -11,6 +12,9 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const lastScrollY = useRef(0);
+  
+  // Use the download modal context
+  const { openModal } = useDownloadModal();
 
   // Handle scroll direction and update navbar visibility
   useEffect(() => {
@@ -45,6 +49,42 @@ const Navbar = () => {
       document.body.style.overflow = menuOpen ? "hidden" : "auto";
     }
   }, [menuOpen, isModalOpen]);
+
+  // Function to load Tawk.to script
+  const loadTawkScript = () => {
+    // Check if Tawk script is already loaded
+    if (window.Tawk_API) {
+      window.Tawk_API.maximize();
+      return;
+    }
+
+    // Create and load the Tawk.to script
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+    
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = 'https://embed.tawk.to/68b0d52848813419264be616/1j3pc1981';
+    script.charset = 'UTF-8';
+    script.setAttribute('crossorigin', '*');
+    
+    const firstScript = document.getElementsByTagName("script")[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+  };
+
+  // Handle support click
+  const handleSupportClick = (e) => {
+    e.preventDefault();
+    loadTawkScript();
+    // Close mobile menu if open
+    setMenuOpen(false);
+  };
+
+  // Handle download button click
+  const handleDownloadClick = () => {
+    openModal('Android'); // Default to Android, you can change this or make it dynamic
+    setMenuOpen(false); // Close mobile menu if open
+  };
 
   return (
     <>
@@ -126,24 +166,19 @@ const Navbar = () => {
 Privacy 
  </span>
               </NavLink>
-                       <NavLink
-              to="/support"
-              className={({ isActive }) =>
-    `group text-primary text-base font-normal transition-all duration-100 ${
-                  isActive
-                    ? "bg-text-gradient bg-clip-text text-transparent"
-                    : ""
-                }`
-              }
+                       <button
+              onClick={handleSupportClick}
+              className="group text-primary text-base font-normal transition-all duration-100 cursor-pointer"
             >
-  <span className={`${({ isActive }) => isActive ? '' : 'group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent'} transition-all duration-300`}>
+  <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
     Support
   </span>
-              </NavLink>
+              </button>
      
           </div>
 
 <button
+  onClick={handleDownloadClick}
   className="
     group
     hidden lg:flex items-center py-[12px] px-[40px] leading-[24px]
@@ -250,23 +285,18 @@ className={`lg:hidden fixed top-0 left-0 h-screen w-3/4 z-[60]  bg-gradient-to-r
 Privacy 
  </span>
               </NavLink>
-                       <NavLink
-              to="/support"
-              className={({ isActive }) =>
-    `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
-                  isActive
-                    ? "border-primary !text-primary bg-text-gradient bg-clip-text text-transparent"
-                    : ""
-                }`
-              }
+                       <button
+              onClick={handleSupportClick}
+              className="group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary cursor-pointer"
             >
-  <span className={`${({ isActive }) => isActive ? '' : 'group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent'} transition-all duration-300`}>
+  <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
     Support
   </span>
-              </NavLink>
+              </button>
      
        
  <button
+  onClick={handleDownloadClick}
   className="
     group
     flex items-center py-[12px] px-[40px] leading-[24px]
@@ -295,7 +325,6 @@ Privacy
         </div>
       </nav>
       
-      {/* Donation Modal - Use the improved DonationModal component */}
     </>
   );
 };

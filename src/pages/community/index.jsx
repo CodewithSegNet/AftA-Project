@@ -2,85 +2,102 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Navbar from "../../layouts/Navbar";
 import Footer from "../../layouts/footer";
 import CommunityFirst from "../../layouts/communityFirst"
-
-
-
-
 import FifthLayer from "../../layouts/FifthLayer"
-
 
 const Community = () => {
   return (
     <>
       <HelmetProvider>
-<Helmet>
-  <title>AftA – Africa’s Social Media Platform for Connection, Culture, and Community</title>
-  <meta
-    name="description"
-    content="Join AftA – the social media platform made for Africa, Africans, and the diaspora. Share moments, connect with people, and celebrate African culture globally."
-  />
-  <meta
-    name="keywords"
-    content="African social media, AftA app, social network for Africa, Africa’s social platform, connect Africans, African diaspora, African culture online, Afrocentric app, pan-African community"
-  />
-  <meta
-    property="og:title"
-    content="AftA – Africa’s Social Network for Global Connection"
-  />
-  <meta
-    property="og:description"
-    content="Experience social networking reimagined for Africa and its diaspora. AftA connects people, stories, and culture – all in one platform built for Africans worldwide."
-  />
-  <meta
-    property="og:url"
-    content="https://www.afta.com"
-  />
-  <meta
-    property="og:image"
-    content="https://www.afta.com/og-image.jpg"
-  />
-  <meta
-    name="twitter:title"
-    content="AftA – Connect Africans Worldwide Through Social Media"
-  />
-  <meta
-    name="twitter:description"
-    content="Celebrate African identity and unity through AftA – the social media app designed for Africans and the diaspora to share, connect, and thrive."
-  />
-  <meta
-    name="twitter:image"
-    content="https://www.afta.com/twitter-image.jpg"
-  />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://www.afta.com" />
-</Helmet>
-
+        <Helmet>
+          <title>AftA Community - Join Africa's Largest Online Social Network | Connect Now</title>
+          <meta
+            name="description"
+            content="Join millions of Africans and diaspora members in AftA's vibrant online community. Connect with like-minded people, share your culture, and build meaningful relationships across the continent."
+          />
+          <meta
+            name="keywords"
+            content="AftA community, African online community, join AftA, African social network, diaspora community, African connections, pan-African network, African culture sharing, African social groups"
+          />
+          <meta
+            property="og:title"
+            content="AftA Community - Where Africa Connects | Join Our Social Network"
+          />
+          <meta
+            property="og:description"
+            content="Become part of Africa's most vibrant online community. Connect with millions of Africans worldwide, share your story, and celebrate our rich cultural heritage together."
+          />
+          <meta
+            property="og:url"
+            content="https://www.afta.com/community"
+          />
+          <meta
+            property="og:image"
+            content="https://www.afta.com/community-og-image.jpg"
+          />
+          <meta
+            property="og:type"
+            content="website"
+          />
+          <meta
+            name="twitter:title"
+            content="Join AftA Community - Africa's Premier Social Network"
+          />
+          <meta
+            name="twitter:description"
+            content="Connect with Africans worldwide. Share stories, celebrate culture, and build lasting friendships in Africa's most inclusive social media community."
+          />
+          <meta
+            name="twitter:image"
+            content="https://www.afta.com/community-twitter-image.jpg"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <link rel="canonical" href="https://www.afta.com/community" />
+          
+          {/* Additional SEO tags */}
+          <meta name="robots" content="index, follow" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="theme-color" content="#002A28" />
+          
+          {/* Structured Data */}
+          <script type="application/ld+json">
+            {`
+              {
+                "@context": "https://schema.org",
+                "@type": "WebPage",
+                "name": "AftA Community",
+                "description": "Join Africa's largest online social community platform",
+                "url": "https://www.afta.com/community",
+                "isPartOf": {
+                  "@type": "WebSite",
+                  "name": "AftA",
+                  "url": "https://www.afta.com"
+                },
+                "about": {
+                  "@type": "SocialMediaPosting",
+                  "name": "African Community Platform",
+                  "description": "A platform where Africans and diaspora connect, share culture, and build relationships"
+                }
+              }
+            `}
+          </script>
+        </Helmet>
 
         <div>
-
-          <div  className="mx-4 md:mx-6 md:mt-[8rem] lg:mt-[1rem] pb-[7rem] lg:pb-[8rem]">
-          <Navbar />
+          <div className="mx-4 md:mx-6 md:mt-[8rem] lg:mt-[1rem] pb-[7rem] lg:pb-[8rem]">
+            <Navbar />
           </div>
   
-<div className="">
-  <CommunityFirst/>
-</div>
+          <div className="">
+            <CommunityFirst/>
+          </div>
 
+          <div className="mx-4 md:mx-6 mt-[2rem]">
+            <FifthLayer/>
+          </div>
 
-
-
-<div className="mx-4 md:mx-6 mt-[2rem]">
-<FifthLayer/>
-</div>
-
-
-
-
-
-
-<div className="">
-  <Footer/>
-</div>
+          <div className="">
+            <Footer/>
+          </div>
         </div>
       </HelmetProvider>
     </>
