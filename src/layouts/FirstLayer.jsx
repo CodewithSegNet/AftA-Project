@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import Img4 from "../assets/emoji.png";
-import Img5 from "../assets/watchyoutube.png";
+import Img4 from "../assets/Fram1.png";
+import Img5 from "../assets/Fram2.png";
 
 
 const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645296/Maskgroup_rukmqw.png";
 const Img6 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645325/markgroup2_j69e7n.webp";
 const Img3 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645470/countries_xnlcji.png";
-const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645686/StoryTray_rmkkdd.png"
+const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759494539/newTrayStory_hixkak.png"
 
 
 
@@ -87,7 +87,7 @@ const FirstLayer = () => {
           <motion.img
             src={Img2}
             alt="Story Tray"
-            className="w-[600px] h-auto object-contain lg:absolute top-[17px] lg:left-[-370px]"
+            className="w-[600px] h-auto object-contain lg:absolute top-[17px] lg:left-[-380px]"
             variants={childVariants}
             animate={float}
           />

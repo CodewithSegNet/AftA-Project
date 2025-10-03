@@ -1,6 +1,5 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import FirstImg from "../assets/vidOverlay.png"
 
 const AboutFirst = () => {
   const ref = useRef(null);
@@ -8,6 +7,7 @@ const AboutFirst = () => {
 
   // Store video URL as a string constant
   const videoUrl = "https://res.cloudinary.com/di0r5v8hw/video/upload/v1754644351/aboutvid_1_h6xpj7.mp4";
+  const FirstImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759494297/newGroup2_mwmboj.png"
 
   const containerVariants = {
     hidden: { opacity: 0 },

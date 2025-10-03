@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../assets/Discover.png";
+import img1 from "../assets/Messages.png";
 
 const FeatureFifth = () => {
   const ref = useRef(null);

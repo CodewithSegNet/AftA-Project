@@ -18,9 +18,9 @@ const faqs = [
     question: "How do I contact customer support?",
     answer: 'You can reach our support team through the "Support" section in the app. Alternatively, you can use the live chat for on the website faster assistance. '
   },
-    {
-    question: "Can I delete my account if I no longer want to use the platform?",
-    answer: "No you cannot delete your account once created."
+     {
+    question: "Can I deactivate my account if I no longer want to use the platform?",
+    answer: "Yes, you can deactivate your account at any time.”"
     }
 ];
 

@@ -4,7 +4,7 @@ import Img2 from "../assets/btnfirst.png";
 import Img3 from "../assets/btnsecond.png";
 
 
-const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645399/secondimg_hfesak.png";
+const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759496443/new_atdovn.png";
 const Img4 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645447/map_tsvzve.png";
 
 

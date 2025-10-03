@@ -27,11 +27,11 @@ const ThirdLayer = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 300,
+    speed: 1000,
     slidesToShow: 4,    
     slidesToScroll: 1,     
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
       {
@@ -80,7 +80,7 @@ const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...h
             </p>
           </div>
           <div>
-            <img src={Img1} className="md:h-[69px] h-[40px] w-[99px] md:w-[64px] " alt="" />
+            <img src={Img1} className="md:h-[69px] h-[60px] w-[169px] md:w-[64px] " alt="" />
           </div>
         </div>
 

@@ -4,23 +4,23 @@ import OpenIcon from "../assets/add.png";
 const faqs = [
   {
     question: "Unapologetic African Identity",
-    answer: "Our app is a social media platform built to connect Africans across the continent and the diaspora. It's a space to share stories, culture, ideas, and build meaningful connections."
+    answer: "AftA was built to celebrate African pride without compromise. We create a digital space where Africans and the diaspora can express their culture, languages, heritage, and creativity without pressure to conform to foreign standards. From local content to community voices, everything on AftA reflects the richness and confidence of the African identity."
   },
   {
     question: "Freedom of Expression",
-    answer: "To create an account, simply enter your email address, receive an OTP (One-Time Password) for verification, and complete your profile. "
+    answer: "We believe every African voice deserves to be heard. AftA allows users to speak, create, and share authentically—without censorship of cultural norms, dialects, or community matters. While we protect against hate speech, abuse, and harm, we encourage open conversation, storytelling, and opinions that move the continent forward."
   },
   {
     question: "Digital Sovereignty",
-    answer: "No worries just enter your registered email on the login screen. We'll send a new OTP to help you log back in. If you're still having trouble, you can contact support for help."
+    answer: "Unlike platforms that don’t prioritize African interests, AftA is built by Africans for Africans. Your data, identity, and digital footprint are governed with respect to African values and laws—not foreign agendas. We’re designing systems that empower communities, protect privacy, and give Africa control over its digital future."
   },
     {
     question: "Cultural Preservation & Innovation",
-    answer: 'You can reach our support team through the "Support" section in the app. Alternatively, you can use the live chat for on the website faster assistance. '
+    answer: 'AftA is a hub where tradition meets technology. Users can share indigenous languages, art, music, fashion, festivals, and history—while also discovering new African trends and innovations. From local creators to global Afro-influencers, we’re building a platform that protects our heritage and fuels modern creativity.'
   },
     {
     question: "Security & Trust",
-    answer: "No you cannot delete your account once created."
+    answer: "Security is at the heart of our platform. Your conversations, media, and data are protected with high-level encryption and privacy protocols. We use transparent policies and advanced tools to prevent scams, fake accounts, and harassment—so you can connect confidently with real people, safely and securely."
     }
 ];
 
