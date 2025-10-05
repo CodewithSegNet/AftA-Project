@@ -356,13 +356,6 @@ const PrivacyPolicy = () => {
                 <div className="flex items-center">
   <Mail className="w-5 h-5 mr-3 text-[rgba(255,180,27,1)]" />
 
-  <a
-    href="mailto:info@afta.com"
-    className="mr-1 cursor-pointer hover:text-[rgba(255,180,27,1)] hover:underline transition-all duration-200"
-  >
-    info@afta.com,
-  </a>
-
 
 
   <a

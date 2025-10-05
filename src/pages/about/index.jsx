@@ -86,7 +86,7 @@ const About = () => {
         </Helmet>
 
         <div>
-          <div className="mx-4 md:mx-6 md:mt-[8rem] lg:mt-[1rem] pb-[7rem] lg:pb-[8rem]">
+          <div className="mx-4 md:mx-6 md:mt-[8rem] lg:mt-[1rem] pb-[7rem] md:pb-[0rem] lg:pb-[8rem]">
             <Navbar />
           </div>
   

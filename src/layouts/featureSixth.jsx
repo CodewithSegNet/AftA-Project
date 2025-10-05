@@ -31,7 +31,7 @@ const FeatureSixth = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4">
-Stories That Speak for You
+Stories That Speak For You
         </motion.h1>
 
         <motion.p className="text-base font-normal text-gray-700">

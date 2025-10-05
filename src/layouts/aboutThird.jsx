@@ -6,7 +6,7 @@ import Img3 from "../assets/btnsecond.png";
 
 
 
-const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754643911/founder1_h6zidn.png"
+const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759669368/uju1_oisqyj.png"
 
 const AboutThird = () => {
   const storyRef = useRef(null);
@@ -16,6 +16,17 @@ const AboutThird = () => {
   const isStoryInView = useInView(storyRef, { once: true, threshold: 0.2 });
   const isLeadershipInView = useInView(leadershipRef, { once: true, threshold: 0.2 });
   const isCtaInView = useInView(ctaRef, { once: true, threshold: 0.2 });
+
+  const container = {
+hidden: { opacity: 0, y: 8 },
+show: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } },
+};
+
+
+const item = {
+hidden: { opacity: 0, y: 6 },
+show: { opacity: 1, y: 0 },
+};
 
   // Story Section Variants
   const storyContainerVariants = {
@@ -259,17 +270,28 @@ const AboutThird = () => {
             AftA's Story
           </motion.h1>
 
-          <motion.p 
-            className="text-base font-normal text-gray-700"
-            variants={storyTextVariants}
-          > 
-            AftA was born from a visionary commitment to redefine how Africans experience and engage with social media. It is a platform built with purpose, a safe empowering digital space where African people can authentically connect, express themselves, and showcase their talents without compromise.
-            For generations, African voices have been underrepresented, our stories overlooked, and our creative contributions undervalued within global digital ecosystems. AftA was founded to change this reality. It exists to amplify the voices of those who have too often been silenced and to provide a platform where African culture, innovation, and identity can thrive.
-            As the founder of AftA, my inspiration stems from personal experience. Growing up, I observed a significant void in the digital space, an absence of platforms that genuinely reflect the richness, diversity, and brilliance of African people. Despite being a continent bursting with creativity, heritage, and ingenuity, Africa does not have a globally recognized social media platform to call its own. Instead, we have engaged in online communities that were never designed with us in mind.
-            AftA is a bold step toward reclaiming digital ownership. It represents our collective stake in the global conversation and our right to be seen, heard, and celebrated on our terms.
-            This platform was created not just as a tool for communication, but as a digital sanctuary grounded in safety, inclusion, and authenticity. 
-            AftA is more than an app, it is a movement. It is where your voice matters, your talent is recognized, and your dreams have a place to grow. This is our time. This is our space. This is AftA.            
-          </motion.p>
+    <motion.section
+className=""
+initial="hidden"
+animate="show"
+variants={container}
+>
+<motion.div className="prose prose-lg dark:prose-invert text-gray-800 sm:text-base" variants={item}>
+<p className="mb-6 text-base sm:text-lg leading-relaxed">
+AftA was born from a clear commitment to redefine how Africans experience and engage with social media — a purpose-built, empowering digital space where people can connect, express themselves, and showcase their talents without compromise. For generations African voices have been underrepresented: our stories overlooked and creative contributions undervalued. AftA exists to change that by amplifying voices that have too often been silenced and by giving African culture, innovation, and identity room to thrive.
+</p>
+
+
+<p className="mb-6 text-base sm:text-lg leading-relaxed">
+The idea for AftA comes from lived experience. Growing up, we saw a gap: a lack of platforms that truly reflect the richness, diversity, and brilliance of the platform. Despite Africa's overflowing creativity and heritage, there is no widely recognized social platform that was designed with us at its core. AftA is a bold step toward reclaiming digital ownership — a collective stake in the global conversation and a platform that insists we be seen, heard, and celebrated on our own terms.
+</p>
+
+
+<p className="mb-0 text-base sm:text-lg leading-relaxed">
+More than a tool for communication, AftA is a movement and a digital sanctuary grounded in safety, inclusion, and authenticity. Here your voice matters, your talent is recognized, and your dreams have space to grow. This is our time. This is our space. This is AftA.
+</p>
+</motion.div>
+</motion.section>
         </motion.div>
 
         {/* Leadership Section */}
@@ -296,7 +318,7 @@ const AboutThird = () => {
               className="text-base font-normal text-gray-700"
               variants={leadershipParagraphVariants}
             > 
-              At AftA, I envision a continent where every African no matter where they are can feel seen, heard, and connected. 
+              At AftA, I envision a platform where every African no matter where they are can feel seen, heard, and connected. 
               Our goal is to build a digital home for Africa's voice, culture, and future a space where unity thrives,
               stories matter, and connection knows no borders.                      
             </motion.p>

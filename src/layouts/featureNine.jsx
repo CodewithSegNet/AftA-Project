@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../assets/profile.png";
+import img1 from "../assets/pro.png";
 
 
 
@@ -44,7 +44,7 @@ const FeatureNine = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
         >
-Keep your info updated
+Keep Your Info Updated
         </motion.h1>
 
         <motion.p 

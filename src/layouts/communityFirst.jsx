@@ -1,5 +1,5 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { useState, useRef } from "react";
+import { useRef, useState, useEffect } from 'react';
 import img3 from "../assets/fill.png";
 import img1 from "../assets/profile.png";
 import img4 from "../assets/plus.svg";
@@ -134,50 +134,55 @@ const CommunityFirst = () => {
                 <p className="text-sm text-black">Follow the steps below to join or create your own community on AftA.</p>
             </motion.div>
 
-
 <motion.div 
   variants={fadeInUp}
   className="flex lg:p-4 items-center bg-[rgba(0,17,23,1)] rounded-full px-8 py-2 w-fit mb-10"
 >
+    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11 mr-4" alt="" />
 
-    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11 mr-4 " alt="" />
-
-<div className="flex gap-2 items-center w-fit relative">
-    {/* Active tab indicator */}
-    <motion.div
-      className="absolute inset-0 bg-[rgba(255,180,27,0.2)] !text-[rgba(255,180,27,1)] rounded-full whitespace-nowrap"
-      initial={false}
-      animate={{
-        x: activeTab === "Create Community" ? 0 : "100%",
-        width: activeTab === "Create Community" ? "calc(50% - 4px)" : "calc(50% - 4px)"
-      }}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 30
-      }}
-      style={{ zIndex: 0 }}
-    />
-    
-    <button 
-      className={`${activeTab === "Create Community whitespace-nowrap" 
-        ? " text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,180,27,1)]"} lg:px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)] `}
-      onClick={() => setActiveTab("Create Community")}
-    >
-Create Community
-    </button>
-    <button 
-      className={`${activeTab === "Join Community" 
-        ? " text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)] lg:pr-[2rem]`}
-      onClick={() => setActiveTab("Join Community")}
-    >
-Join Community
-    </button>
-</div>
-
-
+    <div className="flex gap-3 items-center w-fit relative">
+        {/* Active tab indicator */}
+        <motion.div
+          className="absolute bg-[rgba(255,180,27,0.2)] rounded-full"
+          initial={false}
+          animate={{
+            x: activeTab === "Create Community" 
+              ? 0 
+              : (document.querySelector('.tab-btn-1')?.offsetWidth || 0) + 8,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30
+          }}
+          style={{ 
+            zIndex: 0,
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: activeTab === "Create Community" 
+              ? document.querySelector('.tab-btn-1')?.offsetWidth + 'px'
+              : document.querySelector('.tab-btn-2')?.offsetWidth + 'px'
+          }}
+        />
+        
+        <button 
+          className={`tab-btn-1 ${activeTab === "Create Community" 
+            ? "text-[rgba(255,180,27,1)] font-semibold" 
+            : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)]`}
+          onClick={() => setActiveTab("Create Community")}
+        >
+          Create Community
+        </button>
+        <button 
+          className={`tab-btn-2 ${activeTab === "Join Community" 
+            ? "text-[rgba(255,180,27,1)] font-semibold" 
+            : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs pl-[6px] lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)]`}
+          onClick={() => setActiveTab("Join Community")}
+        >
+          Join Community
+        </button>
+    </div>
 </motion.div>
 </motion.div>
 

@@ -99,29 +99,33 @@ const AboutFirst = () => {
           
           {/* Video container with overlay */}
           <motion.div 
-            className="relative lg:h-[600px] lg:w-[400px]"
+            className="relative h-[500px] md:h-[700px] lg:h-[600px] lg:w-[400px]"
             variants={videoVariants}
           >
-            <motion.video 
-              src={videoUrl} 
-              className="h-[600px] w-[400px] object-cover rounded-lg"
-              autoPlay
-              loop
-              muted
-              playsInline
-              whileHover={{ 
-                scale: 1.02,
-                transition: { duration: 0.3 }
-              }}
-            />
-            <motion.img 
-              src={FirstImg} 
-              className="absolute top-0 left-0 h-[600px] pt-3 w-[400px] z-10 pointer-events-none rounded-lg" 
-              alt=""
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            />
+         <motion.div
+  className="relative"
+  whileHover={{ 
+    scale: 1.02,
+    transition: { duration: 0.3 }
+  }}
+>
+  <video 
+    src={videoUrl} 
+    className="h-[500px] w-[400px] md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px] object-cover rounded-lg"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+  <motion.img 
+    src={FirstImg} 
+    className="absolute top-0 left-0 h-[500px] md:h-[700px] lg:h-[600px] pt-3 md:w-[600px] lg:w-[400px] z-10 pointer-events-none rounded-lg" 
+    alt=""
+    initial={{ opacity: 0 }}
+    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+    transition={{ duration: 0.8, delay: 0.3 }}
+  />
+</motion.div>
           </motion.div>
 
           {/* Text content */}
@@ -137,11 +141,10 @@ const AboutFirst = () => {
             </motion.h1>
 
             <motion.p 
-              className="text-base font-normal text-gray-700"
+              className="text-base  md:pt-0 lg:pt-0 font-normal text-gray-700"
               variants={paragraphVariants}
             > 
-              Connect Africans everywhere through a vibrant social platform that celebrates culture, community, and authentic expression.
-            </motion.p>
+At AftA, our mission is to connect everyone within an engaging community that encourages authenticity, embraces cultural diversity, and brings forward voices and talents often unheard.            </motion.p>
           </motion.div>
 
         </motion.div>

@@ -4,7 +4,7 @@ import LeftArrow from "../assets/arrowleft.png";
 import RightArrow from "../assets/arrowright.png";
 
 
-const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646499/first_yzp23j.png";
+const Img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759669739/first_yzp23j.png";
 const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646547/second_xid8ct.png";
 const Img3 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754646643/third_vo7uwt.png";
 
