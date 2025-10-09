@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Img1 from "../assets/bell.png";
-
+import Img12 from "../assets/bellicons.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -80,7 +80,9 @@ const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...h
             </p>
           </div>
           <div>
-            <img src={Img1} className="md:h-[69px] h-[40px] w-[94px] md:w-[64px] " alt="" />
+            <img src={Img1} className="hidden lg:flex md:h-[69px] h-[40px] w-[86px] md:w-[64px] " alt="" />
+                        <img src={Img12} className="h-[50px] w-[200px]" alt="" />
+
           </div>
         </div>
 
