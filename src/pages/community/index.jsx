@@ -28,11 +28,11 @@ const Community = () => {
           />
           <meta
             property="og:url"
-            content="https://www.afta.com/community"
+            content="https://www.afta.app/community"
           />
           <meta
             property="og:image"
-            content="https://www.afta.com/community-og-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta
             property="og:type"
@@ -48,10 +48,10 @@ const Community = () => {
           />
           <meta
             name="twitter:image"
-            content="https://www.afta.com/community-twitter-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <link rel="canonical" href="https://www.afta.com/community" />
+          <link rel="canonical" href="https://www.afta.app/community" />
           
           {/* Additional SEO tags */}
           <meta name="robots" content="index, follow" />
@@ -66,11 +66,11 @@ const Community = () => {
                 "@type": "WebPage",
                 "name": "AftA Community",
                 "description": "Join Africa's largest online social community platform",
-                "url": "https://www.afta.com/community",
+                "url": "https://www.afta.app/community",
                 "isPartOf": {
                   "@type": "WebSite",
                   "name": "AftA",
-                  "url": "https://www.afta.com"
+                  "url": "https://www.afta.app"
                 },
                 "about": {
                   "@type": "SocialMediaPosting",

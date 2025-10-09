@@ -27,11 +27,11 @@ const Privacy = () => {
           />
           <meta
             property="og:url"
-            content="https://www.afta.com/privacy"
+            content="https://www.afta.app/privacy"
           />
           <meta
             property="og:image"
-            content="https://www.afta.com/privacy-og-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta
             property="og:type"
@@ -47,10 +47,10 @@ const Privacy = () => {
           />
           <meta
             name="twitter:image"
-            content="https://www.afta.com/privacy-twitter-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <link rel="canonical" href="https://www.afta.com/privacy" />
+          <link rel="canonical" href="https://www.afta.app/privacy" />
           
           {/* Additional SEO tags */}
           <meta name="robots" content="index, follow" />
@@ -66,11 +66,11 @@ const Privacy = () => {
                 "@type": "WebPage",
                 "name": "Privacy Policy",
                 "description": "AftA's privacy policy and data protection information",
-                "url": "https://www.afta.com/privacy",
+                "url": "https://www.afta.app/privacy",
                 "isPartOf": {
                   "@type": "WebSite",
                   "name": "AftA",
-                  "url": "https://www.afta.com"
+                  "url": "https://www.afta.app"
                 },
                 "dateModified": "2025-01-15",
                 "inLanguage": "en",

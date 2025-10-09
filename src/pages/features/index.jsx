@@ -37,11 +37,11 @@ const Features = () => {
           />
           <meta
             property="og:url"
-            content="https://www.afta.com/features"
+            content="https://www.afta.app/features"
           />
           <meta
             property="og:image"
-            content="https://www.afta.com/features-og-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta
             property="og:type"
@@ -57,10 +57,10 @@ const Features = () => {
           />
           <meta
             name="twitter:image"
-            content="https://www.afta.com/features-twitter-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <link rel="canonical" href="https://www.afta.com/features" />
+          <link rel="canonical" href="https://www.afta.app/features" />
           
           {/* Additional SEO tags */}
           <meta name="robots" content="index, follow" />
@@ -75,11 +75,11 @@ const Features = () => {
                 "@type": "WebPage",
                 "name": "AftA Features",
                 "description": "Comprehensive overview of AftA's social media features for African communities",
-                "url": "https://www.afta.com/features",
+                "url": "https://www.afta.app/features",
                 "isPartOf": {
                   "@type": "WebSite",
                   "name": "AftA",
-                  "url": "https://www.afta.com"
+                  "url": "https://www.afta.app"
                 },
                 "mainEntity": {
                   "@type": "SoftwareApplication",

@@ -30,11 +30,11 @@ const About = () => {
           />
           <meta
             property="og:url"
-            content="https://www.afta.com/about"
+            content="https://www.afta.app/about"
           />
           <meta
             property="og:image"
-            content="https://www.afta.com/about-og-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta
             property="og:type"
@@ -50,10 +50,10 @@ const About = () => {
           />
           <meta
             name="twitter:image"
-            content="https://www.afta.com/about-twitter-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <link rel="canonical" href="https://www.afta.com/about" />
+          <link rel="canonical" href="https://www.afta.app/about" />
           
           {/* Additional SEO tags */}
           <meta name="author" content="AftA Team" />
@@ -68,12 +68,12 @@ const About = () => {
                 "@type": "AboutPage",
                 "name": "About AftA",
                 "description": "Learn about AftA's mission to unite Africa and its diaspora through innovative social networking",
-                "url": "https://www.afta.com/about",
+                "url": "https://www.afta.app/about",
                 "mainEntity": {
                   "@type": "Organization",
                   "name": "AftA",
                   "description": "Africa's leading social media platform for connection, culture, and community",
-                  "url": "https://www.afta.com",
+                  "url": "https://www.afta.app",
                   "sameAs": [
                     "https://www.facebook.com/afta",
                     "https://www.twitter.com/afta",

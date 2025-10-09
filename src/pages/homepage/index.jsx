@@ -31,11 +31,11 @@ const HomePage = () => {
           />
           <meta
             property="og:url"
-            content="https://www.afta.com"
+            content="https://www.afta.app"
           />
           <meta
             property="og:image"
-            content="https://www.afta.com/og-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta
             property="og:type"
@@ -55,11 +55,11 @@ const HomePage = () => {
           />
           <meta
             name="twitter:image"
-            content="https://www.afta.com/twitter-image.jpg"
+            content="https://www.afta.app/logo.png"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@afta" />
-          <link rel="canonical" href="https://www.afta.com" />
+          <link rel="canonical" href="https://www.afta.app" />
           
           {/* Additional SEO tags */}
           <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -84,7 +84,7 @@ const HomePage = () => {
                 "@type": "WebSite",
                 "name": "AftA",
                 "alternateName": "Africa's Social Media Platform",
-                "url": "https://www.afta.com",
+                "url": "https://www.afta.app",
                 "description": "Africa's premier social media platform connecting millions across the continent and diaspora",
                 "potentialAction": {
                   "@type": "SearchAction",
@@ -111,8 +111,8 @@ const HomePage = () => {
                 "@type": "Organization",
                 "name": "AftA",
                 "description": "Africa's leading social media platform for connection, culture, and community",
-                "url": "https://www.afta.com",
-                "logo": "https://www.afta.com/logo.png",
+                "url": "https://www.afta.app",
+                "logo": "https://www.afta.app/logo.png",
                 "foundingDate": "2024",
                 "areaServed": {
                   "@type": "Place",
