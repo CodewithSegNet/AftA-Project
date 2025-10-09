@@ -81,7 +81,7 @@ const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...h
           </div>
           <div>
             <img src={Img1} className="hidden lg:flex md:h-[69px] h-[40px] w-[86px] md:w-[64px] " alt="" />
-                        <img src={Img12} className="h-[50px] w-[200px]" alt="" />
+                        <img src={Img12} className="flex lg:hidden h-[50px] w-[200px]" alt="" />
 
           </div>
         </div>
