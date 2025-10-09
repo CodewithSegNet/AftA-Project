@@ -80,7 +80,7 @@ const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...h
             </p>
           </div>
           <div>
-            <img src={Img1} className="md:h-[69px] h-[60px] w-[169px] md:w-[64px] " alt="" />
+            <img src={Img1} className="md:h-[69px] h-[40px] w-[94px] md:w-[64px] " alt="" />
           </div>
         </div>
 

@@ -204,11 +204,6 @@ Build Your Tribe <br /> Find Your Voice
 Discover and build communities that speak your vibe. Connect, share, and grow with your people—right on AftA. </motion.p>
       </motion.div>
 </div>
-
-
-
-
-
         </div>
 
         {/* Content sections with animations */}
