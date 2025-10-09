@@ -311,14 +311,14 @@ const Footer = () => {
           {/* Social Icons Section */}
           <div className="flex order-1 lg:order-2 my-3 items-center justify-center space-x-6 lg:space-x-4 mt-6 lg:mt-0">
             {/* Instagram Icon */}
-            <a
+            {/* <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl hover:text-secondary transition-colors duration-300"
             >
               <RiInstagramFill />
-            </a>
+            </a> */}
 
             {/* Facebook Icon */}
             <a
@@ -331,14 +331,14 @@ const Footer = () => {
             </a>
 
             {/* Twitter Icon */}
-            <a
+            {/* <a
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl hover:text-secondary transition-colors duration-300"
             >
               <RiTwitterFill />
-            </a>
+            </a> */}
             
             {/* YouTube Icon */}
             <a

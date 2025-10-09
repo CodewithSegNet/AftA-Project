@@ -362,13 +362,13 @@ const PrivacyPolicy = () => {
     href="mailto:support@afta.com"
     className="ml-1 cursor-pointer hover:text-[rgba(255,180,27,1)] hover:underline transition-all duration-200"
   >
-    support@afta.com
+    support@afta.app
   </a>
 </div>
 
                     <div className="flex items-center">
                       <Globe className="w-5 h-5 mr-3 text-[rgba(255,180,27,1)]" />
-                      <span>Support Center: www.afta.com/support</span>
+                      <span>Support Center: www.afta.app/support</span>
                     </div>
                   </div>
                 </div>
