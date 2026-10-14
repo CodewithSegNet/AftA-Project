@@ -1,18 +1,18 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect } from 'react';
-import img3 from "../../assets/fill.png";
-import img1 from "../../assets/profile.png";
-import img4 from "../../assets/plus.svg";
-import img5 from "../../assets/Community01.png";
-import img6 from "../../assets/Community11.png";
-import img7 from "../../assets/Community3.png";
-import img8 from "../../assets/Community4.png";
-import img9 from "../../assets/Community001.png";
-import img10 from "../../assets/Community002.png";
-import img11 from "../../assets/Community004.png";
-import img12 from "../../assets/Community006.png";
-import img14 from "../../assets/Community12.png";
-import img15 from "../../assets/Community13.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+const img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001693/afta/fill.png";
+const img4 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001695/afta/plus.svg";
+const img5 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001699/afta/Community01.png";
+const img6 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001701/afta/Community11.png";
+const img7 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001703/afta/Community3.png";
+const img8 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001707/afta/Community4.png";
+const img9 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001708/afta/Community001.png";
+const img10 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001710/afta/Community002.png";
+const img11 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001711/afta/Community004.png";
+const img12 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001713/afta/Community006.png";
+const img14 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001717/afta/Community12.png";
+const img15 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001720/afta/Community13.png";
 
 
 const Img2 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754645067/community1_z8zcqf.png";
@@ -111,7 +111,30 @@ const CommunityFirst = () => {
 
 
 <div className="relative">
-    <img src={Img2} className="relative mt-[7rem] lg:mt-0 " alt="" />
+  <picture>
+    <source
+      media="(max-width: 640px)"
+      srcSet={getCloudinaryUrl(Img2, "q_auto:low")}
+      type="image/avif"
+    />
+    <source
+      media="(max-width: 1024px)"
+      srcSet={getCloudinaryUrl(Img2, "q_auto:good")}
+      type="image/avif"
+    />
+    <source
+      media="(max-width: 1920px)"
+      srcSet={getCloudinaryUrl(Img2, "q_auto:best")}
+      type="image/avif"
+    />
+    <img 
+      src={getCloudinaryUrl(Img2, "q_auto:best")} 
+      className="relative mt-[7rem] lg:mt-0" 
+      alt="" 
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
 </div>
 
 
@@ -138,7 +161,7 @@ const CommunityFirst = () => {
   variants={fadeInUp}
   className="flex lg:p-4 items-center bg-[rgba(0,17,23,1)] rounded-full px-8 py-2 w-fit mb-10"
 >
-    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11 mr-4" alt="" />
+    <img src={getCloudinaryUrl(img3, "q_auto:best")} className="h-8 w-8 lg:h-11 lg:w-11 mr-4" alt="" loading="lazy" />
 
     <div className="flex gap-3 items-center w-fit relative">
         {/* Active tab indicator */}
@@ -254,8 +277,13 @@ Manage your account, bio, and more. You're always in full control of how you sho
 
 
     <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img5} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
+      <picture>
+        <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img5, "q_auto:low")} type="image/avif" />
+        <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img5, "q_auto:good")} type="image/avif" />
+        <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img5, "q_auto:best")} type="image/avif" />
+        <motion.img src={getCloudinaryUrl(img5, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+      </picture>
+    </motion.div>
 
     
 
@@ -276,8 +304,13 @@ Manage your account, bio, and more. You're always in full control of how you sho
         >
 
     <motion.div variants={fadeInLeft} className="relative order-2 lg:order-1">
-        <motion.img src={img15} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
+      <picture>
+        <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img15, "q_auto:low")} type="image/avif" />
+        <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img15, "q_auto:good")} type="image/avif" />
+        <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img15, "q_auto:best")} type="image/avif" />
+        <motion.img src={getCloudinaryUrl(img15, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+      </picture>
+    </motion.div>
 
     
 
@@ -329,15 +362,15 @@ Select a niche that defines your community's focus. This helps like-minded peopl
 
 
         <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img6} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
-
-
+          <picture>
+            <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img6, "q_auto:low")} type="image/avif" />
+            <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img6, "q_auto:good")} type="image/avif" />
+            <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img6, "q_auto:best")} type="image/avif" />
+            <motion.img src={getCloudinaryUrl(img6, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+          </picture>
         </motion.div>
 
-
-
-
+        </motion.div>
 
         <motion.div 
           ref={section4Ref}
@@ -348,8 +381,13 @@ Select a niche that defines your community's focus. This helps like-minded peopl
         >
 
     <motion.div variants={fadeInLeft} className="relative order-2 lg:order-2">
-        <motion.img src={img14} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
+      <picture>
+        <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img14, "q_auto:low")} type="image/avif" />
+        <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img14, "q_auto:good")} type="image/avif" />
+        <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img14, "q_auto:best")} type="image/avif" />
+        <motion.img src={getCloudinaryUrl(img14, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+      </picture>
+    </motion.div>
 
     
 
@@ -400,16 +438,15 @@ Decide how your community will function — choose who can post, approve members
 
 
  <motion.div variants={fadeInRight} className="relative">
-        <motion.img src={img7} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
-    
-
+      <picture>
+        <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img7, "q_auto:low")} type="image/avif" />
+        <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img7, "q_auto:good")} type="image/avif" />
+        <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img7, "q_auto:best")} type="image/avif" />
+        <motion.img src={getCloudinaryUrl(img7, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+      </picture>
+  </motion.div>
 
         </motion.div>
-
-
-
-
 
         <motion.div 
           ref={section6Ref}
@@ -420,8 +457,13 @@ Decide how your community will function — choose who can post, approve members
         >
 
     <motion.div variants={fadeInLeft} className="relative order-2 lg:order-1">
-        <motion.img src={img8} className="h-[600px] lg:h-[740px] relative" alt="" />
-      </motion.div>
+      <picture>
+        <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img8, "q_auto:low")} type="image/avif" />
+        <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img8, "q_auto:good")} type="image/avif" />
+        <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img8, "q_auto:best")} type="image/avif" />
+        <motion.img src={getCloudinaryUrl(img8, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+      </picture>
+    </motion.div>
 
     
 
@@ -475,13 +517,23 @@ Browse through AftA's community hub to discover spaces that align with your inte
           </motion.div>
 
           <motion.div className="relative">
-            <motion.img src={img9} className="h-[600px] lg:h-[740px] relative" alt="" />
+            <picture>
+              <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img9, "q_auto:low")} type="image/avif" />
+              <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img9, "q_auto:good")} type="image/avif" />
+              <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img9, "q_auto:best")} type="image/avif" />
+              <motion.img src={getCloudinaryUrl(img9, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+            </picture>
           </motion.div>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[40px] lg:my-[96px] gap-[4rem]">
           <motion.div className="relative order-2 lg:order-1">
-            <motion.img src={img10} className="h-[600px] lg:h-[740px] order-2 lg-order-1 relative" alt="" />
+            <picture>
+              <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img10, "q_auto:low")} type="image/avif" />
+              <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img10, "q_auto:good")} type="image/avif" />
+              <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img10, "q_auto:best")} type="image/avif" />
+              <motion.img src={getCloudinaryUrl(img10, "q_auto:best")} className="h-[600px] lg:h-[740px] order-2 lg-order-1 relative" alt="" loading="lazy" decoding="async" />
+            </picture>
           </motion.div>
 
           {/* Text content */}
@@ -509,13 +561,23 @@ Found one that catches your eye? Tap Join to view its details. If it feels right
           </motion.div>
 
           <motion.div className="relative">
-            <motion.img src={img11} className="h-[600px] lg:h-[740px] relative" alt="" />
+            <picture>
+              <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img11, "q_auto:low")} type="image/avif" />
+              <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img11, "q_auto:good")} type="image/avif" />
+              <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img11, "q_auto:best")} type="image/avif" />
+              <motion.img src={getCloudinaryUrl(img11, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+            </picture>
           </motion.div>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
           <motion.div className="relative order-2 lg:order-1">
-            <motion.img src={img12} className="h-[600px] lg:h-[740px] relative" alt="" />
+            <picture>
+              <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img12, "q_auto:low")} type="image/avif" />
+              <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img12, "q_auto:good")} type="image/avif" />
+              <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img12, "q_auto:best")} type="image/avif" />
+              <motion.img src={getCloudinaryUrl(img12, "q_auto:best")} className="h-[600px] lg:h-[740px] relative" alt="" loading="lazy" decoding="async" />
+            </picture>
           </motion.div>
 
           {/* Text content */}
