@@ -1,7 +1,7 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../../layouts/Navbar";
-import Footer from "../../layouts/footer";
-import Policy from "../../layouts/Policy"
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer";
+import Policy from "../../layouts/policy/Policy";
 
 const Privacy = () => {
   return (

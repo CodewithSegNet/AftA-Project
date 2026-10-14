@@ -1,11 +1,11 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../../layouts/Navbar";
-import Footer from "../../layouts/footer";
-import FirstLayer from "../../layouts/FirstLayer" 
-import SecondLayer from "../../layouts/SecondLayer" 
-import ThirdLayer from "../../layouts/ThirdLayer"
-import FourthLayer from "../../layouts/FourthLayer"
-import FifthLayer from "../../layouts/FifthLayer"
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer";
+import FirstLayer from "../../layouts/homepage/FirstLayer";
+import SecondLayer from "../../layouts/homepage/SecondLayer";
+import ThirdLayer from "../../layouts/homepage/ThirdLayer";
+import FourthLayer from "../../layouts/homepage/FourthLayer";
+import FifthLayer from "../../layouts/homepage/FifthLayer";
 
 const HomePage = () => {
   return (

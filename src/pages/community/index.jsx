@@ -1,8 +1,8 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../../layouts/Navbar";
-import Footer from "../../layouts/footer";
-import CommunityFirst from "../../layouts/communityFirst"
-import FifthLayer from "../../layouts/FifthLayer"
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer";
+import CommunityFirst from "../../layouts/community/communityFirst";
+import FifthLayer from "../../layouts/homepage/FifthLayer";
 
 const Community = () => {
   return (

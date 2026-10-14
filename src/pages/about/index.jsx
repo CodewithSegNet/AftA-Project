@@ -1,10 +1,10 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../../layouts/Navbar";
-import Footer from "../../layouts/footer";
-import AboutFirst from "../../layouts/aboutFirst"
-import AboutSecond from "../../layouts/aboutSecond"
-import AboutThird from "../../layouts/aboutThird"
-import FifthLayer from "../../layouts/FifthLayer"
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer";
+import AboutFirst from "../../layouts/about/aboutFirst";
+import AboutSecond from "../../layouts/about/aboutSecond";
+import AboutThird from "../../layouts/about/aboutThird";
+import FifthLayer from "../../layouts/homepage/FifthLayer";
 
 const About = () => {
   return (

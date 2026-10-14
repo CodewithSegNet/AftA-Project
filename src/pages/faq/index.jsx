@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../../layouts/Navbar.tsx";
-import Footer from "../../layouts/footer.jsx";
-import FAQ from "../../layouts/faq.jsx";
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer.jsx";
+import FAQ from "../../shared/components/faq.jsx";
 
 const FAQPage = () => {
   return (

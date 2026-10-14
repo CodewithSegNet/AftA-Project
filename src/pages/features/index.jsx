@@ -1,17 +1,17 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Navbar from "../../layouts/Navbar";
-import Footer from "../../layouts/footer";
-import FeatureFirst from "../../layouts/featureFirst"
-import FeatureSecond from "../../layouts/featureSecond"
-import FeatureThird from "../../layouts/featureThird"
-import FeatureFourth from "../../layouts/featureFouth"
-import FeatureFifth from "../../layouts/featureFifth"
-import FeatureSixth from "../../layouts/featureSixth"
-import FeatureSeventh from "../../layouts/featureSeventh"
-import FeatureEight from "../../layouts/featureEigth"
-import FeatureNine from "../../layouts/featureNine"
-import FeatureTen from "../../layouts/featureTen"
-import FifthLayer from "../../layouts/FifthLayer"
+import Navbar from "../../shared/components/Navbar";
+import Footer from "../../shared/components/footer";
+import FeatureFirst from "../../layouts/features/featureFirst";
+import FeatureSecond from "../../layouts/features/featureSecond";
+import FeatureThird from "../../layouts/features/featureThird";
+import FeatureFourth from "../../layouts/features/featureFouth";
+import FeatureFifth from "../../layouts/features/featureFifth";
+import FeatureSixth from "../../layouts/features/featureSixth";
+import FeatureSeventh from "../../layouts/features/featureSeventh";
+import FeatureEight from "../../layouts/features/featureEigth";
+import FeatureNine from "../../layouts/features/featureNine";
+import FeatureTen from "../../layouts/features/featureTen";
+import FifthLayer from "../../layouts/homepage/FifthLayer";
 
 const Features = () => {
   return (
