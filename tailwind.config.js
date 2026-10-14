@@ -58,6 +58,8 @@ export default {
         "extra-loose": "110px",
       },
       fontFamily: {
+        sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        helvetica: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
         montserrat: ["Montserrat", "sans-serif"],
       },
     },
