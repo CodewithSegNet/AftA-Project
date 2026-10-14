@@ -1,10 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
 import AboutFaq from "./aboutFaq";
 
-
-
-const secondImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754643743/secImg_njremc.png"
+const secondImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1754643743/secImg_njremc.png";
 
 
 const AboutSecond = () => {
@@ -185,17 +184,36 @@ AftA is built on the foundation of truth, freedom, and cultural pride. We believ
           <motion.div
             variants={imageVariants}
           >
-            <motion.img 
-              src={secondImg} 
-              className=" lg:h-[600px] pt-5 lg:w-[400px]" 
-              alt=""
-              animate={isInView ? float : {}}
-              whileHover={{ 
-                scale: 1.05,
-                rotate: 2,
-                transition: { duration: 0.3 }
-              }}
-            />
+            <picture>
+              <source
+                media="(max-width: 640px)"
+                srcSet={getCloudinaryUrl(secondImg, "q_auto:low")}
+                type="image/avif"
+              />
+              <source
+                media="(max-width: 1024px)"
+                srcSet={getCloudinaryUrl(secondImg, "q_auto:good")}
+                type="image/avif"
+              />
+              <source
+                media="(max-width: 1920px)"
+                srcSet={getCloudinaryUrl(secondImg, "q_auto:best")}
+                type="image/avif"
+              />
+              <motion.img 
+                src={getCloudinaryUrl(secondImg, "q_auto:best")} 
+                className="lg:h-[600px] pt-5 lg:w-[400px]" 
+                alt=""
+                animate={isInView ? float : {}}
+                whileHover={{ 
+                  scale: 1.05,
+                  rotate: 2,
+                  transition: { duration: 0.3 }
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </motion.div>
 
           <motion.div

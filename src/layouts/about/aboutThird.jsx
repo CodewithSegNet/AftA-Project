@@ -1,12 +1,11 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import Img2 from "../../assets/btnfirst.png";
-import Img3 from "../../assets/btnsecond.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
 
+const Img2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001690/afta/btnfirst.png";
+const Img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001691/afta/btnsecond.png";
 
-
-
-const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759669368/uju1_oisqyj.png"
+const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759669368/uju1_oisqyj.png";
 
 const AboutThird = () => {
   const storyRef = useRef(null);
@@ -329,17 +328,36 @@ More than a tool for communication, AftA is a movement and a digital sanctuary g
             className="relative lg:h-[600px] lg:w-[604px]"
             variants={leadershipImageVariants}
           >
-            <motion.img 
-              src={img1} 
-              className="lg:h-[600px] pt-3 lg:w-[604px] z-10 pointer-events-none rounded-lg" 
-              alt=""
-              animate={isLeadershipInView ? float : {}}
-              whileHover={{ 
-                scale: 1.02,
-                rotate: 1,
-                transition: { duration: 0.3 }
-              }}
-            />
+            <picture>
+              <source
+                media="(max-width: 640px)"
+                srcSet={getCloudinaryUrl(img1, "q_auto:low")}
+                type="image/avif"
+              />
+              <source
+                media="(max-width: 1024px)"
+                srcSet={getCloudinaryUrl(img1, "q_auto:good")}
+                type="image/avif"
+              />
+              <source
+                media="(max-width: 1920px)"
+                srcSet={getCloudinaryUrl(img1, "q_auto:best")}
+                type="image/avif"
+              />
+              <motion.img 
+                src={getCloudinaryUrl(img1, "q_auto:best")} 
+                className="lg:h-[600px] pt-3 lg:w-[604px] z-10 pointer-events-none rounded-lg" 
+                alt=""
+                animate={isLeadershipInView ? float : {}}
+                whileHover={{ 
+                  scale: 1.02,
+                  rotate: 1,
+                  transition: { duration: 0.3 }
+                }}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
           </motion.div>
         </motion.div>
 
@@ -379,11 +397,30 @@ More than a tool for communication, AftA is a movement and a digital sanctuary g
                 whileTap={{ scale: 0.95 }}
                 animate={isCtaInView ? pulse : {}}
               >
-                <img
-                  src={Img2}
-                  alt="Download on Apple"
-                  className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet={getCloudinaryUrl(Img2, "q_auto:low")}
+                    type="image/avif"
+                  />
+                  <source
+                    media="(max-width: 1024px)"
+                    srcSet={getCloudinaryUrl(Img2, "q_auto:good")}
+                    type="image/avif"
+                  />
+                  <source
+                    media="(max-width: 1920px)"
+                    srcSet={getCloudinaryUrl(Img2, "q_auto:best")}
+                    type="image/avif"
+                  />
+                  <img
+                    src={getCloudinaryUrl(Img2, "q_auto:best")}
+                    alt="Download on Apple"
+                    className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </motion.div>
 
               <motion.div
@@ -393,11 +430,30 @@ More than a tool for communication, AftA is a movement and a digital sanctuary g
                 whileTap={{ scale: 0.95 }}
                 animate={isCtaInView ? pulse : {}}
               >
-                <img
-                  src={Img3}
-                  alt="Download on Play"
-                  className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 640px)"
+                    srcSet={getCloudinaryUrl(Img3, "q_auto:low")}
+                    type="image/avif"
+                  />
+                  <source
+                    media="(max-width: 1024px)"
+                    srcSet={getCloudinaryUrl(Img3, "q_auto:good")}
+                    type="image/avif"
+                  />
+                  <source
+                    media="(max-width: 1920px)"
+                    srcSet={getCloudinaryUrl(Img3, "q_auto:best")}
+                    type="image/avif"
+                  />
+                  <img
+                    src={getCloudinaryUrl(Img3, "q_auto:best")}
+                    alt="Download on Play"
+                    className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </motion.div>
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
 
 const AboutFirst = () => {
   const ref = useRef(null);
@@ -7,7 +8,7 @@ const AboutFirst = () => {
 
   // Store video URL as a string constant
   const videoUrl = "https://res.cloudinary.com/di0r5v8hw/video/upload/v1754644351/aboutvid_1_h6xpj7.mp4";
-  const FirstImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759494297/newGroup2_mwmboj.png"
+  const FirstImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759494297/newGroup2_mwmboj.png";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,34 +99,70 @@ const AboutFirst = () => {
         >
           
           {/* Video container with overlay */}
-          <motion.div 
+          <motion.div
             className="relative h-[500px] md:h-[700px] lg:h-[600px] lg:w-[400px]"
             variants={videoVariants}
           >
-         <motion.div
-  className="relative"
-  whileHover={{ 
-    scale: 1.02,
-    transition: { duration: 0.3 }
-  }}
->
-  <video 
-    src={videoUrl} 
-    className="h-[500px] w-[400px] md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px] object-cover rounded-lg"
-    autoPlay
-    loop
-    muted
-    playsInline
-  />
-  <motion.img 
-    src={FirstImg} 
-    className="absolute top-0 left-0 h-[500px] md:h-[700px] lg:h-[600px] pt-3 md:w-[600px] lg:w-[400px] z-10 pointer-events-none rounded-lg" 
-    alt=""
-    initial={{ opacity: 0 }}
-    animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-    transition={{ duration: 0.8, delay: 0.3 }}
-  />
-</motion.div>
+            <motion.div
+              className="relative"
+              whileHover={{ 
+                scale: 1.02,
+                transition: { duration: 0.3 }
+              }}
+            >
+              <video 
+                className="h-[500px] w-[400px] md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px] object-cover rounded-lg"
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="auto"
+              >
+                <source
+                  media="(max-width: 640px)"
+                  src={getCloudinaryUrl(videoUrl, "q_auto:low")}
+                  type="video/mp4"
+                />
+                <source
+                  media="(max-width: 1024px)"
+                  src={getCloudinaryUrl(videoUrl, "q_auto:good")}
+                  type="video/mp4"
+                />
+                <source
+                  media="(max-width: 1920px)"
+                  src={getCloudinaryUrl(videoUrl, "q_auto:best")}
+                  type="video/mp4"
+                />
+                <source src={getCloudinaryUrl(videoUrl, "q_auto:best")} type="video/mp4" />
+              </video>
+              <picture className="absolute top-0 left-0 h-[500px] md:h-[700px] lg:h-[600px] pt-3 md:w-[600px] lg:w-[400px] z-10 pointer-events-none">
+                <source
+                  media="(max-width: 640px)"
+                  srcSet={getCloudinaryUrl(FirstImg, "q_auto:low")}
+                  type="image/avif"
+                />
+                <source
+                  media="(max-width: 1024px)"
+                  srcSet={getCloudinaryUrl(FirstImg, "q_auto:good")}
+                  type="image/avif"
+                />
+                <source
+                  media="(max-width: 1920px)"
+                  srcSet={getCloudinaryUrl(FirstImg, "q_auto:best")}
+                  type="image/avif"
+                />
+                <motion.img 
+                  src={getCloudinaryUrl(FirstImg, "q_auto:best")} 
+                  className="h-[500px] md:h-[700px] lg:h-[600px] md:w-[600px] lg:w-[400px] rounded-lg" 
+                  alt=""
+                  initial={{ opacity: 0 }}
+                  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </motion.div>
           </motion.div>
 
           {/* Text content */}
