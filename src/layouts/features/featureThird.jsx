@@ -1,12 +1,14 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import call1 from "../../assets/featThird.png";
-import call2 from "../../assets/Memojis.png";
-import call3 from "../../assets/Memojis1.png";
-import call4 from "../../assets/Memojis2.png";
-import call5 from "../../assets/Memojis6.png";
-import call6 from "../../assets/Memojis4.png";
-import call7 from "../../assets/Memojis8.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const call1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001741/afta/featThird.png";
+const call2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001744/afta/Memojis.png";
+const call3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001745/afta/Memojis1.png";
+const call4 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001746/afta/Memojis2.png";
+const call5 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001749/afta/Memojis6.png";
+const call6 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001748/afta/Memojis4.png";
+const call7 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001750/afta/Memojis8.png";
 
 const FeatureThird = () => {
   const ref = useRef(null);
@@ -30,12 +32,17 @@ const FeatureThird = () => {
           }}
         >
           <div className="relative">
-            <img src={call1} className="relative h-[600px]  lg:h-[700px]" alt="Mobile device" />
+            <picture>
+              <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(call1, "q_auto:low")} type="image/avif" />
+              <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(call1, "q_auto:good")} type="image/avif" />
+              <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(call1, "q_auto:best")} type="image/avif" />
+              <img src={getCloudinaryUrl(call1, "q_auto:best")} className="relative h-[600px] lg:h-[700px]" alt="Mobile device" loading="lazy" decoding="async" />
+            </picture>
 
             {/* Floating emoji animations - positioned outside call1 device at edges */}
             {/* Top edge emoji */}
             <motion.img 
-              src={call2} 
+              src={getCloudinaryUrl(call2, "q_auto:best")} 
               className="absolute w-15 h-15" 
               alt="Memoji 1"
               animate={{
@@ -59,7 +66,7 @@ const FeatureThird = () => {
             
             {/* Right edge emoji */}
             <motion.img 
-              src={call3} 
+              src={getCloudinaryUrl(call3, "q_auto:best")} 
               className="absolute w-[8rem] h-13" 
               alt="Memoji 2"
               animate={{
@@ -82,7 +89,7 @@ const FeatureThird = () => {
             
             {/* Bottom edge emoji */}
             <motion.img 
-              src={call4}
+              src={getCloudinaryUrl(call4, "q_auto:best")}
               className="absolute w-[6rem] h-15" 
               alt="Memoji 3"
               animate={{
@@ -106,7 +113,7 @@ const FeatureThird = () => {
             
             {/* Left edge emoji */}
             <motion.img 
-              src={call5} 
+              src={getCloudinaryUrl(call5, "q_auto:best")} 
               className="absolute w-15 h-15" 
               alt="Memoji 4"
               animate={{
@@ -129,7 +136,7 @@ const FeatureThird = () => {
             
             {/* Top-right corner emoji */}
             <motion.img 
-              src={call6} 
+              src={getCloudinaryUrl(call6, "q_auto:best")} 
               className="absolute w-[6rem] h-15" 
               alt="Memoji 5"
               animate={{
@@ -153,7 +160,7 @@ const FeatureThird = () => {
             
             {/* Bottom-left corner emoji */}
             <motion.img 
-              src={call7} 
+              src={getCloudinaryUrl(call7, "q_auto:best")} 
               className="absolute w-[7rem] h-15" 
               alt="Memoji 6"
               animate={{

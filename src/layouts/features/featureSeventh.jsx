@@ -1,8 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../../assets/Upload1.png";
-import img2 from "../../assets/Frame01.svg";
-import img3 from "../../assets/Frame00.svg";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001764/afta/Upload1.png";
+const img2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001771/afta/Frame01.svg";
+const img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001785/afta/Frame00.svg";
 
 const FeatureSixth = () => {
   const ref = useRef(null);
@@ -14,14 +16,21 @@ const FeatureSixth = () => {
         
         <motion.div className="order-2 lg:order-1 relative">
           {/* Main image */}
-          <motion.img 
-            src={img1} 
-            className="h-[600px] lg:h-[740px] relative" 
-            alt="" 
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          />
+          <picture>
+            <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img1, "q_auto:low")} type="image/avif" />
+            <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img1, "q_auto:good")} type="image/avif" />
+            <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img1, "q_auto:best")} type="image/avif" />
+            <motion.img 
+              src={getCloudinaryUrl(img1, "q_auto:best")} 
+              className="h-[600px] lg:h-[740px] relative" 
+              alt="" 
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
           
           {/* Left floating image */}
           <motion.img 

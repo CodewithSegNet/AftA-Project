@@ -1,8 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
-import img1 from "../../assets/Community.png";
-import img2 from "../../assets/Groups.png";
-import img3 from "../../assets/fill.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001788/afta/Community.png";
+const img2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001789/afta/Groups.png";
+const img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001693/afta/fill.png";
 
 
 const FeatureSixth = () => {
@@ -28,7 +30,7 @@ const FeatureSixth = () => {
   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
 >
-    <img src={img3} className="h-8 w-8 lg:h-11 lg:w-11" alt="" />
+    <img src={getCloudinaryUrl(img3, "q_auto:best")} className="h-8 w-8 lg:h-11 lg:w-11" alt="" loading="lazy" />
 
 <div className="flex gap-2 items-center w-fit">
     <button 
@@ -78,15 +80,21 @@ Find your people. Join the conversation. Whether you're about fashion, tech, act
       animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
     >
-        <motion.img 
-          src={activeTab === "communities" ? img1 : img2}
-          className="h-[600px] lg:h-[740px] lg:w-[350px] relative" 
-          alt="" 
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3 }}
-          key={activeTab}
-        />
+        <picture key={activeTab}>
+          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:low")} type="image/avif" />
+          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:good")} type="image/avif" />
+          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:best")} type="image/avif" />
+          <motion.img 
+            src={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:best")}
+            className="h-[600px] lg:h-[740px] lg:w-[350px] relative" 
+            alt="" 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3 }}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
 
 
       </motion.div>

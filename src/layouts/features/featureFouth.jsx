@@ -1,7 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
-import img1 from "../../assets/Discover.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001752/afta/Discover.png";
 
 const FeatureFourth = () => {
 
@@ -40,7 +42,12 @@ const FeatureFourth = () => {
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.img src={img1} className="h-[600px] lg:h-[740px]" alt="" />
+        <picture>
+          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img1, "q_auto:low")} type="image/avif" />
+          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img1, "q_auto:good")} type="image/avif" />
+          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img1, "q_auto:best")} type="image/avif" />
+          <motion.img src={getCloudinaryUrl(img1, "q_auto:best")} className="h-[600px] lg:h-[740px]" alt="" loading="lazy" decoding="async" />
+        </picture>
       </motion.div>
 
         </div>

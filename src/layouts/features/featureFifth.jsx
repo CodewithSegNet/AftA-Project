@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../../assets/Messages.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001756/afta/Messages.png";
 
 const FeatureFifth = () => {
   const ref = useRef(null);
@@ -23,7 +25,12 @@ const FeatureFifth = () => {
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.img src={img1} className="h-[600px] lg:h-[740px]" alt="" />
+        <picture>
+          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img1, "q_auto:low")} type="image/avif" />
+          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img1, "q_auto:good")} type="image/avif" />
+          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img1, "q_auto:best")} type="image/avif" />
+          <motion.img src={getCloudinaryUrl(img1, "q_auto:best")} className="h-[600px] lg:h-[740px]" alt="" loading="lazy" decoding="async" />
+        </picture>
       </motion.div>
 
       {/* Text content */}

@@ -1,8 +1,10 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
-import calling1 from "../../assets/Calling.png";
-import calling2 from "../../assets/Calling1.png";
-import calling3 from "../../assets/Calling2.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const calling1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001721/afta/Calling.png";
+const calling2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001728/afta/Calling1.png";
+const calling3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001736/afta/Calling2.png";
 
 const FeatureFirst = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,11 +63,18 @@ const FeatureFirst = () => {
               className="absolute transition-all duration-700 ease-in-out"
               style={getImageStyle(index)}
             >
-              <img 
-                src={image} 
-                alt={`calling-${index + 1}`}
-                className="h-auto w-auto object-contain"
-              />
+              <picture>
+                <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(image, "q_auto:low")} type="image/avif" />
+                <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(image, "q_auto:good")} type="image/avif" />
+                <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(image, "q_auto:best")} type="image/avif" />
+                <img 
+                  src={getCloudinaryUrl(image, "q_auto:best")} 
+                  alt={`calling-${index + 1}`}
+                  className="h-auto w-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
             </div>
           ))}
         </motion.div>

@@ -1,8 +1,10 @@
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { useRef } from "react";
-import feat1 from "../../assets/feat1.png";
-import feat2 from "../../assets/feat2.png";
-import feat3 from "../../assets/feat3.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const feat1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001738/afta/feat1.png";
+const feat2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001739/afta/feat2.png";
+const feat3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001740/afta/feat3.png";
 
 const FeatureSecond = () => {
   const ref = useRef(null);
@@ -43,16 +45,23 @@ const FeatureSecond = () => {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           >
             <div className=" relative">
+              <picture>
+                <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(feat1, "q_auto:low")} type="image/avif" />
+                <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(feat1, "q_auto:good")} type="image/avif" />
+                <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(feat1, "q_auto:best")} type="image/avif" />
+                <motion.img 
+                  src={getCloudinaryUrl(feat1, "q_auto:best")} 
+                  className="h-[600px] lg:h-[740px] relative"  
+                  alt=""
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <motion.img 
-                src={feat1} 
-                className="h-[600px] lg:h-[740px] relative"  
-                alt=""
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              />
-              <motion.img 
-                src={feat2} 
+                src={getCloudinaryUrl(feat2, "q_auto:best")} 
                 className="absolute lg:top-[100px] lg:right-[-40px] top-[100px] right-[-10px] w-[55px] lg:w-[85px]" 
                 alt=""
                 initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
@@ -73,9 +82,10 @@ const FeatureSecond = () => {
                     ease: "easeInOut" 
                   }
                 }}
+                loading="lazy"
               />
               <motion.img 
-                src={feat3} 
+                src={getCloudinaryUrl(feat3, "q_auto:best")} 
                 className="absolute lg:top-[440px] lg:left-[-90px] top-[450px] left-[-10px] w-[145px] lg:w-[245px]" 
                 alt=""
                 initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
@@ -96,6 +106,7 @@ const FeatureSecond = () => {
                     ease: "easeInOut" 
                   }
                 }}
+                loading="lazy"
               />
             </div>
           </motion.div>

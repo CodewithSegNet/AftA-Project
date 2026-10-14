@@ -1,6 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import img1 from "../../assets/profile1.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001792/afta/profile1.png";
 
 
 
@@ -49,14 +51,21 @@ Total control over who sees what. From story views to chat access, tweak your pr
           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-        <motion.img 
-          src={img1} 
-          className="h-[600px] lg:h-[740px] relative" 
-          alt="" 
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img1, "q_auto:low")} type="image/avif" />
+          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img1, "q_auto:good")} type="image/avif" />
+          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img1, "q_auto:best")} type="image/avif" />
+          <motion.img 
+            src={getCloudinaryUrl(img1, "q_auto:best")} 
+            className="h-[600px] lg:h-[740px] relative" 
+            alt="" 
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       </motion.div>
 
 
