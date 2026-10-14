@@ -149,7 +149,7 @@ const HomePage = () => {
             <FourthLayer/>
           </div>
 
-          <div className="mx-4 md:mx-6 mt-[2rem]">
+          <div className="mx-6 mt-[2rem]">
             <FifthLayer/>
           </div>
 

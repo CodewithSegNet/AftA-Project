@@ -76,7 +76,7 @@ const FourthLayer = () => {
   return (
     <div className="font-sans">
       <motion.section className="max-w-screen-2xl mx-auto my-[40px] md:my-[76px]">
-      <div className="px-4 md:px-6">
+      <div className="px-6 md:px-6">
       <div className="max-w-[669px] md:pl-[27px] pb-[46px]">
         <h2 className="text-[42px] text-primary md:text-[64px] pb-[8px] leading-[50px] md:leading-[70px] font-normal">
           How The AftA App Works
@@ -253,7 +253,7 @@ const FourthLayer = () => {
     </motion.section>
 
       {/* ── Courses, Tutors & Resources Showcase ── */}
-      <section className="max-w-screen-2xl mx-auto px-4 md:px-6 my-16 md:my-28 flex flex-col gap-16 md:gap-[120px] font-sans">
+      <section className="max-w-screen-2xl mx-auto px-6 md:px-6 my-16 md:my-28 flex flex-col gap-16 md:gap-[120px] font-sans">
         {/* Block 1: Choose a tutor and enroll in their course */}
         <motion.div
           variants={showcaseBlockVariants}

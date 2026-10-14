@@ -71,7 +71,7 @@ const duplicated = [...headshots, ...headshots, ...headshots, ...headshots, ...h
       animate={isInView ? "visible" : "hidden"}
     >
       <div className="my-[76px]">
-        <div className="flex px-4 md:px-6">
+        <div className="flex px-6 md:px-6">
           <div className="max-w-[669px] md:pl-[27px] pb-[46px]">
             <h2 className="text-[42px] text-white md:text-[64px] pb-[8px] leading-[50px] md:leading-[70px] font-normal">
               Never <span className="text-secondary "> Miss a Moment </span> That Matters

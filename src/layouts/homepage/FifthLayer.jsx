@@ -1,5 +1,7 @@
 import { useState } from "react";
-import OpenIcon from "../../assets/add.png";
+import { getCloudinaryUrl } from "../../utils/cloudinary";
+
+const OpenIcon = getCloudinaryUrl("https://res.cloudinary.com/wruetqvx/image/upload/v1792001692/afta/add.png", "q_auto:best");
 
 const faqs = [
   {
