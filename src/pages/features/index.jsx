@@ -11,7 +11,9 @@ import FeatureSeventh from "../../layouts/features/featureSeventh";
 import FeatureEight from "../../layouts/features/featureEigth";
 import FeatureNine from "../../layouts/features/featureNine";
 import FeatureTen from "../../layouts/features/featureTen";
-import FifthLayer from "../../layouts/homepage/FifthLayer";
+import FeatureEleven from "../../layouts/features/featureEleven";
+import FeatureTwelve from "../../layouts/features/featureTwelve";
+import FeatureFaq from "../../layouts/features/featureFaq";
 
 const Features = () => {
   return (
@@ -143,11 +145,19 @@ const Features = () => {
             <FeatureTen/>
           </div>
 
-          <div className="mx-4 md:mx-6 mt-[2rem]">
-            <FifthLayer/>
+          <div className=" mx-4 md:mx-6 ">
+            <FeatureEleven/>
           </div>
 
-          <div className="">
+          <div className=" mx-4 md:mx-6 ">
+            <FeatureTwelve/>
+          </div>
+
+          <div className="mx-4 md:mx-6 mt-[2rem]">
+            <FeatureFaq/>
+          </div>
+
+          <div className="lg:mt-[96px] mt-[40px]">
             <Footer/>
           </div>
         </div>

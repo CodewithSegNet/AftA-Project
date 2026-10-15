@@ -21,7 +21,7 @@ const FeatureSecond = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           > 
             <motion.h1 
-              className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
+              className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

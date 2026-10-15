@@ -1,17 +1,19 @@
 import { motion, useInView } from "framer-motion";
-import { useState, useRef } from "react";
+import { useRef } from "react";
+
 import { getCloudinaryUrl } from "../../utils/cloudinary";
 
-const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001788/afta/Community.png";
-const img2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001789/afta/Groups.png";
-const img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001693/afta/fill.png";
+const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1791980865/Circle.avif";
 
+const FeatureEigth = () => {
 
-const FeatureSixth = () => {
-  const [activeTab, setActiveTab] = useState("communities");
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
-
+    const ref = useRef(null);
+    const isInView = useInView(ref, { 
+      once: true, 
+      threshold: 0.3,
+      margin: "-100px"
+    });
+  
   return (
     <motion.section ref={ref}>
 
@@ -20,87 +22,32 @@ const FeatureSixth = () => {
       {/* Text content */}
       <motion.div 
         className="lg:w-[368px]"
-        initial={{ opacity: 0, x: -50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+        initial={{ x: -100, opacity: 0 }}
+        animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-<motion.div 
-  className="flex gap-5 items-center bg-[rgba(0,17,23,1)] mx-auto lg:mx-none rounded-full p-3 w-fit mb-10"
-  initial={{ opacity: 0, y: -20 }}
-  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
-  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
->
-    <img src={getCloudinaryUrl(img3, "q_auto:best")} className="h-8 w-8 lg:h-11 lg:w-11" alt="" loading="lazy" />
-
-<div className="flex gap-2 items-center w-fit">
-    <button 
-      className={`${activeTab === "communities" 
-        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] font-semibold w-fit hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full text-sm lg:text-md transition-all duration-300 font-semibold w-fit hover:text-[rgba(255,180,27,1)] hover:bg-[rgba(255,180,27,0.1)] `}
-      onClick={() => setActiveTab("communities")}
-    >
-      Communities
-    </button>
-    <button 
-      className={`${activeTab === "groups" 
-        ? "bg-[rgba(255,180,27,0.1)] text-[rgba(255,180,27,1)] w-fit font-semibold hover:text-[rgba(255,180,27,1)] duration-200" 
-        : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full text-sm lg:text-md  transition-all font-semibold duration-300 w-fit hover:text-[rgba(255,180,27,1)] hover:bg-[rgba(255,180,27,0.1)] `}
-      onClick={() => setActiveTab("groups")}
-    >
-      Groups
-    </button>
-</div>
-
-
-</motion.div>
-
-
-        <motion.h1 
-          className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-        >
-Communities That Get You
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4">
+Circles that Get You
         </motion.h1>
 
-        <motion.p 
-          className="text-base font-normal text-gray-700"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-        >
-Find your people. Join the conversation. Whether you're about fashion, tech, activism, or Afrobeat—there's a space here for you. Or create your own. </motion.p>
+        <motion.p className="text-base font-normal text-gray-700">
+        Find your people. Join the conversation. Whether you're about fashion, tech, activism, or Afrobeat—there’s a space here for you. Or create your own.
+        </motion.p>
       </motion.div>
 
-
-    <motion.div 
-      className="relative"
-      initial={{ opacity: 0, x: 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-      transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-    >
-        <picture key={activeTab}>
-          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:low")} type="image/avif" />
-          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:good")} type="image/avif" />
-          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:best")} type="image/avif" />
-          <motion.img 
-            src={getCloudinaryUrl(activeTab === "communities" ? img1 : img2, "q_auto:best")}
-            className="h-[600px] lg:h-[740px] lg:w-[350px] relative" 
-            alt="" 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3 }}
-            loading="lazy"
-            decoding="async"
-          />
+      <motion.div 
+        className="relative"
+        initial={{ x: 100, opacity: 0 }}
+        animate={isInView ? { x: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <picture>
+          <source media="(max-width: 640px)" srcSet={getCloudinaryUrl(img1, "q_auto:low")} type="image/avif" />
+          <source media="(max-width: 1024px)" srcSet={getCloudinaryUrl(img1, "q_auto:good")} type="image/avif" />
+          <source media="(max-width: 1920px)" srcSet={getCloudinaryUrl(img1, "q_auto:best")} type="image/avif" />
+          <motion.img src={getCloudinaryUrl(img1, "q_auto:best")} className="h-[600px] lg:h-[740px]" alt="" loading="lazy" decoding="async" />
         </picture>
-
-
       </motion.div>
-
-    
-
 
         </div>
 
@@ -108,4 +55,4 @@ Find your people. Join the conversation. Whether you're about fashion, tech, act
   );
 };
 
-export default FeatureSixth;
+export default FeatureEigth;

@@ -1,5 +1,5 @@
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { getCloudinaryUrl } from "../../utils/cloudinary";
 
 const call1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001741/afta/featThird.png";
@@ -195,7 +195,7 @@ const FeatureThird = () => {
           }}
         > 
           <motion.h1 
-            className=" text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
+            className=" text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4"
             initial={{ y: 30, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 }}
             transition={{ 

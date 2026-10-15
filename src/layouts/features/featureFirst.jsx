@@ -1,14 +1,14 @@
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { getCloudinaryUrl } from "../../utils/cloudinary";
 
 const calling1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001721/afta/Calling.png";
 const calling2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001728/afta/Calling1.png";
 const calling3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001736/afta/Calling2.png";
+const images = [calling2, calling1, calling3];
 
 const FeatureFirst = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [calling2, calling1, calling3];
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
 
@@ -87,7 +87,7 @@ const FeatureFirst = () => {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         > 
           <motion.h1 
-            className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4"
+            className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4"
           >
 Crystal-Clear Audio & Video Calls
           </motion.h1>

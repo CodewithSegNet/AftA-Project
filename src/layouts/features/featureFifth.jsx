@@ -40,7 +40,7 @@ const FeatureFifth = () => {
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4">
 Private Chats, Your Space
         </motion.h1>
 

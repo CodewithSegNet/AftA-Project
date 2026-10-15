@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { getCloudinaryUrl } from "../../utils/cloudinary";
 
@@ -26,7 +26,7 @@ const FeatureFourth = () => {
         animate={isInView ? { x: 0, opacity: 1 } : {}}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <motion.h1 className="text-[32px] md:text-[64px] leading-[35px] md:leading-[80px] font-normal mb-4">
+        <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4">
           Follow Who You Vibe With
         </motion.h1>
 
