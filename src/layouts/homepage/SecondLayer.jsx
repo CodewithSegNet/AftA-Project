@@ -88,7 +88,7 @@ const chatBubbleRight = {
 
 // ─── TextContent ──────────────────────────────────────────────────────────────
 const TextContent = () => (
-  <div className="flex flex-col gap-4 w-[368px]">
+  <div className="flex flex-col gap-4 lg:w-[368px]">
     <h2 className="text-[32px] lg:text-[64px] font-normal leading-[100%] tracking-[0] m-0 text-[#111]">
       Connect, Learn and Teach From Anywhere
     </h2>
