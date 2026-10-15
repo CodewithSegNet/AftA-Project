@@ -56,21 +56,6 @@ show: { opacity: 1, y: 0 },
     }
   };
 
-  const storyTextVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: 40
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        delay: 0.3,
-        ease: "easeOut"
-      }
-    }
-  };
 
   // Leadership Section Variants
   const leadershipContainerVariants = {
@@ -217,39 +202,37 @@ show: { opacity: 1, y: 0 },
     }
   };
 
-  const buttonVariants = {
-    hidden: { 
-      opacity: 0, 
-      scale: 0.7
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
 
-  // Continuous animations
-  const float = {
-    y: [0, -8, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
 
-  const pulse = {
-    scale: [1, 1.03, 1],
-    transition: {
-      duration: 2.5,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
+  // ─── Store button icons (inline SVG — no image dependency) ───────────────────
+const AppleIcon = () => (
+  <svg width="33" height="33" viewBox="0 0 814 1000" fill="#FFF7E6" aria-hidden="true">
+    <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-37.3-155.5-127.5C46.7 790.7 0 663 0 541.8c0-207.1 135.4-316.6 268.1-316.6 71 0 130.1 46.7 174.4 46.7 42.7 0 109.2-49.3 188.6-49.3zm-183.8-78.4c33.6-39.5 57.4-94.3 57.4-149.1 0-7.7-.6-15.4-1.9-21.7-54.1 2-117.8 36.2-157.6 81.9-30.8 35.6-60.2 90.4-60.2 145.9 0 8.3 1.3 16.6 1.9 19.1 3.2.6 8.4 1.3 13.6 1.3 48.7 0 109.3-32.8 146.8-77.4z"/>
+  </svg>
+);
+
+const GooglePlayIcon = () => (
+  <svg width="33" height="33" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M3.18 23.76a2 2 0 0 1-.96-.86l10-10 3.38 3.38-12.42 7.48z" fill="#EA4335"/>
+    <path d="M1.07 1.63A2 2 0 0 0 .75 2.77v18.46c0 .4.1.78.32 1.11L12 12 1.07 1.63z" fill="#4285F4"/>
+    <path d="M20.3 10.33l-2.93-1.77L13.97 12l3.4 3.4 2.94-1.77A2 2 0 0 0 20.3 10.33z" fill="#FBBC05"/>
+    <path d="M3.18.24l12.42 7.48L12.2 11.1 2.22 1.1A2 2 0 0 1 3.18.24z" fill="#34A853"/>
+  </svg>
+);
+
+// ─── Download buttons ─────────────────────────────────────────────────────────
+const StoreButton = ({ icon, label, sub }) => (
+  <button
+    type="button"
+    className="inline-flex items-center gap-[0.55rem] bg-[#111] text-white border-none rounded-[0.625rem] px-[1.1rem] py-[0.55rem] cursor-pointer text-left transition-all duration-[180ms] min-w-[8.5rem] hover:bg-[#2a2a2a] hover:-translate-y-[1px] active:translate-y-0"
+  >
+    <span className="flex items-center shrink-0 text-white">{icon}</span>
+    <span className="flex flex-col gap-[0.05rem] text-[#FFF7E6]">
+      <span className="text-[0.5625rem] font-normal text-[#FFF7E6] leading-none tracking-[0.01em]">{sub}</span>
+      <span className="text-[0.9rem] font-semibold text-[#FFF7E6] leading-[1.2] tracking-[-0.01em]">{label}</span>
+    </span>
+  </button>
+);
 
   return (
     <>
@@ -277,17 +260,30 @@ variants={container}
 >
 <motion.div className="prose prose-lg dark:prose-invert text-gray-800 sm:text-base" variants={item}>
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
-AftA was born from a clear commitment to redefine how Africans experience and engage with social media — a purpose-built, empowering digital space where people can connect, express themselves, and showcase their talents without compromise. For generations African voices have been underrepresented: our stories overlooked and creative contributions undervalued. AftA exists to change that by amplifying voices that have too often been silenced and by giving African culture, innovation, and identity room to thrive.
+AftA was born from a visionary commitment to redefine how Africans experience and engage with social media. It is a platform built with purpose, a safe empowering digital space where African people can authentically connect, express themselves, and showcase their talents without compromise.
 </p>
 
 
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
-The idea for AftA comes from lived experience. Growing up, we saw a gap: a lack of platforms that truly reflect the richness, diversity, and brilliance of the platform. Despite Africa's overflowing creativity and heritage, there is no widely recognized social platform that was designed with us at its core. AftA is a bold step toward reclaiming digital ownership — a collective stake in the global conversation and a platform that insists we be seen, heard, and celebrated on our own terms.
+For generations, African voices have been underrepresented, our stories overlooked, and our creative contributions undervalued within global digital ecosystems. AftA was founded to change this reality. It exists to amplify the voices of those who have too often been silenced and to provide a platform where African culture, innovation, and identity can thrive.
 </p>
 
 
+<p className="mb-6 text-base sm:text-lg leading-relaxed">
+
+As the founder of AftA, my inspiration stems from personal experience. Growing up, I observed a significant void in the digital space, an absence of platforms that genuinely reflect the richness, diversity, and brilliance of African people. Despite being a continent bursting with creativity, heritage, and ingenuity, Africa does not have a globally recognized social media platform to call its own. Instead, we have engaged in online communities that were never designed with us in mind.
+</p>
+
+<p className="mb-6 text-base sm:text-lg leading-relaxed">
+AftA is a bold step toward reclaiming digital ownership. It represents our collective stake in the global conversation and our right to be seen, heard, and celebrated on our terms.
+</p>
+
+<p className="mb-6 text-base sm:text-lg leading-relaxed">
+This platform was created not just as a tool for communication, but as a digital sanctuary grounded in safety, inclusion, and authenticity. 
+</p>
+
 <p className="mb-0 text-base sm:text-lg leading-relaxed">
-More than a tool for communication, AftA is a movement and a digital sanctuary grounded in safety, inclusion, and authenticity. Here your voice matters, your talent is recognized, and your dreams have space to grow. This is our time. This is our space. This is AftA.
+AftA is more than an app, it is a movement. It is where your voice matters, your talent is recognized, and your dreams have a place to grow. This is our time. This is our space. This is AftA.
 </p>
 </motion.div>
 </motion.section>
@@ -348,12 +344,7 @@ More than a tool for communication, AftA is a movement and a digital sanctuary g
                 src={getCloudinaryUrl(img1, "q_auto:best")} 
                 className="lg:h-[600px] pt-3 lg:w-[604px] z-10 pointer-events-none rounded-lg" 
                 alt=""
-                animate={isLeadershipInView ? float : {}}
-                whileHover={{ 
-                  scale: 1.02,
-                  rotate: 1,
-                  transition: { duration: 0.3 }
-                }}
+          
                 loading="lazy"
                 decoding="async"
               />
@@ -390,71 +381,19 @@ More than a tool for communication, AftA is a movement and a digital sanctuary g
             variants={ctaButtonsVariants}
           >
             <div className="flex  gap-4">
-              <motion.div
-                className="flex-1"
-                variants={buttonVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                animate={isCtaInView ? pulse : {}}
-              >
-                <picture>
-                  <source
-                    media="(max-width: 640px)"
-                    srcSet={getCloudinaryUrl(Img2, "q_auto:low")}
-                    type="image/avif"
-                  />
-                  <source
-                    media="(max-width: 1024px)"
-                    srcSet={getCloudinaryUrl(Img2, "q_auto:good")}
-                    type="image/avif"
-                  />
-                  <source
-                    media="(max-width: 1920px)"
-                    srcSet={getCloudinaryUrl(Img2, "q_auto:best")}
-                    type="image/avif"
-                  />
-                  <img
-                    src={getCloudinaryUrl(Img2, "q_auto:best")}
-                    alt="Download on Apple"
-                    className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </motion.div>
+          
+                  <StoreButton
+        icon={<AppleIcon />}
+        sub="Download on the"
+        label="App Store"
+      />
+      <StoreButton
+        icon={<GooglePlayIcon />}
+        sub="Download on the"
+        label="Google Play"
+      />
 
-              <motion.div
-                className="flex-1"
-                variants={buttonVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                animate={isCtaInView ? pulse : {}}
-              >
-                <picture>
-                  <source
-                    media="(max-width: 640px)"
-                    srcSet={getCloudinaryUrl(Img3, "q_auto:low")}
-                    type="image/avif"
-                  />
-                  <source
-                    media="(max-width: 1024px)"
-                    srcSet={getCloudinaryUrl(Img3, "q_auto:good")}
-                    type="image/avif"
-                  />
-                  <source
-                    media="(max-width: 1920px)"
-                    srcSet={getCloudinaryUrl(Img3, "q_auto:best")}
-                    type="image/avif"
-                  />
-                  <img
-                    src={getCloudinaryUrl(Img3, "q_auto:best")}
-                    alt="Download on Play"
-                    className="w-[195px] h-[60px] object-contain hover:scale-105 duration-200"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </motion.div>
+        
             </div>
           </motion.div>
         </motion.div>

@@ -4,7 +4,7 @@ import Footer from "../../shared/components/footer";
 import AboutFirst from "../../layouts/about/aboutFirst";
 import AboutSecond from "../../layouts/about/aboutSecond";
 import AboutThird from "../../layouts/about/aboutThird";
-import FifthLayer from "../../layouts/homepage/FifthLayer";
+import AboutSecondFaq from "../../layouts/about/aboutSecondFaq";
 
 const About = () => {
   return (
@@ -103,10 +103,10 @@ const About = () => {
           </div>
 
           <div className="mx-4 md:mx-6 mt-[2rem]">
-            <FifthLayer/>
+            <AboutSecondFaq/>
           </div>
 
-          <div className="">
+          <div className="lg:mt-[96px] mt-[40px]">
             <Footer/>
           </div>
         </div>

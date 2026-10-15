@@ -5,23 +5,23 @@ const OpenIcon = getCloudinaryUrl("https://res.cloudinary.com/wruetqvx/image/upl
 
 const faqs = [
   {
-    question: "Unapologetic African Identity",
+    question: "African Identity & Cultural Pride",
     answer: "AftA was built to celebrate African pride without compromise. We create a digital space where Africans and the diaspora can express their culture, languages, heritage, and creativity without pressure to conform to foreign standards. From local content to community voices, everything on AftA reflects the richness and confidence of the African identity."
   },
   {
-    question: "Freedom of Expression",
+    question: "Learning Through Shared Knowledge",
     answer: "We believe every African voice deserves to be heard. AftA allows users to speak, create, and share authentically—without censorship of cultural norms, dialects, or community matters. While we protect against hate speech, abuse, and harm, we encourage open conversation, storytelling, and opinions that move the continent forward."
   },
   {
-    question: "Digital Sovereignty",
+    question: "Creative Freedom & Expression",
     answer: "Unlike platforms that don’t prioritize African interests, AftA is built by Africans for Africans. Your data, identity, and digital footprint are governed with respect to African values and laws—not foreign agendas. We’re designing systems that empower communities, protect privacy, and give Africa control over its digital future."
   },
     {
-    question: "Cultural Preservation & Innovation",
+    question: "Opportunity for Learners & Tutors",
     answer: 'AftA is a hub where tradition meets technology. Users can share indigenous languages, art, music, fashion, festivals, and history—while also discovering new African trends and innovations. From local creators to global Afro-influencers, we’re building a platform that protects our heritage and fuels modern creativity.'
   },
     {
-    question: "Security & Trust",
+    question: "Community & Meaningful Connection",
     answer: "Security is at the heart of our platform. Your conversations, media, and data are protected with high-level encryption and privacy protocols. We use transparent policies and advanced tools to prevent scams, fake accounts, and harassment—so you can connect confidently with real people, safely and securely."
     }
 ];
@@ -34,7 +34,16 @@ const FAQ = () => {
   };
 
   return (
+        <section className="max-w-screen-2xl mx-auto my-12">
 
+     <div className="max-w-[669px] md:pl-[27px] pb-[46px]">
+        <h2 className="text-[32px] text-primary md:text-[64px] pb-[8px] leading-[35px] md:leading-[70px] font-normal">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-sm lg:text-base font-normal text-primary ">
+          Find quick answers to common questions about our services, features, and how to get started.
+        </p>
+        </div>
 
       <div className="divide-y border-t border-b border-gray-300">
         {faqs.map(({ question, answer }, i) => (
@@ -72,6 +81,7 @@ const FAQ = () => {
           </div>
         ))}
       </div>
+      </section>
   );
 };
 

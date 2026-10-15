@@ -7,7 +7,7 @@ const AboutFirst = () => {
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   // Store video URL as a string constant
-  const videoUrl = "https://res.cloudinary.com/di0r5v8hw/video/upload/v1754644351/aboutvid_1_h6xpj7.mp4";
+  const videoUrl = "https://res.cloudinary.com/wruetqvx/video/upload/v1792015150/7677015-sd_540_960_25fps.mp4.mp4";
   const FirstImg = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759494297/newGroup2_mwmboj.png";
 
   const containerVariants = {
@@ -181,7 +181,7 @@ const AboutFirst = () => {
               className="text-base  md:pt-0 lg:pt-0 font-normal text-gray-700"
               variants={paragraphVariants}
             > 
-At AftA, our mission is to connect everyone within an engaging community that encourages authenticity, embraces cultural diversity, and brings forward voices and talents often unheard.            </motion.p>
+Empower Africans to learn, create, and connect—blending education and entertainment so learners grow, tutors earn, and communities thrive.    </motion.p>
           </motion.div>
 
         </motion.div>

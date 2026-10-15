@@ -127,23 +127,6 @@ const AboutSecond = () => {
     },
   };
 
-  const pulse = {
-    scale: [1, 1.05, 1],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  const rotate = {
-    rotate: [0, 5, -5, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
 
   return (
     <>
@@ -170,9 +153,7 @@ const AboutSecond = () => {
             className="text-base font-normal text-gray-700"
             variants={paragraphVariants}
           >
-AftA is built on the foundation of truth, freedom, and cultural pride. We believe in the power of unfiltered African voices,
- the preservation of ancestral knowledge, and the right to connect without censorship. Rooted in authenticity and driven by purpose, 
- our principles guide every line of code, every conversation, and every connection—because to build for Africa, we must stand by Africa.    
+AftA is built for a continent where learning and creativity thrive together. We believe in the power of African voices, the value of shared knowledge, and the freedom to grow through authentic expression. Rooted in community and driven by creative growth, our principles guide every connection, every course, and every moment of shared learning—because to build for Africa, we must build with Africa.   
        </motion.p>
         </motion.div>
 
