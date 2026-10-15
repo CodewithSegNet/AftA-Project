@@ -187,7 +187,7 @@ const FirstLayer = () => (
 
     {/* ════════════════ MOBILE (< 768px) ════════════════ */}
     <motion.div
-      className="flex flex-col gap-4 max-w-[75rem] mx-auto py-4 px-6 md:hidden font-sans"
+      className="flex flex-col gap-4 max-w-[75rem] mx-auto md:hidden font-sans"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

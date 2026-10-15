@@ -133,7 +133,7 @@ const HomePage = () => {
             <Navbar />
           </div>
   
-          <div className="md:pt-[22rem] lg:pt-[0rem] ">
+          <div className="mx-4 md:mx-6 md:pt-[22rem] lg:pt-[0rem] ">
             <FirstLayer/>
           </div>
 
@@ -149,11 +149,11 @@ const HomePage = () => {
             <FourthLayer/>
           </div>
 
-          <div className="mx-6 mt-[2rem]">
+          <div className="mx-4 md:mx-6 mt-[2rem]">
             <FifthLayer/>
           </div>
 
-          <div className="">
+          <div className="lg:mt-[96px] mt-[40px]">
             <Footer/>
           </div>
         </div>
