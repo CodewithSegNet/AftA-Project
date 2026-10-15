@@ -244,7 +244,7 @@ Discover and build communities that speak your vibe. Connect, share, and grow wi
           variants={staggerContainer}
           initial="hidden"
           animate={section1InView ? "visible" : "hidden"}
-          className="flex flex-col lg:flex-row !lg:mt-[606px] items-center justify-center max-w-screen-2xl mx-auto mt-[110px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[170px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]"
         >
 
 
@@ -492,7 +492,7 @@ Once you're done, submit your Circle for admin approval. You'll be notified once
                 className="inset-0 flex flex-col items-center justify-center text-center p-8"
               >
 
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[110px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[170px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]">
           {/* Text content */}
           <motion.div className="lg:w-[368px]">
             <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4 text-left">
