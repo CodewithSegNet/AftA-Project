@@ -163,7 +163,7 @@ const CommunityBox = () => (
           <img src={IMG.avatar2} alt="" className="w-[1.125rem] h-[1.125rem] lg:w-[1.375rem] lg:h-[1.375rem] rounded-full border-[1.5px] border-white object-cover -mr-[0.3rem]" loading="lazy" decoding="async" />
           <img src={IMG.avatar1} alt="" className="w-[1.125rem] h-[1.125rem] lg:w-[1.375rem] lg:h-[1.375rem] rounded-full border-[1.5px] border-white object-cover -mr-[0.3rem]" loading="lazy" decoding="async" />
         </div>
-        <span className="text-[0.625rem] lg:text-[0.6875rem] text-white/90 pl-[0.45rem] leading-none">
+        <span className="text-[0.625rem] lg:text-[0.6875rem] text-white/90 lg:pl-[0.45rem] leading-none">
           4,000+ Community Members
         </span>
       </div>
