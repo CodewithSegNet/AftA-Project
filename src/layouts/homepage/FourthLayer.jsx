@@ -253,7 +253,7 @@ const FourthLayer = () => {
     </motion.section>
 
       {/* ── Courses, Tutors & Resources Showcase ── */}
-      <section className="max-w-screen-2xl mx-auto px-6 md:px-6 my-16 md:my-28 flex flex-col gap-16 md:gap-[120px] font-sans">
+      <section className="max-w-screen-2xl mx-auto px-4 md:px-6 my-16 md:my-28 flex flex-col gap-16 md:gap-[120px] font-sans">
         {/* Block 1: Choose a tutor and enroll in their course */}
         <motion.div
           variants={showcaseBlockVariants}

@@ -341,7 +341,7 @@ const SecondLayer = () => {
 
       <motion.section
         ref={ref}
-        className="max-w-[75rem] mx-auto px-4 flex flex-col gap-6 md:flex-row md:items-stretch md:gap-[40px] lg:gap-[60px]"
+        className="max-w-[75rem] mx-auto flex flex-col gap-6 md:flex-row md:items-stretch md:gap-[40px] lg:gap-[60px]"
         variants={stagger}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
