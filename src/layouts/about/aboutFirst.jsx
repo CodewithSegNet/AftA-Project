@@ -100,18 +100,18 @@ const AboutFirst = () => {
           
           {/* Video container with overlay */}
           <motion.div
-            className="relative h-[500px] md:h-[700px] lg:h-[600px] lg:w-[400px]"
+            className="relative h-[500px] w-[400px] max-w-full md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px]"
             variants={videoVariants}
           >
             <motion.div
-              className="relative"
+              className="relative w-full h-full rounded-lg overflow-hidden"
               whileHover={{ 
                 scale: 1.02,
                 transition: { duration: 0.3 }
               }}
             >
               <video 
-                className="h-[500px] w-[400px] md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px] object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
                 autoPlay
                 loop
                 muted
@@ -135,7 +135,7 @@ const AboutFirst = () => {
                 />
                 <source src={getCloudinaryUrl(videoUrl, "q_auto:best")} type="video/mp4" />
               </video>
-              <picture className="absolute top-0 left-0 h-[500px] md:h-[700px] lg:h-[600px] pt-3 md:w-[600px] lg:w-[400px] z-10 pointer-events-none">
+              <picture className="absolute inset-0 w-full h-full z-10 pointer-events-none">
                 <source
                   media="(max-width: 640px)"
                   srcSet={getCloudinaryUrl(FirstImg, "q_auto:low")}
@@ -153,7 +153,7 @@ const AboutFirst = () => {
                 />
                 <motion.img 
                   src={getCloudinaryUrl(FirstImg, "q_auto:best")} 
-                  className="h-[500px] md:h-[700px] lg:h-[600px] md:w-[600px] lg:w-[400px] rounded-lg" 
+                  className="w-full h-full object-cover rounded-lg" 
                   alt=""
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}

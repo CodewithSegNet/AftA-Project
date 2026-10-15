@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { getCloudinaryUrl } from "../../utils/cloudinary";
+import { useDownloadModal } from "../../utils/DownloadModalContext.jsx";
 
 // ─── Store button icons (inline SVG — no image dependency) ───────────────────
 const AppleIcon = () => (
@@ -19,9 +20,10 @@ const GooglePlayIcon = () => (
 );
 
 // ─── Download buttons ─────────────────────────────────────────────────────────
-const StoreButton = ({ icon, label, sub }) => (
+const StoreButton = ({ icon, label, sub, onClick }) => (
   <button
     type="button"
+    onClick={onClick}
     className="inline-flex items-center gap-[0.55rem] bg-[#111] text-white border-none rounded-[0.625rem] px-[1.1rem] py-[0.55rem] cursor-pointer text-left transition-all duration-[180ms] min-w-[8.5rem] hover:bg-[#2a2a2a] hover:-translate-y-[1px] active:translate-y-0"
   >
     <span className="flex items-center shrink-0 text-white">{icon}</span>
@@ -41,8 +43,7 @@ const CLD = "https://res.cloudinary.com/wruetqvx/image/upload";
 const IMG = {
   community   : `${CLD}/q_auto,f_auto,w_600/v1791969310/dc89b86ef6b4e12d14359db2f0b8915a68302c4a-1-1.avif`,
   learn       : `${CLD}/q_auto,f_auto,w_600/v1791969865/99c0b4dbe50fbc85ca97cf16eac48776f8e61f5e.avif`,
-  live        : `${CLD}/q_auto,f_auto,w_800/v1791969865/01fe50e66c518c480f69a4bf9dcd1f205835bd6b.avif`,
-  liveInset   : `${CLD}/q_auto,f_auto,w_200/v1791969868/Group_36994.avif`,
+  live        : `${CLD}/q_auto,f_auto,w_800/v1792065619/Group_37014_1.avif`,
   avatar      : `${CLD}/q_auto,f_auto,w_80/v1791970365/34d8c0c4ccdc7c59fc51d14f299cfc2ed9167cfe.avif`,
   avatar1     : `${CLD}/q_auto,f_auto,w_80/v1791969867/e7cb45e6bb1a0b89cd73624f2acaa97705feb9bb.avif`,
   avatar2     : `${CLD}/q_auto,f_auto,w_80/v1791969866/90740093eac87c1b4769665af589dd54207b6318.avif`,
@@ -87,34 +88,40 @@ const chatBubbleRight = {
 };
 
 // ─── TextContent ──────────────────────────────────────────────────────────────
-const TextContent = () => (
-  <div className="flex flex-col gap-4 lg:w-[368px]">
-    <h2 className="text-[32px] lg:text-[64px] font-normal leading-[100%] tracking-[0] m-0 text-[#111]">
-      Connect, Learn and Teach From Anywhere
-    </h2>
-    <p className="text-[0.9375rem] leading-[1.65] text-[#444] m-0 max-w-[32rem]">
-      Download AftA and join a growing community of African learners and tutors.
-      Enroll in courses, share resources, and earn from your knowledge — all on mobile.
-    </p>
-    <div className="flex gap-[0.625rem] flex-wrap">
-      <StoreButton
-        icon={<AppleIcon />}
-        sub="Download on the"
-        label="App Store"
-      />
-      <StoreButton
-        icon={<GooglePlayIcon />}
-        sub="Download on the"
-        label="Google Play"
-      />
+const TextContent = () => {
+  const { openModal } = useDownloadModal();
+
+  return (
+    <div className="flex flex-col gap-4 lg:w-[368px]">
+      <h2 className="text-[32px] lg:text-[64px] font-normal leading-[100%] tracking-[0] m-0 text-[#111]">
+        Connect, Learn and Teach From Anywhere
+      </h2>
+      <p className="text-[0.9375rem] leading-[1.65] text-[#444] m-0 max-w-[32rem]">
+        Download AftA and join a growing community of African learners and tutors.
+        Enroll in courses, share resources, and earn from your knowledge — all on mobile.
+      </p>
+      <div className="flex gap-[0.625rem] flex-wrap">
+        <StoreButton
+          onClick={() => openModal('iOS')}
+          icon={<AppleIcon />}
+          sub="Download on the"
+          label="App Store"
+        />
+        <StoreButton
+          onClick={() => openModal('Android')}
+          icon={<GooglePlayIcon />}
+          sub="Download on the"
+          label="Google Play"
+        />
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ─── CommunityBox ─────────────────────────────────────────────────────────────
 const CommunityBox = () => (
   <motion.div
-    className="relative rounded-[1rem] overflow-hidden flex-1 min-h-0 aspect-[3/4] md:aspect-auto"
+    className="relative rounded-[10px] overflow-hidden flex-1 md:flex-none w-full md:w-[322px] md:h-[288px] aspect-[3/4] md:aspect-auto"
     variants={scaleIn}
   >
     <picture>
@@ -136,7 +143,7 @@ const CommunityBox = () => (
       <img
         src={getCloudinaryUrl(IMG.community, "q_auto:best")}
         alt="Join Community"
-        className="absolute inset-0 w-full h-full object-cover block"
+        className="absolute inset-0 w-full h-full object-cover block rounded-[10px]"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
@@ -174,7 +181,7 @@ const CommunityBox = () => (
 // ─── LearnBox ─────────────────────────────────────────────────────────────────
 const LearnBox = () => (
   <motion.div
-    className="relative rounded-[1rem] overflow-hidden flex-1 min-h-0 aspect-[3/4] md:aspect-auto"
+    className="relative rounded-[10px] overflow-hidden flex-1 md:flex-none w-full md:w-[322px] md:h-[288px] aspect-[3/4] md:aspect-auto"
     variants={scaleIn}
   >
     <picture>
@@ -196,7 +203,7 @@ const LearnBox = () => (
       <img
         src={getCloudinaryUrl(IMG.learn, "q_auto:best")}
         alt="Learn From Anywhere"
-        className="absolute inset-0 w-full h-full object-cover block"
+        className="absolute inset-0 w-full h-full object-cover block rounded-[10px]"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
@@ -207,7 +214,7 @@ const LearnBox = () => (
       <div className="text-[clamp(0.875rem,3vw,1.25rem)] md:text-[1.125rem] lg:text-[1.375rem] font-bold text-white leading-[1.2] m-0">
         Learn From Anywhere
       </div>
-      <div className="text-[0.75rem] text-white/85 leading-[1.4] m-0">
+      <div className="text-[0.625rem] lg:text-[0.6875rem] text-white/85 leading-[1.4] m-0">
         Discover courses wherever you are.
       </div>
     </div>
@@ -217,7 +224,7 @@ const LearnBox = () => (
 // ─── LiveBox ──────────────────────────────────────────────────────────────────
 const LiveBox = () => (
   <motion.div
-    className="relative rounded-[1rem] overflow-hidden flex-1 min-h-0 w-full aspect-[9/16] md:aspect-auto"
+    className="relative rounded-[10px] overflow-hidden w-full md:w-[400px] md:h-[600px] aspect-[400/600] md:aspect-auto shrink-0"
     variants={scaleIn}
   >
     <picture>
@@ -239,90 +246,12 @@ const LiveBox = () => (
       <img
         src={getCloudinaryUrl(IMG.live, "q_auto:best")}
         alt="Live content"
-        className="absolute inset-0 w-full h-full object-cover block"
+        className="absolute inset-0 w-full h-full object-cover block rounded-[10px]"
         loading="lazy"
         decoding="async"
         fetchpriority="low"
       />
     </picture>
-    <div className="absolute inset-0 z-[1] bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
-
-    {/* LIVE badge */}
-    <div className="absolute top-[0.875rem] left-[0.875rem] z-[3] bg-[#1a6b47] text-white text-[0.625rem] font-extrabold tracking-[0.06em] px-[0.55rem] py-[0.2rem] rounded-[2rem]">
-      LIVE
-    </div>
-
-    {/* Video-in-video inset */}
-    <div className="absolute top-[0.875rem] right-[0.875rem] z-[3] w-[28%] max-w-[5.5rem] lg:max-w-[6.5rem] aspect-[3/4] rounded-[0.625rem] overflow-hidden border-2 border-white shadow-[0_4px_16px_rgba(0,0,0,0.3)]">
-      <picture>
-        <source
-          media="(max-width: 640px)"
-          srcSet={getCloudinaryUrl(IMG.liveInset, "q_auto:low")}
-          type="image/avif"
-        />
-        <source
-          media="(max-width: 1024px)"
-          srcSet={getCloudinaryUrl(IMG.liveInset, "q_auto:good")}
-          type="image/avif"
-        />
-        <source
-          media="(max-width: 1920px)"
-          srcSet={getCloudinaryUrl(IMG.liveInset, "q_auto:best")}
-          type="image/avif"
-        />
-        <img src={getCloudinaryUrl(IMG.liveInset, "q_auto:best")} alt="" className="w-full h-full object-cover block" loading="lazy" decoding="async" />
-      </picture>
-    </div>
-
-    {/* Right engagement bar */}
-    <div className="absolute right-[0.625rem] md:right-[0.75rem] bottom-[7.5rem] md:bottom-[9rem] lg:bottom-[10rem] z-[3] flex flex-col items-center gap-[0.875rem] md:gap-4" aria-label="Engagement stats">
-      <div className="flex flex-col items-center gap-[0.15rem]">
-        <div className="w-[1.875rem] h-[1.875rem] md:w-[2.125rem] md:h-[2.125rem] bg-white/20 backdrop-blur-[6px] rounded-full flex items-center justify-center text-[0.8rem] md:text-[0.875rem] text-white">
-          ♡
-        </div>
-        <span className="text-[0.5625rem] md:text-[0.625rem] text-white font-bold">11k</span>
-      </div>
-      <div className="flex flex-col items-center gap-[0.15rem]">
-        <div className="w-[1.875rem] h-[1.875rem] md:w-[2.125rem] md:h-[2.125rem] bg-white/20 backdrop-blur-[6px] rounded-full flex items-center justify-center text-[0.8rem] md:text-[0.875rem] text-white">
-          💬
-        </div>
-        <span className="text-[0.5625rem] md:text-[0.625rem] text-white font-bold">2.3k</span>
-      </div>
-      <div className="flex flex-col items-center gap-[0.15rem]">
-        <div className="w-[1.875rem] h-[1.875rem] md:w-[2.125rem] md:h-[2.125rem] bg-white/20 backdrop-blur-[6px] rounded-full flex items-center justify-center text-[0.8rem] md:text-[0.875rem] text-white">
-          ↗
-        </div>
-        <span className="text-[0.5625rem] md:text-[0.625rem] text-white font-bold">371</span>
-      </div>
-      <div className="flex flex-col items-center gap-[0.15rem]">
-        <div className="w-[1.875rem] h-[1.875rem] md:w-[2.125rem] md:h-[2.125rem] bg-white/20 backdrop-blur-[6px] rounded-full flex items-center justify-center text-[0.8rem] md:text-[0.875rem] text-white">
-          ⬇
-        </div>
-        <span className="text-[0.5625rem] md:text-[0.625rem] text-white font-bold">3.71k</span>
-      </div>
-      <div className="flex flex-col items-center gap-[0.15rem]">
-        <div className="w-[1.875rem] h-[1.875rem] md:w-[2.125rem] md:h-[2.125rem] bg-white/20 backdrop-blur-[6px] rounded-full flex items-center justify-center text-[0.8rem] md:text-[0.875rem] text-white">
-          ···
-        </div>
-      </div>
-    </div>
-
-    {/* Bottom user + caption */}
-    <div className="absolute bottom-0 left-0 right-[2.75rem] md:right-[3rem] px-[0.875rem] pb-[0.875rem] md:px-4 md:pb-[1.125rem] z-[3] flex flex-col gap-1">
-      <div className="flex items-center gap-2 mb-[0.15rem]">
-        <img src={IMG.avatar} alt="Mark Ramos" className="w-[1.875rem] h-[1.875rem] rounded-full object-cover border-[1.5px] border-white shrink-0" loading="lazy" decoding="async" />
-        <div>
-          <div className="text-[0.75rem] md:text-[0.8125rem] font-bold text-white">Mark Ramos ✓</div>
-          <div className="text-[0.625rem] text-white/80">🌐 Public</div>
-        </div>
-      </div>
-      <div className="text-[0.75rem] md:text-[0.8125rem] font-semibold text-white leading-[1.35]">Look what we found down here! 😂🤿</div>
-      <div className="text-[0.6875rem] md:text-[0.75rem] text-white/85">
-        #adventure #nature #diving{" "}
-        <span className="font-bold text-white">... more</span>
-      </div>
-      <div className="text-[0.625rem] text-white/75">🎵 Audio · Original</div>
-    </div>
   </motion.div>
 );
 
@@ -352,9 +281,9 @@ const SecondLayer = () => {
         </motion.div>
 
         {/* ── Media group ─────────────────────────────────────────────────── */}
-        <div className="flex flex-col gap-[0.625rem] md:order-1 md:flex-[2] md:flex-row md:gap-3 md:min-h-[36rem] lg:gap-4 lg:min-h-[40rem]">
+        <div className="flex flex-col gap-3 md:order-1 md:flex-row md:items-center md:gap-6">
           {/* Left col: Community (top) + Learn (bottom) */}
-          <div className="flex flex-row gap-[0.625rem] md:flex-col md:flex-1">
+          <div className="flex flex-row gap-3 md:flex-col md:w-[322px] md:gap-6">
             <CommunityBox />
             <LearnBox />
           </div>

@@ -4,7 +4,7 @@ import Footer from "../../shared/components/footer";
 import AboutFirst from "../../layouts/about/aboutFirst";
 import AboutSecond from "../../layouts/about/aboutSecond";
 import AboutThird from "../../layouts/about/aboutThird";
-import AboutSecondFaq from "../../layouts/about/aboutSecondFaq";
+import AboutSecondFaq from "../../layouts/homepage/FifthLayer";
 
 const About = () => {
   return (

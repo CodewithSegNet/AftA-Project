@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { getCloudinaryUrl } from "../../utils/cloudinary";
+import { useDownloadModal } from "../../utils/DownloadModalContext.jsx";
 
 // ─── Video sources ────────────────────────────────────────────────────────────
 // Each box has a unique video. Replace placeholder public IDs with your own.
@@ -98,61 +99,67 @@ const VideoBox = ({ src, className = "" }) => {
 };
 
 // ─── TextCard ─────────────────────────────────────────────────────────────────
-const TextCard = ({ mobile = false }) => (
-  <div
-    className={`flex flex-col ${
-      mobile ? "gap-[0.875rem]" : "gap-[1.125rem]"
-    }`}
-  >
-    <h1
-      className={`text-white m-0 tracking-[-0.02em] ${
-        mobile
-          ? "font-normal text-[32px] leading-[112%]"
-          : "font-bold text-[clamp(1.75rem,2.4vw,2.625rem)] leading-[1.15]"
-      }`}
-    >
-      Learn something new.
-      <br />
-      Share your story.
-    </h1>
+const TextCard = ({ mobile = false }) => {
+  const { openModal } = useDownloadModal();
 
-    <p
-      className={`text-white m-0 font-normal text-[16px] tracking-normal ${
-        mobile ? "leading-[25px] pb-3" : "leading-[28px]"
-      }`}
-    >
-      Discover courses from tutors you choose, share your creativity, and
-      connect through feeds and live moments. AftA brings learning and
-      entertainment into one community
-    </p>
-
+  return (
     <div
-      className={`flex gap-[0.625rem] mt-1 ${
-        mobile ? "flex-col" : "flex-row"
+      className={`flex flex-col ${
+        mobile ? "gap-[0.875rem]" : "gap-[1.125rem]"
       }`}
     >
-      {/* Primary */}
-      <button
-        type="button"
-        className={`bg-[#1a5c47] hover:bg-black text-white border-0 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
-          mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+      <h1
+        className={`text-white m-0 tracking-[-0.02em] ${
+          mobile
+            ? "font-normal text-[32px] leading-[112%]"
+            : "font-bold text-[clamp(1.75rem,2.4vw,2.625rem)] leading-[1.15]"
         }`}
       >
-        Explore Courses
-      </button>
+        Learn something new.
+        <br />
+        Share your story.
+      </h1>
 
-      {/* Secondary */}
-      <button
-        type="button"
-        className={`bg-transparent hover:border-white text-white border-[1.5px] border-white/65 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
-          mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+      <p
+        className={`text-white m-0 font-normal text-[16px] tracking-normal ${
+          mobile ? "leading-[25px] pb-3" : "leading-[28px]"
         }`}
       >
-        Become a Tutor
-      </button>
+        Discover courses from tutors you choose, share your creativity, and
+        connect through feeds and live moments. AftA brings learning and
+        entertainment into one community
+      </p>
+
+      <div
+        className={`flex gap-[0.625rem] mt-1 ${
+          mobile ? "flex-col" : "flex-row"
+        }`}
+      >
+        {/* Primary */}
+        <button
+          onClick={() => openModal()}
+          type="button"
+          className={`bg-[#1a5c47] hover:bg-black text-white border-0 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
+            mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+          }`}
+        >
+          Explore Courses
+        </button>
+
+        {/* Secondary */}
+        <button
+          onClick={() => openModal()}
+          type="button"
+          className={`bg-transparent hover:border-white text-white border-[1.5px] border-white/65 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
+            mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+          }`}
+        >
+          Become a Tutor
+        </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ─── Component ────────────────────────────────────────────────────────────────
 const FirstLayer = () => (

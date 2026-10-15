@@ -67,8 +67,6 @@ function App() {
             <Route path="/"          element={<HomePage />} />
             <Route path="/about"     element={<About />} />
             <Route path="/features"  element={<Features />} />
-            <Route path="/course"    element={<Features />} />
-            <Route path="/courses"   element={<Features />} />
             <Route path="/community" element={<Community />} />
             <Route path="/circle"    element={<Community />} />
             <Route path="/circles"   element={<Community />} />

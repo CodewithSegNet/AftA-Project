@@ -198,7 +198,7 @@ const FourthLayer = () => {
           </div>
           
           <button
-            onClick={openModal}
+            onClick={() => openModal()}
             type="button"
             className="
               group
@@ -230,7 +230,7 @@ const FourthLayer = () => {
           </div>
           <div>
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               type="button"
               className="
                 group
@@ -270,7 +270,7 @@ const FourthLayer = () => {
               Browse courses taught by tutors you choose. Enroll in the courses that interest you and learn from people who share their knowledge on AftA.
             </p>
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               type="button"
               className="mt-2 w-full md:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
             >
@@ -331,7 +331,7 @@ const FourthLayer = () => {
               Create and publish courses on subjects you know well. Set your course price and earn from enrollments. Share your knowledge with learners on AftA.
             </p>
             <button
-              onClick={openModal}
+              onClick={() => openModal()}
               type="button"
               className="mt-2 w-full md:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
             >

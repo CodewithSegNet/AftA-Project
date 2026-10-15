@@ -34,16 +34,7 @@ const FAQ = () => {
   };
 
   return (
-        <section className="max-w-screen-2xl mx-auto my-12">
-
-     <div className="max-w-[669px] md:pl-[27px] pb-[46px]">
-        <h2 className="text-[32px] text-primary md:text-[64px] pb-[8px] leading-[35px] md:leading-[70px] font-normal">
-          Frequently Asked Questions
-        </h2>
-        <p className="text-sm lg:text-base font-normal text-primary ">
-          Find quick answers to common questions about our services, features, and how to get started.
-        </p>
-        </div>
+     
 
       <div className="divide-y border-t border-b border-gray-300">
         {faqs.map(({ question, answer }, i) => (
@@ -81,7 +72,6 @@ const FAQ = () => {
           </div>
         ))}
       </div>
-      </section>
   );
 };
 

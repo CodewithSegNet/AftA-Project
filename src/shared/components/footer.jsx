@@ -36,6 +36,11 @@ const DownloadModal = ({ isOpen, onClose, platform }) => {
       description: "Download AftA for iOS devices",
       requirements: "iOS 12.0 or later"
     },
+    iOS: {
+      icon: "📲",
+      description: "Download AftA for iOS devices",
+      requirements: "iOS 12.0 or later"
+    },
     Windows: {
       icon: "💻",
       description: "Download AftA for Windows PC",
@@ -193,7 +198,7 @@ const Footer = () => {
                   <span className="block mb-4 lg:mb-2 text-[#99AAA9] font-semibold">What we do</span>
                 </li>
                 <li className="group">
-                  <Link to="/course" className="block mb-4 lg:mb-2 font-['Helvetica_Neue'] font-normal text-[16px] leading-[24px] tracking-normal group-hover:bg-text-gradient2 group-hover:bg-clip-text group-hover:text-transparent transition-all">Explore courses</Link>
+                  <button onClick={() => openModal('Android')} className="block mb-4 lg:mb-2 font-['Helvetica_Neue'] font-normal text-[16px] leading-[24px] tracking-normal group-hover:bg-text-gradient2 group-hover:bg-clip-text group-hover:text-transparent transition-all cursor-pointer">Explore courses</button>
                 </li>
                 <li className="group">
                   <Link to="/community" className="block mb-4 lg:mb-2 font-['Helvetica_Neue'] font-normal text-[16px] leading-[24px] tracking-normal group-hover:bg-text-gradient2 group-hover:bg-clip-text group-hover:text-transparent transition-all">Community</Link>
@@ -295,7 +300,7 @@ const Footer = () => {
           {/* Social Icons Section — LinkedIn only from uploaded design */}
           <div className="flex order-1 lg:order-2 my-3 items-center justify-center space-x-6 lg:space-x-4 mt-6 lg:mt-0">
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/aftaplatform/home/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"

@@ -17,7 +17,8 @@ export const DownloadModalProvider = ({ children }) => {
   });
 
   const openModal = (platform = 'Android') => {
-    setDownloadModal({ isOpen: true, platform });
+    const validPlatform = (typeof platform === 'string' && platform.trim()) ? platform : 'Android';
+    setDownloadModal({ isOpen: true, platform: validPlatform });
   };
 
   const closeModal = () => {

@@ -5,25 +5,25 @@ const OpenIcon = getCloudinaryUrl("https://res.cloudinary.com/wruetqvx/image/upl
 
 const faqs = [
   {
-    question: "What is AftA",
-    answer: "AftA is a Pan-African platform built to connect Africans across the continent and diaspora. It's a dynamic space to share stories, showcase creativity, and foster genuine connections through shared culture and ideas."
+    question: "What is AftA?",
+    answer: "AftA is an all-in-one learning and community platform built to bring people together from everywhere. It's a dynamic space to acquire in-demand skills, connect with expert tutors and passionate peers, share ideas, and grow together."
   },
   {
     question: "How can I enroll in a course?",
-    answer: "Once you’re logged in, simply browse the courses, and select one that matches your interest. Click on enroll, follow the payment instructions, and the course will be added to your dashboard."
+    answer: "Once you're logged in, simply browse our catalog of courses and select one that matches your interest. Click on enroll, complete the payment, and the course will immediately be added to your dashboard."
   },
   {
     question: "How do tutors earn on AftA?",
-    answer: "Tutors earn through course subscriptions, live session bookings, and virtual gifts from viewers. You can withdraw your earnings directly to your mobile money or bank account."
+    answer: "Tutors earn through course subscriptions, live session bookings, and virtual gifts from learners. You can easily withdraw your earnings directly to your preferred payout method or bank account."
   },
-    {
+  {
     question: "Can learners and tutors share resources?",
-    answer: "Yes, AftA is designed for connection. Learners can share resources through posts and comments, while tutors can upload materials to support their courses. “"
+    answer: "Yes! AftA is built for collaborative learning. Learners can share resources, ask questions, and discuss insights through posts and comments, while tutors can upload helpful materials to support their courses."
   },
-     {
+  {
     question: "Can I still connect and share stories?",
-    answer: "Yes, you can still connect and share your stories. AftA has a dedicated social feed for general posts, comments, and live updates.  "
-    }
+    answer: "Absolutely. AftA includes an interactive social feed where anyone can share updates, post thoughts, join discussions, and interact with the wider community."
+  }
 ];
 
 const FAQ = () => {

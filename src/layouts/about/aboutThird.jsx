@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { getCloudinaryUrl } from "../../utils/cloudinary";
+import { useDownloadModal } from "../../utils/DownloadModalContext.jsx";
 
 const Img2 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001690/afta/btnfirst.png";
 const Img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001691/afta/btnsecond.png";
@@ -8,6 +9,7 @@ const Img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001691/afta/
 const img1 = "https://res.cloudinary.com/di0r5v8hw/image/upload/v1759669368/uju1_oisqyj.png";
 
 const AboutThird = () => {
+  const { openModal } = useDownloadModal();
   const storyRef = useRef(null);
   const leadershipRef = useRef(null);
   const ctaRef = useRef(null);
@@ -221,9 +223,10 @@ const GooglePlayIcon = () => (
 );
 
 // ─── Download buttons ─────────────────────────────────────────────────────────
-const StoreButton = ({ icon, label, sub }) => (
+const StoreButton = ({ icon, label, sub, onClick }) => (
   <button
     type="button"
+    onClick={onClick}
     className="inline-flex items-center gap-[0.55rem] bg-[#111] text-white border-none rounded-[0.625rem] px-[1.1rem] py-[0.55rem] cursor-pointer text-left transition-all duration-[180ms] min-w-[8.5rem] hover:bg-[#2a2a2a] hover:-translate-y-[1px] active:translate-y-0"
   >
     <span className="flex items-center shrink-0 text-white">{icon}</span>
@@ -381,19 +384,18 @@ AftA is more than an app, it is a movement. It is where your voice matters, your
             variants={ctaButtonsVariants}
           >
             <div className="flex  gap-4">
-          
-                  <StoreButton
-        icon={<AppleIcon />}
-        sub="Download on the"
-        label="App Store"
-      />
-      <StoreButton
-        icon={<GooglePlayIcon />}
-        sub="Download on the"
-        label="Google Play"
-      />
-
-        
+              <StoreButton
+                onClick={() => openModal('iOS')}
+                icon={<AppleIcon />}
+                sub="Download on the"
+                label="App Store"
+              />
+              <StoreButton
+                onClick={() => openModal('Android')}
+                icon={<GooglePlayIcon />}
+                sub="Download on the"
+                label="Google Play"
+              />
             </div>
           </motion.div>
         </motion.div>

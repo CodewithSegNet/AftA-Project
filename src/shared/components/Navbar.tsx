@@ -125,7 +125,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/course"
+              to="/features"
               className={({ isActive }) =>
                 `group text-primary text-base font-normal transition-all duration-100 ${
                   isActive ? "bg-text-gradient bg-clip-text text-transparent" : ""
@@ -133,22 +133,19 @@ const Navbar = () => {
               }
             >
               <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                Course
+                Features
               </span>
             </NavLink>
 
-            <NavLink
-              to="/circle"
-              className={({ isActive }) =>
-                `group text-primary text-base font-normal transition-all duration-100 ${
-                  isActive ? "bg-text-gradient bg-clip-text text-transparent" : ""
-                }`
-              }
+            <button
+              onClick={() => openModal()}
+              type="button"
+              className="group text-primary text-base font-normal transition-all duration-100 cursor-pointer"
             >
               <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                Circle
+                Explore Courses
               </span>
-            </NavLink>
+            </button>
 
             <button
               onClick={() => openModal()}
@@ -236,7 +233,7 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/course"
+              to="/features"
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
@@ -247,25 +244,22 @@ const Navbar = () => {
               }
             >
               <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                Course
+                Features
               </span>
             </NavLink>
 
-            <NavLink
-              to="/circle"
-              onClick={() => setMenuOpen(false)}
-              className={({ isActive }) =>
-                `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
-                  isActive
-                    ? "border-primary !text-primary bg-text-gradient bg-clip-text text-transparent"
-                    : ""
-                }`
-              }
+            <button
+              onClick={() => {
+                openModal();
+                setMenuOpen(false);
+              }}
+              type="button"
+              className="group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary cursor-pointer"
             >
               <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
-                Circle
+                Explore Courses
               </span>
-            </NavLink>
+            </button>
 
             <button
               onClick={() => {

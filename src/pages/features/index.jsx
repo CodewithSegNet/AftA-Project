@@ -13,7 +13,7 @@ import FeatureNine from "../../layouts/features/featureNine";
 import FeatureTen from "../../layouts/features/featureTen";
 import FeatureEleven from "../../layouts/features/featureEleven";
 import FeatureTwelve from "../../layouts/features/featureTwelve";
-import FeatureFaq from "../../layouts/features/featureFaq";
+import FeatureFaq from "../../layouts/homepage/FifthLayer";
 
 const Features = () => {
   return (
