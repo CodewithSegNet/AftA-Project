@@ -117,7 +117,7 @@ const TextCard = ({ mobile = false }) => (
     </h1>
 
     <p
-      className={`text-white/[0.83] m-0 font-normal text-[16px] tracking-normal ${
+      className={`text-white m-0 font-normal text-[16px] tracking-normal ${
         mobile ? "leading-[25px] pb-3" : "leading-[28px]"
       }`}
     >
