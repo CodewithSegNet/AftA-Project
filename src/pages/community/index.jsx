@@ -2,7 +2,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Navbar from "../../shared/components/Navbar";
 import Footer from "../../shared/components/footer";
 import CommunityFirst from "../../layouts/community/communityFirst";
-import FifthLayer from "../../layouts/homepage/FifthLayer";
+import FifthLayer from "../../layouts/features/featureFaq";
 
 const Community = () => {
   return (
@@ -95,7 +95,7 @@ const Community = () => {
             <FifthLayer/>
           </div>
 
-          <div className="">
+          <div className="lg:mt-[96px] mt-[40px]">
             <Footer/>
           </div>
         </div>
