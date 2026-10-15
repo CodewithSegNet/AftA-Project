@@ -48,13 +48,15 @@ const FeatureFirst = () => {
     }
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   return (
-    <section className="max-w-screen-2xl mx-auto lg:my-12" ref={ref}>
+    <section className="overflow-x-clip overflow-hidden w-full max-w-screen-2xl mx-auto lg:my-12" ref={ref}>
       <div className="flex flex-col lg:flex-row items-center justify-center"> 
         <motion.div 
           className="flex w-[350px] lg:w-[742.17px] items-center justify-center relative h-[700px] overflow-hidden"
-          initial={{ x: -100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+          initial={{ x: isMobile ? 0 : -100, y: isMobile ? 30 : 0, opacity: 0 }}
+          animate={isInView ? { x: 0, y: 0, opacity: 1 } : { x: isMobile ? 0 : -100, y: isMobile ? 30 : 0, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {images.map((image, index) => (
@@ -82,8 +84,8 @@ const FeatureFirst = () => {
 
         <motion.div 
           className="lg:w-[368px]"
-          initial={{ x: 100, opacity: 0 }}
-          animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+          initial={{ x: isMobile ? 0 : 100, y: isMobile ? 30 : 0, opacity: 0 }}
+          animate={isInView ? { x: 0, y: 0, opacity: 1 } : { x: isMobile ? 0 : 100, y: isMobile ? 30 : 0, opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         > 
           <motion.h1 

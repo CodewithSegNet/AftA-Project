@@ -9,16 +9,17 @@ const img1 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001791/afta/
 const FeatureNine = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
   return (
-    <motion.section ref={ref}>
+    <motion.section ref={ref} className="overflow-x-clip overflow-hidden w-full">
 
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
 
     <motion.div 
       className="relative order-2 lg:order-1"
-      initial={{ opacity: 0, x: -50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+      initial={{ opacity: 0, x: isMobile ? 0 : -50, y: isMobile ? 30 : 0 }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: isMobile ? 0 : -50, y: isMobile ? 30 : 0 }}
       transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
     >
         <picture>
@@ -43,8 +44,8 @@ const FeatureNine = () => {
       {/* Text content */}
       <motion.div 
         className="lg:w-[368px] order-1 lg:order-2"
-        initial={{ opacity: 0, x: 50 }}
-        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+        initial={{ opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 30 : 0 }}
+        animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 30 : 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1 

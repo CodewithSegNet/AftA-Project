@@ -36,15 +36,19 @@ const AboutSecond = () => {
     }
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   const titleVariants = {
     hidden: { 
       opacity: 0, 
-      x: -50,
+      x: isMobile ? 0 : -50,
+      y: isMobile ? 20 : 0,
       scale: 0.9
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
       transition: {
         duration: 0.7,
@@ -85,13 +89,15 @@ const AboutSecond = () => {
   const imageVariants = {
     hidden: { 
       opacity: 0, 
-      x: -80,
+      x: isMobile ? 0 : -80,
+      y: isMobile ? 30 : 0,
       scale: 0.8,
-      rotate: -5
+      rotate: isMobile ? 0 : -5
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
       rotate: 0,
       transition: {
@@ -104,8 +110,8 @@ const AboutSecond = () => {
   const faqVariants = {
     hidden: { 
       opacity: 0, 
-      x: 80,
-      y: 50
+      x: isMobile ? 0 : 80, 
+      y: isMobile ? 30 : 50
     },
     visible: {
       opacity: 1,
@@ -130,7 +136,7 @@ const AboutSecond = () => {
 
   return (
     <>
-      <section>
+      <section className="overflow-x-clip overflow-hidden w-full">
         <motion.div 
           ref={ref}
           className="max-w-screen-2xl mx-auto lg:mt-[96px]"

@@ -13,17 +13,18 @@ const FeatureEigth = () => {
       threshold: 0.3,
       margin: "-100px"
     });
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
   
   return (
-    <motion.section ref={ref}>
+    <motion.section ref={ref} className="overflow-x-clip overflow-hidden w-full">
 
         <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
 
       {/* Text content */}
       <motion.div 
         className="lg:w-[368px]"
-        initial={{ x: -100, opacity: 0 }}
-        animate={isInView ? { x: 0, opacity: 1 } : {}}
+        initial={{ x: isMobile ? 0 : -100, y: isMobile ? 30 : 0, opacity: 0 }}
+        animate={isInView ? { x: 0, y: 0, opacity: 1 } : { x: isMobile ? 0 : -100, y: isMobile ? 30 : 0, opacity: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4">
@@ -37,8 +38,8 @@ Circles that Get You
 
       <motion.div 
         className="relative"
-        initial={{ x: 100, opacity: 0 }}
-        animate={isInView ? { x: 0, opacity: 1 } : {}}
+        initial={{ x: isMobile ? 0 : 100, y: isMobile ? 30 : 0, opacity: 0 }}
+        animate={isInView ? { x: 0, y: 0, opacity: 1 } : { x: isMobile ? 0 : 100, y: isMobile ? 30 : 0, opacity: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <picture>

@@ -137,6 +137,19 @@ const Navbar = () => {
               </span>
             </NavLink>
 
+            <NavLink
+              to="/circle"
+              className={({ isActive }) =>
+                `group text-primary text-base font-normal transition-all duration-100 ${
+                  isActive ? "bg-text-gradient bg-clip-text text-transparent" : ""
+                }`
+              }
+            >
+              <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                Circle
+              </span>
+            </NavLink>
+
             <button
               onClick={() => openModal()}
               type="button"
@@ -223,7 +236,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
-                  isActive ? 'border-primary !text-primary bg-text-gradient bg-clip-text text-transparent' : ''
+                  isActive ? 'border-primary !text-primary' : ''
                 }`
               }
             >
@@ -237,14 +250,26 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
                 `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
-                  isActive
-                    ? "border-primary !text-primary bg-text-gradient bg-clip-text text-transparent"
-                    : ""
+                  isActive ? "border-primary !text-primary" : ""
                 }`
               }
             >
               <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                 Features
+              </span>
+            </NavLink>
+
+            <NavLink
+              to="/circle"
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                `group text-primary text-base font-normal transition-all duration-100 py-[12px] px-[40px] leading-[24px] border-2 border-white bg-white rounded-[90px] text-[12px] hover:border-primary z-[70] hover:!text-primary ${
+                  isActive ? "border-primary !text-primary" : ""
+                }`
+              }
+            >
+              <span className="group-hover:bg-text-gradient group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                Circle
               </span>
             </NavLink>
 

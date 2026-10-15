@@ -21,15 +21,19 @@ const AboutFirst = () => {
     }
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   const videoVariants = {
     hidden: { 
       opacity: 0, 
-      x: -100, 
-      scale: 0.8 
+      x: isMobile ? 0 : -100,
+      y: isMobile ? 30 : 0, 
+      scale: isMobile ? 0.95 : 0.8 
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
       transition: {
         duration: 0.8,
@@ -41,8 +45,8 @@ const AboutFirst = () => {
   const textVariants = {
     hidden: { 
       opacity: 0, 
-      x: 100, 
-      y: 50 
+      x: isMobile ? 0 : 100, 
+      y: isMobile ? 30 : 50 
     },
     visible: {
       opacity: 1,
@@ -89,7 +93,7 @@ const AboutFirst = () => {
 
   return (
     <>
-      <section>
+      <section className="overflow-x-clip overflow-hidden w-full">
         <motion.div 
           ref={ref}
           className="flex lg:flex-row flex-col max-w-screen-2xl mx-auto items-center justify-center gap-[2rem] lg:gap-[4rem]"
@@ -100,7 +104,7 @@ const AboutFirst = () => {
           
           {/* Video container with overlay */}
           <motion.div
-            className="relative h-[500px] w-[400px] max-w-full md:h-[700px] md:w-[580px] lg:h-[600px] lg:w-[400px]"
+            className="relative h-[520px] w-[400px] max-w-full md:h-[850px] md:w-[580px] lg:h-[600px] lg:w-[400px]"
             variants={videoVariants}
           >
             <motion.div

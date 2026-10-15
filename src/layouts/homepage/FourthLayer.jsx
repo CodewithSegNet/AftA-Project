@@ -89,7 +89,7 @@ const FourthLayer = () => {
       </div>
 
 
-      <div className="flex flex-col md:flex-row justify-center gap-8 overflow-hidden px-4 md:px-0 relative">
+      <div className="flex flex-col lg:flex-row justify-center gap-8 overflow-hidden px-4 md:px-0 relative">
         {/* Left Thumbnail and Arrows (Desktop) */}
         <div className="hidden lg:flex flex-col h-auto justify-between items-center">
           <div className="mb-4">
@@ -128,9 +128,9 @@ const FourthLayer = () => {
         </div>
 
         {/* Main Slide */}
-        <div className="bg-[#d7e2c4] w-full max-w-[802px] h-auto md:h-[382px] flex flex-col md:flex-row items-center md:items-end justify-between rounded-[12.41px] overflow-hidden relative">
-          <div className="flex-1 max-w-[669px] pl-[15px] md:pl-[27px] pb-[46px]">
-            <h2 className="text-[42px] pt-[58px] md:pt-0 text-primary md:text-[54px] pb-[8px] leading-[50px] md:leading-[70px] font-normal">
+        <div className="bg-[#d7e2c4] w-full max-w-[802px] h-auto lg:h-[382px] flex flex-col lg:flex-row items-center lg:items-end justify-between rounded-[12.41px] overflow-hidden relative">
+          <div className="flex-1 max-w-[669px] pl-[15px] lg:pl-[27px] pb-[46px]">
+            <h2 className="text-[42px] pt-[58px] lg:pt-0 text-primary md:text-[54px] pb-[8px] leading-[50px] lg:leading-[70px] font-normal">
               Download The AftA App
             </h2>
           </div>
@@ -173,7 +173,7 @@ const FourthLayer = () => {
           </div>
 
           {/* Dots — displayed on top-left of the main slide on ALL screen sizes */}
-          <div className="absolute flex top-6 left-6 md:top-10 md:left-10 gap-2 z-20">
+          <div className="absolute flex top-6 left-6 lg:top-10 lg:left-10 gap-2 z-20">
             {images.map((_, index) => (
               <div
                 key={index}
@@ -272,7 +272,7 @@ const FourthLayer = () => {
             <button
               onClick={() => openModal()}
               type="button"
-              className="mt-2 w-full md:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
+              className="mt-2 w-full md:w-full lg:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
             >
               Browse Courses
             </button>
@@ -333,7 +333,7 @@ const FourthLayer = () => {
             <button
               onClick={() => openModal()}
               type="button"
-              className="mt-2 w-full md:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
+              className="mt-2 w-full md:w-full lg:w-auto self-center lg:self-start inline-flex items-center justify-center bg-[#0f4738] hover:bg-black text-white text-[15px] font-medium py-3.5 md:px-24 rounded-full transition-all duration-200 shadow-sm hover:shadow"
             >
               Become a Tutor
             </button>

@@ -53,11 +53,13 @@ const CircleFirst = () => {
         }
       };
 
+      const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
       const fadeInLeft = {
-        hidden: { opacity: 0, x: -60 },
+        hidden: { opacity: 0, x: isMobile ? 0 : -50, y: isMobile ? 30 : 0 },
         visible: { 
           opacity: 1, 
           x: 0,
+          y: 0,
           transition: { 
             duration: 0.8, 
             ease: [0.25, 0.46, 0.45, 0.94] 
@@ -66,10 +68,11 @@ const CircleFirst = () => {
       };
 
       const fadeInRight = {
-        hidden: { opacity: 0, x: 60 },
+        hidden: { opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 30 : 0 },
         visible: { 
           opacity: 1, 
           x: 0,
+          y: 0,
           transition: { 
             duration: 0.8, 
             ease: [0.25, 0.46, 0.45, 0.94] 
@@ -89,135 +92,128 @@ const CircleFirst = () => {
       };
   
   return (
-    <motion.section>
+    <motion.section className="overflow-x-clip overflow-hidden w-full relative">
 
 
 
 
 
-        <div className="mb-[100px]">
+        {/* ── Hero Banner Section ── */}
+        <div className="relative w-full max-w-screen-2xl mx-auto overflow-hidden">
+          <picture>
+            <source
+              media="(max-width: 640px)"
+              srcSet={getCloudinaryUrl(Img2, "q_auto:low")}
+              type="image/avif"
+            />
+            <source
+              media="(max-width: 1024px)"
+              srcSet={getCloudinaryUrl(Img2, "q_auto:good")}
+              type="image/avif"
+            />
+            <source
+              media="(max-width: 1920px)"
+              srcSet={getCloudinaryUrl(Img2, "q_auto:best")}
+              type="image/avif"
+            />
+            <img 
+              src={getCloudinaryUrl(Img2, "q_auto:best")} 
+              className="w-full h-auto object-cover mt-[130px] md:mt-[200px] min-h-[240px] sm:min-h-[300px] md:min-h-0 block" 
+              alt="Build Your Tribe" 
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
 
-
-
-
-<div className="relative">
-  <picture>
-    <source
-      media="(max-width: 640px)"
-      srcSet={getCloudinaryUrl(Img2, "q_auto:low")}
-      type="image/avif"
-    />
-    <source
-      media="(max-width: 1024px)"
-      srcSet={getCloudinaryUrl(Img2, "q_auto:good")}
-      type="image/avif"
-    />
-    <source
-      media="(max-width: 1920px)"
-      srcSet={getCloudinaryUrl(Img2, "q_auto:best")}
-      type="image/avif"
-    />
-    <img 
-      src={getCloudinaryUrl(Img2, "q_auto:best")} 
-      className="relative mt-[7rem] lg:mt-0" 
-      alt="" 
-      loading="lazy"
-      decoding="async"
-    />
-  </picture>
-</div>
-
-
-
-
-<motion.div 
-  ref={tabSwitcherRef}
-  variants={staggerContainer}
-  initial="hidden"
-  animate={tabSwitcherInView ? "visible" : "hidden"}
-  className="absolute top-[30rem] lg:top-[50rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center text-center"
->
-
+          {/* Centered headline framed within the curved banner */}
+          <div className="absolute inset-x-0 top-[10%] sm:top-[12%] md:top-[14%] lg:top-[16%] flex flex-col items-center justify-center text-center px-4">
             <motion.div 
-              variants={fadeInUp}
-              className="flex flex-col items-center justify-center text-center mb-[50px] lg:mb-[76px]"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-[280px] sm:max-w-[340px] md:max-w-[420px] lg:max-w-[500px] text-center"
             >
-
-                <h1 className="text-[32px] md:text-3xl text-black mb-3">Let's Show You How</h1>
-                <p className="text-sm text-black">Follow the steps below to join or create your own Circle on AftA.</p>
+              <h1 className="text-[26px] sm:text-[34px] md:text-[44px] lg:text-[50px] leading-[1.15] font-normal mb-2 lg:mb-3 text-primary tracking-tight">
+                Build Your Tribe <br /> Find Your Voice
+              </h1>
+              <p className="text-xs sm:text-sm font-normal text-gray-700 leading-relaxed max-w-[260px] sm:max-w-[320px] md:max-w-[380px] mx-auto">
+                Discover and build communities that speak your vibe. Connect, share, and grow with your people—right on AftA.
+              </p>
             </motion.div>
-
-<motion.div 
-  variants={fadeInUp}
-  className="flex lg:p-4 items-center bg-[rgba(0,17,23,1)] rounded-full px-8 py-2 w-fit"
->
-    <img src={getCloudinaryUrl(img3, "q_auto:best")} className="h-8 w-8 lg:h-11 lg:w-11 mr-4" alt="" loading="lazy" />
-
-    <div className="flex  gap-3 items-center w-fit relative">
-        {/* Active tab indicator */}
-        <motion.div
-          className="absolute bg-[rgba(255,180,27,0.2)] rounded-full"
-          initial={false}
-          animate={{
-            x: activeTab === "Create Circle" 
-              ? 0 
-              : (document.querySelector('.tab-btn-1')?.offsetWidth || 0) + 8,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 30
-          }}
-          style={{ 
-            zIndex: 0,
-            top: 0,
-            bottom: 0,
-            left: 0,
-            width: activeTab === "Create Circle" 
-              ? document.querySelector('.tab-btn-1')?.offsetWidth + 'px'
-              : document.querySelector('.tab-btn-2')?.offsetWidth + 'px'
-          }}
-        />
-        
-        <button 
-          className={`tab-btn-1 ${activeTab === "Create Circle" 
-            ? "text-[rgba(255,180,27,1)] font-semibold" 
-            : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)]`}
-          onClick={() => setActiveTab("Create Circle")}
-        >
-          Create Circle
-        </button>
-        <button 
-          className={`tab-btn-2 ${activeTab === "Join Circle" 
-            ? "text-[rgba(255,180,27,1)] font-semibold" 
-            : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs pl-[6px] lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)]`}
-          onClick={() => setActiveTab("Join Circle")}
-        >
-          Join Circle
-        </button>
-    </div>
-</motion.div>
-</motion.div>
-
-
-<div className="absolute  top-[11rem] lg:top-[13rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-center">
-      <motion.div 
-        initial="hidden"
-        className="w-[240px] lg:w-[378px] text-center lg:text-left"
-      >
-        <motion.h1 
-          className="text-[32px] md:text-[50px] leading-[35px] lg:leading-[55px] font-normal mb-2 lg:mb-4"
-        >
-Build Your Tribe <br /> Find Your Voice
-        </motion.h1>
-
-        <motion.p 
-          className="text-sm font-normal text-gray-700"
-        >
-Discover and build communities that speak your vibe. Connect, share, and grow with your people—right on AftA. </motion.p>
-      </motion.div>
-</div>
+          </div>
         </div>
+
+        {/* ── Tab Switcher Section (Flows naturally below the banner) ── */}
+        <motion.div 
+          ref={tabSwitcherRef}
+          variants={staggerContainer}
+          initial="hidden"
+          animate={tabSwitcherInView ? "visible" : "hidden"}
+          className="relative flex flex-col items-center justify-center text-center mt-[-2px] sm:mt-10 md:mt-[-1.5px] lg:mt-[-1px] px-4"
+        >
+          <motion.div 
+            variants={fadeInUp}
+            className="flex flex-col items-center justify-center text-center mb-6 lg:mb-8"
+          >
+            <h2 className="text-[28px] sm:text-[32px] md:text-[36px] text-black mb-2 font-normal">
+              Let's Show You How
+            </h2>
+            <p className="text-xs sm:text-sm text-black">
+              Follow the steps below to join or create your own Circle on AftA.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            variants={fadeInUp}
+            className="flex lg:p-4 items-center bg-[rgba(0,17,23,1)] rounded-full px-6 sm:px-8 py-2 w-fit shadow-md"
+          >
+            <img src={getCloudinaryUrl(img3, "q_auto:best")} className="h-8 w-8 lg:h-11 lg:w-11 mr-4" alt="" loading="lazy" />
+
+            <div className="flex gap-3 items-center w-fit relative">
+              {/* Active tab indicator */}
+              <motion.div
+                className="absolute bg-[rgba(255,180,27,0.2)] rounded-full"
+                initial={false}
+                animate={{
+                  x: activeTab === "Create Circle" 
+                    ? 0 
+                    : (document.querySelector('.tab-btn-1')?.offsetWidth || 0) + 8,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30
+                }}
+                style={{ 
+                  zIndex: 0,
+                  top: 0,
+                  bottom: 0,
+                  left: 0,
+                  width: activeTab === "Create Circle" 
+                    ? document.querySelector('.tab-btn-1')?.offsetWidth + 'px'
+                    : document.querySelector('.tab-btn-2')?.offsetWidth + 'px'
+                }}
+              />
+              
+              <button 
+                className={`tab-btn-1 ${activeTab === "Create Circle" 
+                  ? "text-[rgba(255,180,27,1)] font-semibold" 
+                  : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs lg:text-base duration-300 font-semibold w-fit relative z-10 hover:text-[rgba(255,180,27,1)] cursor-pointer`}
+                onClick={() => setActiveTab("Create Circle")}
+              >
+                Create Circle
+              </button>
+              <button 
+                className={`tab-btn-2 ${activeTab === "Join Circle" 
+                  ? "text-[rgba(255,180,27,1)] font-semibold" 
+                  : "text-[rgba(255,255,255,1)]"} px-4 py-2 rounded-full transition-all whitespace-nowrap text-xs pl-[6px] lg:text-base font-semibold duration-300 w-fit relative z-10 hover:text-[rgba(255,180,27,1)] cursor-pointer`}
+                onClick={() => setActiveTab("Join Circle")}
+              >
+                Join Circle
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
 
         {/* Content sections with animations */}
         <div className="">
@@ -244,7 +240,7 @@ Discover and build communities that speak your vibe. Connect, share, and grow wi
           variants={staggerContainer}
           initial="hidden"
           animate={section1InView ? "visible" : "hidden"}
-          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[170px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]"
+          className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-10 sm:mt-14 lg:mt-20 mb-[30px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]"
         >
 
 
@@ -492,7 +488,7 @@ Once you're done, submit your Circle for admin approval. You'll be notified once
                 className="inset-0 flex flex-col items-center justify-center text-center p-8"
               >
 
-        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-[170px] mb-[30px] lg:mt-[300px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]">
+        <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto mt-10 sm:mt-14 lg:mt-20 mb-[30px] lg:mb-[130px] gap-[2rem] lg:gap-[4rem]">
           {/* Text content */}
           <motion.div className="lg:w-[368px]">
             <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4 text-left">

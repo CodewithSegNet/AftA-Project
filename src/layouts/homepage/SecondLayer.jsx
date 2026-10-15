@@ -121,7 +121,7 @@ const TextContent = () => {
 // ─── CommunityBox ─────────────────────────────────────────────────────────────
 const CommunityBox = () => (
   <motion.div
-    className="relative rounded-[10px] overflow-hidden flex-1 md:flex-none w-full md:w-[322px] md:h-[288px] aspect-[3/4] md:aspect-auto"
+    className="relative rounded-[10px] overflow-hidden flex-1 lg:flex-none w-full lg:w-[322px] lg:h-[288px] aspect-[3/4] lg:aspect-auto"
     variants={scaleIn}
   >
     <picture>
@@ -181,7 +181,7 @@ const CommunityBox = () => (
 // ─── LearnBox ─────────────────────────────────────────────────────────────────
 const LearnBox = () => (
   <motion.div
-    className="relative rounded-[10px] overflow-hidden flex-1 md:flex-none w-full md:w-[322px] md:h-[288px] aspect-[3/4] md:aspect-auto"
+    className="relative rounded-[10px] overflow-hidden flex-1 lg:flex-none w-full lg:w-[322px] lg:h-[288px] aspect-[3/4] lg:aspect-auto"
     variants={scaleIn}
   >
     <picture>
@@ -224,7 +224,7 @@ const LearnBox = () => (
 // ─── LiveBox ──────────────────────────────────────────────────────────────────
 const LiveBox = () => (
   <motion.div
-    className="relative rounded-[10px] overflow-hidden w-full md:w-[400px] md:h-[600px] aspect-[400/600] md:aspect-auto shrink-0"
+    className="relative rounded-[10px] overflow-hidden w-full lg:w-[400px] lg:h-[600px] aspect-[400/600] lg:aspect-auto shrink-0"
     variants={scaleIn}
   >
     <picture>
@@ -270,31 +270,31 @@ const SecondLayer = () => {
 
       <motion.section
         ref={ref}
-        className="max-w-[75rem] mx-auto flex flex-col gap-6 md:flex-row md:items-stretch md:gap-[40px] lg:gap-[60px]"
+        className="max-w-[75rem] mx-auto flex flex-col gap-6 lg:flex-row lg:items-stretch lg:gap-[40px] xl:gap-[60px]"
         variants={stagger}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        {/* ── Text block (mobile: top; desktop: right col via flex order) ── */}
-        <motion.div className="md:order-3 md:flex-[1.15] md:flex md:items-center" variants={fadeUp}>
+        {/* ── Text block (mobile & tab: top; desktop: right col via flex order) ── */}
+        <motion.div className="lg:order-3 lg:flex-[1.15] lg:flex lg:items-center" variants={fadeUp}>
           <TextContent />
         </motion.div>
 
         {/* ── Media group ─────────────────────────────────────────────────── */}
-        <div className="flex flex-col gap-3 md:order-1 md:flex-row md:items-center md:gap-6">
+        <div className="flex flex-col gap-3 lg:order-1 lg:flex-row lg:items-center lg:gap-6">
           {/* Left col: Community (top) + Learn (bottom) */}
-          <div className="flex flex-row gap-3 md:flex-col md:w-[322px] md:gap-6">
+          <div className="flex flex-row gap-3 lg:flex-col lg:w-[322px] lg:gap-6">
             <CommunityBox />
             <LearnBox />
           </div>
 
-          {/* Live box — full-width on mobile, right col on desktop */}
+          {/* Live box — full-width on mobile & tab, right col on desktop */}
           <LiveBox />
         </div>
       </motion.section>
 
-      {/* ── Community Discussion Preview (Mobile Chat / Desktop Image) ── */}
-      <div className="w-full max-w-[75rem] mx-auto py-8 md:pt-[144px] pb-[48px] md:pb-[120px]">
+      {/* ── Community Discussion Preview (Mobile Chat / Tab & Desktop Image) ── */}
+      <div className="w-full max-w-[75rem] mx-auto py-8 md:pt-[72px] lg:pt-[144px] pb-[48px] lg:pb-[120px]">
         {/* Mobile View: Chat Bubbles */}
         <div className="block md:hidden">
           <motion.div
@@ -362,7 +362,7 @@ const SecondLayer = () => {
           </motion.div>
         </div>
 
-        {/* Desktop View: Cloudinary File */}
+        {/* Tab & Desktop View: Cloudinary File */}
         <motion.div
           className="hidden md:flex justify-center items-center"
           initial={{ opacity: 0, y: 32, scale: 0.98 }}

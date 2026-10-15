@@ -132,7 +132,7 @@ const TextCard = ({ mobile = false }) => {
 
       <div
         className={`flex gap-[0.625rem] mt-1 ${
-          mobile ? "flex-col" : "flex-row"
+          mobile ? "flex-col sm:flex-row" : "flex-row"
         }`}
       >
         {/* Primary */}
@@ -140,7 +140,7 @@ const TextCard = ({ mobile = false }) => {
           onClick={() => openModal()}
           type="button"
           className={`bg-[#1a5c47] hover:bg-black text-white border-0 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
-            mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+            mobile ? "w-full sm:w-auto py-4 sm:py-4 px-6" : "w-auto py-4 px-6"
           }`}
         >
           Explore Courses
@@ -151,7 +151,7 @@ const TextCard = ({ mobile = false }) => {
           onClick={() => openModal()}
           type="button"
           className={`bg-transparent hover:border-white text-white border-[1.5px] border-white/65 rounded-[3.125rem] text-[0.875rem] font-semibold cursor-pointer tracking-[0.01em] transition-colors duration-200 ${
-            mobile ? "w-full py-5 px-0" : "w-auto py-4 px-6"
+            mobile ? "w-full sm:w-auto py-4 sm:py-4 px-6" : "w-auto py-4 px-6"
           }`}
         >
           Become a Tutor
@@ -164,9 +164,9 @@ const TextCard = ({ mobile = false }) => {
 // ─── Component ────────────────────────────────────────────────────────────────
 const FirstLayer = () => (
   <>
-    {/* ════════════════ DESKTOP (≥ 768px) ════════════════ */}
+    {/* ════════════════ DESKTOP (≥ 1024px) ════════════════ */}
     <motion.div
-      className="hidden md:block max-w-[75rem] mx-auto py-6 px-6 font-sans"
+      className="hidden lg:block max-w-[75rem] mx-auto py-6 px-6 font-sans"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -192,9 +192,9 @@ const FirstLayer = () => (
       </div>
     </motion.div>
 
-    {/* ════════════════ MOBILE (< 768px) ════════════════ */}
+    {/* ════════════════ MOBILE & TAB (< 1024px) ════════════════ */}
     <motion.div
-      className="flex flex-col gap-4 max-w-[75rem] mx-auto md:hidden font-sans"
+      className="flex flex-col gap-4 max-w-[75rem] mx-auto lg:hidden font-sans"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

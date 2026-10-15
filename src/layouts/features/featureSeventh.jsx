@@ -9,9 +9,10 @@ const img3 = "https://res.cloudinary.com/wruetqvx/image/upload/v1792001785/afta/
 const FeatureSixth = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.3 });
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
   return (
-    <motion.section ref={ref}>
+    <motion.section ref={ref} className="overflow-x-clip overflow-hidden w-full">
       <div className="flex flex-col lg:flex-row items-center justify-center max-w-screen-2xl mx-auto  my-[40px] lg:my-[96px] gap-[2rem] lg:gap-[4rem]">
         
         <motion.div className="order-2 lg:order-1 relative">
@@ -37,7 +38,7 @@ const FeatureSixth = () => {
             src={img2} 
             className="absolute lg:left-[-220px] top-[26rem] lg:top-[18rem]" 
             alt="" 
-            initial={{ opacity: 0, scale: 0.8, rotate: -10, x: -100 }}
+            initial={{ opacity: 0, scale: 0.8, rotate: -10, x: isMobile ? 0 : -100 }}
             animate={isInView ? { 
               opacity: 1, 
               scale: 1, 
@@ -48,7 +49,7 @@ const FeatureSixth = () => {
               opacity: 0, 
               scale: 0.8, 
               rotate: -10, 
-              x: -100 
+              x: isMobile ? 0 : -100 
             }}
             transition={{ 
               opacity: { duration: 0.8, delay: 0.3, ease: "easeOut" },
@@ -69,7 +70,7 @@ const FeatureSixth = () => {
             src={img3} 
             className="absolute lg:right-[-240px] top-[30rem] lg:top-[10rem]" 
             alt="" 
-            initial={{ opacity: 0, scale: 0.8, rotate: 10, x: 100 }}
+            initial={{ opacity: 0, scale: 0.8, rotate: 10, x: isMobile ? 0 : 100 }}
             animate={isInView ? { 
               opacity: 1, 
               scale: 1, 
@@ -80,7 +81,7 @@ const FeatureSixth = () => {
               opacity: 0, 
               scale: 0.8, 
               rotate: 10, 
-              x: 100 
+              x: isMobile ? 0 : 100 
             }}
             transition={{ 
               opacity: { duration: 0.8, delay: 0.5, ease: "easeOut" },
@@ -100,8 +101,8 @@ const FeatureSixth = () => {
         {/* Text content */}
         <motion.div 
           className="lg:w-[368px] order-1 lg:order-2"
-          initial={{ opacity: 0, x: 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 30 : 0 }}
+          animate={isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0, x: isMobile ? 0 : 50, y: isMobile ? 30 : 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <motion.h1 className="text-[32px] md:text-[64px] leading-[100%] tracking-0 font-normal mb-4">

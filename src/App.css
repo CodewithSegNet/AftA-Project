@@ -7,13 +7,14 @@ body{
 html, body{
   min-width: 230px;
   margin: 0 auto;
-    overflow-x: hidden;
-
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 
 body {
   overflow-x: hidden;
+  overflow-x: clip;
   min-width: 230px;
   background-color: #FFF7E6;
 }

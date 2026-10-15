@@ -71,11 +71,13 @@ show: { opacity: 1, y: 0 },
     }
   };
 
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   const leadershipTextVariants = {
     hidden: { 
       opacity: 0, 
-      x: -100,
-      y: 50
+      x: isMobile ? 0 : -100,
+      y: isMobile ? 30 : 50
     },
     visible: {
       opacity: 1,
@@ -91,13 +93,15 @@ show: { opacity: 1, y: 0 },
   const leadershipImageVariants = {
     hidden: { 
       opacity: 0, 
-      x: 100,
+      x: isMobile ? 0 : 100,
+      y: isMobile ? 30 : 0,
       scale: 0.8,
-      rotate: 3
+      rotate: isMobile ? 0 : 3
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
       rotate: 0,
       transition: {
@@ -110,12 +114,14 @@ show: { opacity: 1, y: 0 },
   const leadershipTitleVariants = {
     hidden: { 
       opacity: 0, 
-      x: -50,
+      x: isMobile ? 0 : -50,
+      y: isMobile ? 20 : 0,
       scale: 0.9
     },
     visible: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
       transition: {
         duration: 0.7,
@@ -239,7 +245,7 @@ const StoreButton = ({ icon, label, sub, onClick }) => (
 
   return (
     <>
-      <section className="max-w-screen-2xl mx-auto mt-[56px] lg:mt-[96px]">
+      <section className="overflow-x-clip overflow-hidden w-full max-w-screen-2xl mx-auto mt-[56px] lg:mt-[96px]">
         {/* Story Section */}
         <motion.div 
           ref={storyRef}
@@ -263,31 +269,25 @@ variants={container}
 >
 <motion.div className="prose prose-lg dark:prose-invert text-gray-800 sm:text-base" variants={item}>
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
-AftA was born from a visionary commitment to redefine how Africans experience and engage with social media. It is a platform built with purpose, a safe empowering digital space where African people can authentically connect, express themselves, and showcase their talents without compromise.
+AftA brings education, entertainment, and community together in one place. It is a platform for people who want to discover something new, share their skills, and connect through the things they love.
 </p>
 
 
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
-For generations, African voices have been underrepresented, our stories overlooked, and our creative contributions undervalued within global digital ecosystems. AftA was founded to change this reality. It exists to amplify the voices of those who have too often been silenced and to provide a platform where African culture, innovation, and identity can thrive.
+Learning is at the heart of this experience. Learners can explore courses and enroll with tutors of their choice, while tutors can turn their knowledge into opportunity by creating courses and setting their own prices. Shared resources bring fresh perspectives and help knowledge travel beyond a single lesson.
 </p>
 
 
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
 
-As the founder of AftA, my inspiration stems from personal experience. Growing up, I observed a significant void in the digital space, an absence of platforms that genuinely reflect the richness, diversity, and brilliance of African people. Despite being a continent bursting with creativity, heritage, and ingenuity, Africa does not have a globally recognized social media platform to call its own. Instead, we have engaged in online communities that were never designed with us in mind.
-</p>
+Creativity and connection keep that experience alive. From posting in the feed to going live, AftA gives people space to express themselves, share their work, and be part of conversations that matter to them. Education and entertainment sit side by side, making room for both personal growth and everyday enjoyment.</p>
 
 <p className="mb-6 text-base sm:text-lg leading-relaxed">
-AftA is a bold step toward reclaiming digital ownership. It represents our collective stake in the global conversation and our right to be seen, heard, and celebrated on our terms.
-</p>
+Our community is worldwide. Across cultures, interests, and experiences, AftA brings learners, tutors, and creatives together not around where they come from, but around what they can learn, create, and share.</p>
 
-<p className="mb-6 text-base sm:text-lg leading-relaxed">
-This platform was created not just as a tool for communication, but as a digital sanctuary grounded in safety, inclusion, and authenticity. 
-</p>
 
 <p className="mb-0 text-base sm:text-lg leading-relaxed">
-AftA is more than an app, it is a movement. It is where your voice matters, your talent is recognized, and your dreams have a place to grow. This is our time. This is our space. This is AftA.
-</p>
+AftA is a place to grow your knowledge, share your creativity, and find your community. Learn something new. Teach what you know. Connect with what inspires you.</p>
 </motion.div>
 </motion.section>
         </motion.div>

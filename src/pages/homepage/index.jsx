@@ -129,11 +129,11 @@ const HomePage = () => {
         </Helmet>
 
         <div>
-          <div className="mx-4 md:mx-6 md:mt-[8rem] lg:mt-[1rem] pb-[7rem] lg:pb-[8rem]">
+          <div className="mx-4 md:mx-6 lg:mt-[1rem] pb-[7rem] lg:pb-[8rem]">
             <Navbar />
           </div>
   
-          <div className="mx-4 md:mx-6 md:pt-[22rem] lg:pt-[0rem] ">
+          <div className="mx-4 md:mx-6 lg:pt-[0rem] ">
             <FirstLayer/>
           </div>
 
@@ -145,7 +145,7 @@ const HomePage = () => {
             <ThirdLayer/>
           </div>
 
-          <div className="mt-[1rem]">
+          <div className="mt-[1rem] mx-4 md:mx-6">
             <FourthLayer/>
           </div>
 
